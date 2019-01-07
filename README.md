@@ -1,3 +1,3 @@
-# oslo-steps
+# OSLO-STEPS
 
 OSLO-STEPS data model
