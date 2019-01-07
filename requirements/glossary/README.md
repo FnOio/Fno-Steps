@@ -2,76 +2,14 @@ This table contains the lexicon (outcome of step 1) and glossary (outcome of ste
 
 | Term                                     | Synonyms                         | Kind        | Description                        | Source                          | Suggested By | Updated by |
 |------------------------------------------|----------------------------------|-------------|------------------------------------|---------------------------------|--------------|------------|
-| cpsv-ap:PublicService                    | oslo:PubliekeDienstverlening     | Object      | 
-This class represents the Public Service itself, as it is described in a public service catalogue. 
-A Public Service is a mandatory or discretionary set of activities performed, 
-or able to be performed, by or on behalf of a public organisation, 
-publicly funded and arise from public policy. 
-Services may be for the benefit of an individual, 
-a business, or other public authority, or groups of any of these. 
-A service exists whether it is used or not, and the term 'benefit' may apply in the sense of enabling the fulfilment of an obligation. 
-As defined in the revised version of the European Interoperability Framework12, 
-a European public service comprises any service provided by public administrations in Europe, 
-or by other organisations on their behalf, to businesses, citizens or others public administrations. | 
-[CPSV-AP specification](https://joinup.ec.europa.eu/rdf_entity/http_e_f_fdata_ceuropa_ceu_fw21_f08950374_b7f7c_b4b5a_b94c1_b40d72ffad670) | @slieber | @slieber |
-| cpsv-ap:Event                            | oslo:Gebeurtenis                 | Object | 
-This class represents an event that can be of any type that triggers, 
-makes use of, or in some way is related to, a Public Service. 
-It is not expected to be used directly, rather, one or other of its subclasses should be used. 
-The properties of the class are, of course, inherited by those subclasses.
-The Event class is used as a hook either to a single related Public Service, 
-such as diagnosis of illness being related to application for sickness benefit (section 3.3.5); 
-or to a group of Public Services, such as all those related to the establishment of a new business (see section 3.2.10). |
-[CPSV-AP specification](https://joinup.ec.europa.eu/rdf_entity/http_e_f_fdata_ceuropa_ceu_fw21_f08950374_b7f7c_b4b5a_b94c1_b40d72ffad670) | @slieber | @slieber |
-| cpsv-ap:LifeEvent                        | oslo:LevensGebeurtenis           | Object      |  
-The Life Event class represents an important event or situations in a citizen's life where public services may be required. 
-Note the scope: an individual will encounter any number of 'events' in the general sense of the word. In the context of the CPSV-AP, 
-the Life Event class only represents an event for which a Public Service is related. 
-For example, a couple becoming engaged is not a CPSV-AP Life Event, 
-getting married is, since only the latter has any relevance to public services. | 
-[CPSV-AP specification](https://joinup.ec.europa.eu/rdf_entity/http_e_f_fdata_ceuropa_ceu_fw21_f08950374_b7f7c_b4b5a_b94c1_b40d72ffad670) | @slieber | @slieber |
-| cpsv-ap:BusinessEvent                    | oslo:BedrijfsGebeurtenis         | Object       |
-This class represents a Business Event, which specialises Event. 
-A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time. 
-A Business Event requires a set of public services to be delivered and consumed in order for the associated business need(s) or obligation(s) to be fulfilled. 
-Business Events are defined within the context of a particular Member State.
-In other words, a Business Event groups together a number of public services that need to be delivered for completing that particular event. |
-[CPSV-AP specification](https://joinup.ec.europa.eu/rdf_entity/http_e_f_fdata_ceuropa_ceu_fw21_f08950374_b7f7c_b4b5a_b94c1_b40d72ffad670) | @slieber | @slieber |
-| cccev:Criterion                          |                                  | Object       |
-The Criterion class represents the rule or principle used to judge, evaluate or assess something. |
-[CPSV-AP specification](https://joinup.ec.europa.eu/rdf_entity/http_e_f_fdata_ceuropa_ceu_fw21_f08950374_b7f7c_b4b5a_b94c1_b40d72ffad670) | @slieber | @slieber |
-| cccev:RequirementGroup                   |                                  | Object       |
-Criterion requirement group is the set of requirements that must be fulfilled together to validate a criterion.
-A Criterion can be satisfied using different options. 
-The Requirement group class is used to wrap the set of criteria requirements that validate a criterion.
-All criteria requirements belonging to a requirement group shall be valid for the requirement group to be considered valid.
-When there is more than one Requirement group for a Criterion, at least one of them has to be positively validated for the Criterion to be considered fulfilled. |
-[CCCEV specification](https://joinup.ec.europa.eu/release/core-criterion-and-core-evidence-vocabulary-v100) | @slieber | @slieber |
-| cccev:CriterionRequirement               | oslo:CriteriumVereiste           | Object       |
-A Criterion can be expressed as a set of requirements where every requirement must be valid. 
-A Criterion requirement is an atomic requirement. 
-This can be better explained with the examples in section 6.1, 
-where the criterion is "to be eligible to enter into the cinema to watch a movie", and there are several options to meet this criterion. 
-One option has two Criterion requirements: (1) Holding a ticket (2) Being older than eighteen
-Some criteria can be expressed with several atomic requirements. 
-A Criterion requirement can specify the expected value that the Criterion response has to contain, 
-or a range of threshold values within which the Criterion response has to fit in.
-The Criterion requirement may apply to a certain period of time. 
-It also can provide a list of candidate evidences that the responder can use to prove the Criterion requirement. |
-[CCCEV specification](https://joinup.ec.europa.eu/release/core-criterion-and-core-evidence-vocabulary-v100) | @slieber | @slieber |
-| cccev:RequirementResponse                |                                  | Object       |
-Requirement response is an assertion that responds to a criterion requirement.
-Requirement Response is the class used to define the actual response to a Criterion requirement. 
-It provides the value for the specific requirement and the period to which it applies.  |
-[CCCEV specification](https://joinup.ec.europa.eu/release/core-criterion-and-core-evidence-vocabulary-v100) | @slieber | @slieber |
-It refers to the Criterion requirement that validates.
-| cccev:Evidence                           | oslo:Bewijs                      | Object       |
-Evidence is any resource that can document or support a Requirement response.
-The Evidence class contains information that proves that a Criterion requirement exists or is true, in particular Evidences are used to prove that a specific Criterion is met. | 
-[CCCEV specification](https://joinup.ec.europa.eu/release/core-criterion-and-core-evidence-vocabulary-v100) | @slieber | @slieber |
-| State                                    |                                  | Object       |
-A State represents values, in its most generic form. A state could be a data graph. |
-FAST project WP1 | @slieber | @slieber |
-| Step                                     |                                  | Object       |
-A Step is an action which performs changes in a State. |
-FAST project WP1 | @slieber | @slieber |
+| cpsv-ap:PublicService                    | oslo:PubliekeDienstverlening     | Object      | This class represents the Public Service itself, as it is described in a public service catalogue. A Public Service is a mandatory or discretionary set of activities performed,  or able to be performed, by or on behalf of a public organisation, publicly funded and arise from public policy. Services may be for the benefit of an individual, a business, or other public authority, or groups of any of these. A service exists whether it is used or not, and the term 'benefit' may apply in the sense of enabling the fulfilment of an obligation. As defined in the revised version of the European Interoperability Framework12, a European public service comprises any service provided by public administrations in Europe, or by other organisations on their behalf, to businesses, citizens or others public administrations. | [CPSV-AP specification](https://joinup.ec.europa.eu/rdf_entity/http_e_f_fdata_ceuropa_ceu_fw21_f08950374_b7f7c_b4b5a_b94c1_b40d72ffad670) | @slieber | @slieber |
+| cpsv-ap:Event                            | oslo:Gebeurtenis                 | Object      | This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service. It is not expected to be used directly, rather, one or other of its subclasses should be used. The properties of the class are, of course, inherited by those subclasses. The Event class is used as a hook either to a single related Public Service, such as diagnosis of illness being related to application for sickness benefit (section 3.3.5); or to a group of Public Services, such as all those related to the establishment of a new business (see section 3.2.10). | [CPSV-AP specification](https://joinup.ec.europa.eu/rdf_entity/http_e_f_fdata_ceuropa_ceu_fw21_f08950374_b7f7c_b4b5a_b94c1_b40d72ffad670) | @slieber | @slieber |
+| cpsv-ap:LifeEvent                        | oslo:LevensGebeurtenis           | Object      | The Life Event class represents an important event or situations in a citizen's life where public services may be required. Note the scope: an individual will encounter any number of 'events' in the general sense of the word. In the context of the CPSV-AP, the Life Event class only represents an event for which a Public Service is related. For example, a couple becoming engaged is not a CPSV-AP Life Event, getting married is, since only the latter has any relevance to public services. | [CPSV-AP specification](https://joinup.ec.europa.eu/rdf_entity/http_e_f_fdata_ceuropa_ceu_fw21_f08950374_b7f7c_b4b5a_b94c1_b40d72ffad670) | @slieber | @slieber |
+| cpsv-ap:BusinessEvent                    | oslo:BedrijfsGebeurtenis         | Object      | This class represents a Business Event, which specialises Event. A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time. A Business Event requires a set of public services to be delivered and consumed in order for the associated business need(s) or obligation(s) to be fulfilled. Business Events are defined within the context of a particular Member State. In other words, a Business Event groups together a number of public services that need to be delivered for completing that particular event. | [CPSV-AP specification](https://joinup.ec.europa.eu/rdf_entity/http_e_f_fdata_ceuropa_ceu_fw21_f08950374_b7f7c_b4b5a_b94c1_b40d72ffad670) | @slieber | @slieber |
+| cccev:Criterion                          |                                  | Object      | The Criterion class represents the rule or principle used to judge, evaluate or assess something. | [CPSV-AP specification](https://joinup.ec.europa.eu/rdf_entity/http_e_f_fdata_ceuropa_ceu_fw21_f08950374_b7f7c_b4b5a_b94c1_b40d72ffad670) | @slieber | @slieber |
+| cccev:RequirementGroup                   |                                  | Object      | Criterion requirement group is the set of requirements that must be fulfilled together to validate a criterion. A Criterion can be satisfied using different options.  The Requirement group class is used to wrap the set of criteria requirements that validate a criterion. All criteria requirements belonging to a requirement group shall be valid for the requirement group to be considered valid. When there is more than one Requirement group for a Criterion, at least one of them has to be positively validated for the Criterion to be considered fulfilled. | [CCCEV specification](https://joinup.ec.europa.eu/release/core-criterion-and-core-evidence-vocabulary-v100) | @slieber | @slieber |
+| cccev:CriterionRequirement               | oslo:CriteriumVereiste           | Object      | A Criterion can be expressed as a set of requirements where every requirement must be valid. A Criterion requirement is an atomic requirement. See example in section 6.1 of related specification, where the criterion is "to be eligible to enter into the cinema to watch a movie", and there are several options to meet this criterion. One option has two Criterion requirements: (1) Holding a ticket (2) Being older than eighteen. Some criteria can be expressed with several atomic requirements. A Criterion requirement can specify the expected value that the Criterion response has to contain, or a range of threshold values within which the Criterion response has to fit in. The Criterion requirement may apply to a certain period of time.  It also can provide a list of candidate evidences that the responder can use to prove the Criterion requirement. | [CCCEV specification](https://joinup.ec.europa.eu/release/core-criterion-and-core-evidence-vocabulary-v100) | @slieber | @slieber |
+| cccev:RequirementResponse                |                                  | Object      | Requirement response is an assertion that responds to a criterion requirement. Requirement Response is the class used to define the actual response to a Criterion requirement. It provides the value for the specific requirement and the period to which it applies. It refers to the Criterion requirement that validates. | [CCCEV specification](https://joinup.ec.europa.eu/release/core-criterion-and-core-evidence-vocabulary-v100) | @slieber | @slieber |
+| cccev:Evidence                           | oslo:Bewijs                      | Object      | Evidence is any resource that can document or support a Requirement response. The Evidence class contains information that proves that a Criterion requirement exists or is true, in particular Evidences are used to prove that a specific Criterion is met. | [CCCEV specification](https://joinup.ec.europa.eu/release/core-criterion-and-core-evidence-vocabulary-v100) | @slieber | @slieber |
+| State                                    |                                  | Object      | A State represents values, in its most generic form. A state could be a data graph. | FAST project WP1 | @slieber | @slieber |
+| Step                                     |                                  | Object      | A Step is an action which performs changes in a State. | FAST project WP1 | @slieber | @slieber |
