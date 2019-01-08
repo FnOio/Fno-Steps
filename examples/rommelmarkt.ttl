@@ -1,0 +1,47 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix gent: <https://example.org/ns/gent#> .
+@prefix app: <https://example.org/ns/app#> .
+@prefix oslo-steps: <https://example.org/ns/oslo-steps#> .
+
+
+# Excerpt of requirements of the Aanvragformulier Rommelmarkt
+# https://stad.gent/sites/default/files/page/documents/20141218_FR_%20aanvraagformulier%202015.pdf
+gent:rommelMarktLocation         a cccev:CriterionRequirement .
+gent:rommelMarktDate             a cccev:CriterionRequirement .
+gent:rommelMarktOpeningHours     a cccev:CriterionRequirement .
+gent:rommelMarktFoodStandInfo    a cccev:CriterionRequirement .
+
+# Requirements which ALL needs to be fulfilled
+gent:rommelMarktRequirements a cccev:RequirementGroup ;
+    rdfs:comment "Information which needs to be provided to file a flea market request at the city of Ghent."@en ;
+	rdfs:comment "Benötigte Informationen zum Ausfüllen eines Flohmarkt Antrags der Stadt Gent."@de ;
+	cccev:hasCriterionRequirement 
+		gent:rommelMarktLocation, 
+		gent:rommelMarktDate,
+		gent:rommelMarktOpeningHours, 
+		gent:rommelMarktFoodStandInfo . 
+		
+# An example macro step referring to one or multiple RequirementGroups
+# If multiple RequirementGroups are provided, only one of them needs to be fulfilled to be valid.
+# This allows alternatives (is part of the cccev specification)
+gent:requestRommelmarkt a oslo-steps:Step ;
+    rdfs:comment             "A macro step providing information needed to file a flea market request"@en ;
+	oslo-steps:requiresInput gent:rommelMarktRequirements .
+	
+
+# Information I use to fill part of the request (self declaration, no evidence yet)
+:myStreetLocation a cccev:RequirementResponse ;
+    cccev:validates gent:rommelMarktLocation ;
+	cccev:value     "Technologiepark Zwijnaarde 122, 9052 Gent"@en .
+	
+:myFoodStandInfo a cccev:RequirementResponse ;
+    cccev:validates gent:rommelMarktFoodStandInfo ;
+	cccev:value "No"@en .
+	
+
+# Smaller steps fulfilling needed requirements
+# TODO: finish
+app:provideLocation a oslo-steps:Step ;
+    rdfs:comment    "A step providing a location information."@en .
+	
+	
