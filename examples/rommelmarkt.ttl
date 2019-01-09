@@ -1,33 +1,113 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix gent: <https://example.org/ns/gent#> .
 @prefix app: <https://example.org/ns/app#> .
+@prefix cccev: <http://data.europa.eu/m8g/> .
+@prefix oslo-adres: <https://data.vlaanderen.be/ns/adres#> .
 @prefix oslo-steps: <https://example.org/ns/oslo-steps#> .
 
+#
+# STATIC DATA describing steps related to public services
+#
 
 # Excerpt of requirements of the Aanvragformulier Rommelmarkt
 # https://stad.gent/sites/default/files/page/documents/20141218_FR_%20aanvraagformulier%202015.pdf
-gent:rommelMarktLocation         a cccev:CriterionRequirement .
-gent:rommelMarktDate             a cccev:CriterionRequirement .
-gent:rommelMarktOpeningHours     a cccev:CriterionRequirement .
-gent:rommelMarktFoodStandInfo    a cccev:CriterionRequirement .
 
-# Requirements which ALL needs to be fulfilled
-gent:rommelMarktRequirements a cccev:RequirementGroup ;
-    rdfs:comment "Information which needs to be provided to file a flea market request at the city of Ghent."@en ;
-	rdfs:comment "Benötigte Informationen zum Ausfüllen eines Flohmarkt Antrags der Stadt Gent."@de ;
-	cccev:hasCriterionRequirement 
-		gent:rommelMarktLocation, 
-		gent:rommelMarktDate,
-		gent:rommelMarktOpeningHours, 
-		gent:rommelMarktFoodStandInfo . 
-		
-# An example macro step referring to one or multiple RequirementGroups
-# If multiple RequirementGroups are provided, only one of them needs to be fulfilled to be valid.
-# This allows alternatives (is part of the cccev specification)
-gent:requestRommelmarkt a oslo-steps:Step ;
-    rdfs:comment             "A macro step providing information needed to file a flea market request"@en ;
-	oslo-steps:requiresInput gent:rommelMarktRequirements .
+# CRITERION: event location
+gent:criterionRommelMarktLocation a cccev:Criterion ;
+    rdfs:label "Locatie"@nl ;
+	rdfs:label "Location"@en ;
+	rdfs:comment "The location of the event." ;
+	cccev:fulfilledBy gent:locationGroup .
+
+gent:locationGroup a cccev:RequirementGroup ;
+    cccev:hasCriterionRequirement gent:location .
+
+gent:location a cccev:CriterionRequirement ;
+    rdfs:label "A location"@en ;
+	cccev:expecteddatatype oslo-adres:Adres .
+
+# CRITERION: event date
+gent:criterionRommelMarktDate a cccev:Criterion ;
+    rdfs:label "Datum"@nl ;
+	rdfs:label "Date"@en ;
+	rdfs:comment "The date of the event." ;
+	cccev:fulfilledBy gent:dateGroup .
+
+gent:dateGroup a cccev:RequirementGroup ;
+    cccev:hasCriterionRequirement gent:date .
+
+gent:date a cccev:CriterionRequirement ;
+    rdfs:label "A date" ;
+	cccev:expecteddatatype xsd:date .
+
+# CRITERION: opening hours
+gent:criterionRommelMarktOpeningHours a cccev:Criterion ;
+    rdfs:label "Tijdstip markt"@nl ;
+	rdfs:label "Daytime" ;
+	rdfs:comment "Information regarding from which to which time the event will be."@en ;
+	cccev:fulfilledBy gent:openingHoursGroup .
+
+gent:openingHoursGroup a cccev:RequirementGroup ;
+    cccev:hasCriterionRequirement gent:openingHours .
 	
+gent:openingHours a cccev:CriterionRequirement ;
+    rdfs:label "Hours, from and until" ;
+	cccev:expecteddatatype cccev:PeriodOfTime .
+
+# CRITERION: food stand info
+# The food stand information criterion (either no, or yes + more infos, thus two requirement groups)
+gent:criterionRommelMarktFoodStandInfo a cccev:Criterion ;
+    rdfs:label "Eetstand"@nl ;
+	rdfs:label "Food stand"@en ;
+	rdfs:comment "Will there be a food stand yes/no. If yes, how much." ;
+	cccev:fulfilledBy gent:foodstandInfo ;
+	cccev:fulfilledBy gent:foodstandInfoAmount .
+	
+# The requirement group for the case there will be a foodstand (saying yes + amount)
+gent:foodstandInfoAmount a cccev:RequirementGroup ;
+    rdfs:comment "Needed information in case a food stand exist."@en ;
+	cccev:hasCriterionRequirement gent:foodstandInfo, gent:foodstandAmount .
+	
+# The requirement group for the case there won't be a foodstand (saying no)
+gent:foodstandInfoNo a cccev:RequirementGroup ;
+	rdfs:comment "Needed information in case there is no food stand."@en ;
+	cccev:hasCriterionRequirement gent:foodstandInfo .
+
+gent:foodstandAmount a cccev:CriterionRequirement ;
+    rdfs:label "The amount of foodstands"@en ;
+	cccev:expecteddatatype xsd:integer .
+
+gent:foodstandInfo a cccev:CriterionRequirement ;
+	rdfs:label "Information if there will be foodstands" ;
+	cccev:expecteddatatype xsd:boolean .
+
+# CRITERION: flea market type
+gent:criterionRommelMarktType a cccev:Criterion ;
+    rdfs:label "Naam evenement"@nl ;
+	rdfs:label "Event name"@en ;
+	rdfs:comment "Name of the event. Available: Flea market, second hand fair, or garage sale."@en .
+
+# TODO: find out how to model fixed sets of expected types
+
+		
+# An example macro step referring to one or multiple Criterions
+gent:requestRommelmarkt a oslo-steps:Step ;
+    rdfs:comment "A macro step providing information needed to file a flea market request"@en ;
+	oslo-steps:requiresInput 
+		gent:criterionRommelMarktDate, 
+		gent:criterionRommelMarktFoodStandInfo, 
+		gent:criterionRommelMarktLocation,
+		gent:criterionRommelMarktOpeningHours,
+		gent:criterionRommelMarktType ;
+	oslo-steps:producesEvidence gent:rommelMarktFilledRequest .
+
+
+gent:rommelMarktFilledRequest a cccev:Evidence .
+	
+#
+# TODO ... bring order to the chaos of ALL the following statements
+#
 
 # Information I use to fill part of the request (self declaration, no evidence yet)
 :myStreetLocation a cccev:RequirementResponse ;
@@ -41,7 +121,25 @@ gent:requestRommelmarkt a oslo-steps:Step ;
 
 # Smaller steps fulfilling needed requirements
 # TODO: finish
-app:provideLocation a oslo-steps:Step ;
-    rdfs:comment    "A step providing a location information."@en .
+app:provideLocationMagda a oslo-steps:Step ;
+    rdfs:comment    "A step providing a location information."@en ;
 	
+	
+app:provideLocationManually a oslo-steps:Step ;
+	
+	
+	
+# triples
+# our state
+
+:ourAddress a prov:Entity .
+
+:ourAddress1 a prov:Entity ;
+    prov:specializationOf :ourAddress;
+	
+# activity which produces address2 from address1, via executing necessary steps
+...
+
+
+:ourAddress2 :streetName "new address"
 	
