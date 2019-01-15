@@ -2,7 +2,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix gent: <https://example.org/ns/gent#> .
 @prefix app: <https://example.org/ns/app#> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
 @prefix cccev: <http://data.europa.eu/m8g/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix oslo-adres: <https://data.vlaanderen.be/ns/adres#> .
 @prefix oslo-steps: <https://example.org/ns/oslo-steps#> .
 
@@ -61,16 +63,16 @@ gent:criterionRommelMarktFoodStandInfo a cccev:Criterion ;
     rdfs:label "Eetstand"@nl ;
 	rdfs:label "Food stand"@en ;
 	rdfs:comment "Will there be a food stand yes/no. If yes, how much." ;
-	cccev:fulfilledBy gent:foodstandInfo ;
-	cccev:fulfilledBy gent:foodstandInfoAmount .
+	cccev:fulfilledBy gent:foodstandInfoNoGroup ;
+	cccev:fulfilledBy gent:foodstandInfoAmountGroup .
 	
 # The requirement group for the case there will be a foodstand (saying yes + amount)
-gent:foodstandInfoAmount a cccev:RequirementGroup ;
+gent:foodstandInfoAmountGroup a cccev:RequirementGroup ;
     rdfs:comment "Needed information in case a food stand exist."@en ;
 	cccev:hasCriterionRequirement gent:foodstandInfo, gent:foodstandAmount .
 	
 # The requirement group for the case there won't be a foodstand (saying no)
-gent:foodstandInfoNo a cccev:RequirementGroup ;
+gent:foodstandInfoNoGroup a cccev:RequirementGroup ;
 	rdfs:comment "Needed information in case there is no food stand."@en ;
 	cccev:hasCriterionRequirement gent:foodstandInfo .
 
@@ -83,13 +85,39 @@ gent:foodstandInfo a cccev:CriterionRequirement ;
 	cccev:expecteddatatype xsd:boolean .
 
 # CRITERION: flea market type
+# On the original form three checkboxes. One of it should be marked, thus three requirement groups
 gent:criterionRommelMarktType a cccev:Criterion ;
     rdfs:label "Naam evenement"@nl ;
 	rdfs:label "Event name"@en ;
-	rdfs:comment "Name of the event. Available: Flea market, second hand fair, or garage sale."@en .
+	rdfs:comment "Name of the event. Available: Flea market, second hand fair, or garage sale."@en ;
+	cccev:fulfilledBy 
+	    gent:rommelMarktTypeFleaMarketGroup, 
+	    gent:rommelMarktTypeSecondHandGroup,
+		gent:rommelMarktTypeGarageGroup .
 
-# TODO: find out how to model fixed sets of expected types
+# The requirement group for the case it is a rommelmarkt
+gent:rommelMarktTypeFleaMarketGroup a cccev:RequirementGroup ;
+    cccev:hasCriterionRequirement gent:rommelMarktTypeFleaMarket ;
+	
+gent:rommelMarktTypeFleaMarket a cccev:CriterionRequirement ;
+    rdfs:label "Rommel markt is an actual rommel market"@en ;
+	cccev:expecteddatatype xsd:boolean .
 
+# The requirement group for the case it is a second hand market
+gent:rommelMarktTypeSecondHandGroup a cccev:RequirementGroup ;
+    cccev:hasCriterionRequirement gent:rommelMarktTypeSecondHand .
+	
+gent:rommelMarktTypeSecondHand a cccev:CriterionRequirement ;
+    rdfs:label "Rommel markt is a second hand market"@en ;
+	cccev:expecteddatatype xsd:boolean .
+
+# The requirement group for the case it is a garage sale
+gent:rommelMarktTypeGarageGroup a cccev:RequirementGroup ;
+    cccev:hasCriterionRequirement gent:rommelMarktTypeGarage .
+
+gent:rommelMarktTypeGarage a cccev:CriterionRequirement ;
+    rdfs:label "Rommel markt is a garage sale"@en ;
+	cccev:expecteddatatype xsd:boolean .
 		
 # An example macro step referring to one or multiple Criterions
 gent:requestRommelmarkt a oslo-steps:Step ;
@@ -101,36 +129,106 @@ gent:requestRommelmarkt a oslo-steps:Step ;
 		gent:criterionRommelMarktOpeningHours,
 		gent:criterionRommelMarktType ;
 	oslo-steps:producesEvidence gent:rommelMarktFilledRequest .
-
+	# TODO: change, it should not produce a concrete evidence instance
 
 gent:rommelMarktFilledRequest a cccev:Evidence .
-	
-#
-# TODO ... bring order to the chaos of ALL the following statements
-#
 
-# Information I use to fill part of the request (self declaration, no evidence yet)
-:myStreetLocation a cccev:RequirementResponse ;
-    cccev:validates gent:rommelMarktLocation ;
-	cccev:value     "Technologiepark Zwijnaarde 122, 9052 Gent"@en .
-	
-:myFoodStandInfo a cccev:RequirementResponse ;
-    cccev:validates gent:rommelMarktFoodStandInfo ;
-	cccev:value "No"@en .
-	
+# The goal for the planner
+app:rommelMarktPermitAchieved a sh:NodeShape .
 
-# Smaller steps fulfilling needed requirements
-# TODO: finish
-app:provideLocationMagda a oslo-steps:Step ;
-    rdfs:comment    "A step providing a location information."@en ;
+
+# Micro steps providing data to fulfill criterions of macro step
+# Steps are generic, e.g. a step providing a date, not only provides a date for a flea market
+gent:provideLocationMagda a oslo-steps:Step ;
+    rdfs:comment "A step providing a location information from the Kruispunkt databank (MAGDA)."@en .
 	
+gent:provideLocationManually a oslo-steps:Step ;
+    rdfs:comment "A step providing a location information manually by the user."@en .
 	
-app:provideLocationManually a oslo-steps:Step ;
+gent:provideOpeningHoursManually a oslo-steps:Step ;
+    rdfs:comment "A step providing opening hours, from and to, manually by the user."@en .
 	
+gent:provideRommelmarktType a oslo-steps:Step ;
+    rdfs:comment "A step providing the type of a rommelmarkt."@en .
 	
+gent:provideDate a oslo-steps:Step ;
+    rdfs:comment "A step providing a date."@en .
 	
-# triples
-# our state
+gent:provideFoodstandInfo a oslo-steps:Step ;
+    rdfs:comment "A step providing information if a foodstand is present, and if yes, how many."@en .
+
+# Execution of several steps
+
+# Default evidence for cases where a requirementResponse is user input
+# Alternative point to overall workflow provenance?
+app:userInput a cccev:Evidence .
+
+# Example MAGDA api response (evidence that MAGDA provided this information at x o'clock at day y)
+app:magdaLocationReceived1 a cccev:Evidence .
+
+# EXECUTED STEP: location
+# Asumed the location is our home address we took from MAGDA
+app:providedLocation a oslo-steps:ExecutedStep ;
+    rdfs:comment "" ;
+	p-plan:correspondsToStep gent:provideLocationMagda ;
+	oslo-steps:emitsRequirementResponse [
+	    a cccev:RequirementResponse ;
+		cccev:validates gent:location ;
+        cccev:provenBy app:magdaLocationReceived1 ;
+	    cccev:value "Technologiepark Zwijnaarde 122, 9052 Gent"@en ;
+	] .
+
+# EXECUTED STEP: opening hours
+app:providedOpeningHours a oslo-steps:ExecutedStep ;
+    rdfs:comment "" ;
+	p-plan:correspondsToStep gent:provideOpeningHoursManually ;
+	oslo-steps:emitsRequirementResponse [
+	    a cccev:RequirementResponse ;
+		cccev:validates gent:openingHours ;
+        cccev:provenBy app:userInput ;
+	    cccev:value "10am to 7pm"@en ;
+	] .
+
+# EXECUTED STEP: rommel markt type	
+app:providedRommelmarktType a oslo-steps:ExecutedStep ;
+    rdfs:comment "" ;
+	p-plan:correspondsToStep gent:provideRommelmarktType ;
+	oslo-steps:emitsRequirementResponse [
+	    a cccev:RequirementResponse ;
+		cccev:validates gent:rommelMarktTypeFleaMarket ;
+        cccev:provenBy app:userInput ;
+	    cccev:value "true"^^xsd:boolean ;
+	] .
+
+# EXECUTED STEP: rommel markt date	
+app:providedDate a oslo-steps:ExecutedStep ;
+    rdfs:comment "" ;
+	p-plan:correspondsToStep gent:provideDate ;
+	oslo-steps:emitsRequirementResponse [
+	    a cccev:RequirementResponse ;
+		cccev:validates gent:date ;
+        cccev:provenBy app:userInput ;
+	    cccev:value "25.04.2019"@en ;
+	] .
+
+# EXECUTED STEP: food stand info
+# Assumed we said yes and the amount 3	
+app:providedFoodstandInfo a oslo-steps:ExecutedStep ;
+    rdfs:comment "" ;
+	p-plan:correspondsToStep provideFoodstandInfo ;
+	oslo-steps:emitsRequirementResponse [
+	    a cccev:RequirementResponse ;
+		cccev:validates gent:foodstandInfo ;
+        cccev:provenBy app:userInput ;
+	    cccev:value "true"^^xsd:boolean ;
+	] ;
+	oslo-steps:emitsRequirementResponse [
+	    a cccev:RequirementResponse ;
+		cccev:validates gent:foodstandAmount ;
+		cccev:provenBy app:userInput ;
+		cccev:value 3 ;
+	] ;
+
 
 :ourAddress a prov:Entity .
 
