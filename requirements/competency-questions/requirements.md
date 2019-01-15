@@ -3,7 +3,7 @@
 | ID   | type            | Description                        | Source       | Suggested By | Updated by |
 |------|-----------------|------------------------------------|--------------|--------------|------------|
 | R1   | solution        | Workflows are not statically defined, only possible steps. | | @slieber | @slieber |
-| R2   | solution        | Steps produce evidence or modify a given state. | @slieber | | @slieber |
+| R2   | solution        | Steps produce evidence or modify a given state. | | @slieber | @slieber |
 | R3   | solution        | Dynamically building workflows, requires to know which evidence or state change a step produces. | | @slieber | @slieber |
 | R4   | requirement     | Steps have to contain a human readable description | OSLO | @slieber | @slieber |
 | R5   | solution        | Steps might have requirements which need to be met in order for the step to execute. | | @slieber | @slieber |
