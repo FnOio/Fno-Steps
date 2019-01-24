@@ -1,0 +1,58 @@
+
+#
+# Constraint groups (can be used to generate form, e.g. based on order)
+# The specific constraints link to their respective group
+#
+westerlo-constraints:criterionMasterDataWasteContainerInfoConstraintsGroup
+    a sh:PropertyGroup ;
+	sh: order 0 ;
+	rdfs:label "Jouw gegevens"@nl ;
+	rdfs:label "Your information"@en .
+
+westerlo-constraints:criterionGreyWasteContainerInfoConstraintsGroup
+    a sh:PropertyGroup ;
+	sh:order 1 ;
+	rdfs:label "Volgens de toekenningsregels ontvang ik de volgende grijze restafval container(s) met chip:"@nl ;
+	rdfs:label "According to the allocation rules, I receive the following gray waste container(s) with chip:"@en .
+	
+westerlo-constraints:criterionGreenWasteContainerInfoConstraintsGroup
+    a sh:PropertyGroup ;
+	sh:order 2 ;
+	rdfs:label "Volgens de toekenningsregels ontvang ik te volgende groene GFT-container(s) met chip:"@nl ;
+	rdfs:label "According to the allocation rules, I receive the following green waste container(s) with chip"@en .
+	
+westerlo-constraints:criterionYellowWasteContainerInfoConstraintsGroup
+    a sh:PropertyGroup ;
+	sh:order 3 ;
+	rdfs:label "Volgens de toekenningsregels ontvang ik de volgende gele papier container(s) met chip:"@nl ;
+	rdfs:label "According to the allocation rules, I receive the following yellow paper waste container(s) with chip:"@en .
+
+
+#
+# Reusable constraint fragments
+#
+westerlo-constraints:
+	
+#
+# Constraints regarding master data
+#
+
+
+#
+# Constraints regarding the grey waste container
+#
+westerlo-constraints:criterionGreyWasteContainerInfo40LiterConstraint
+    a sh:NodeShape ;
+	sh:property [
+	    a sh:PropertyShape ;
+	    sh:path
+	]
+
+#
+# Constraints regarding the green waste container
+#
+
+
+#
+# Constraints regarding the yellow waste container
+#
