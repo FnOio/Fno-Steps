@@ -1,0 +1,10 @@
+version: '2'
+services:
+  lutra:
+    build: docker-lutra
+    image: lutra
+    stdin_open: true
+    tty: true
+    volumes:
+      - ".:/input"
+    network_mode: bridge
