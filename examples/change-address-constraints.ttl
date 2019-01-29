@@ -1,3 +1,5 @@
+<http://data.europa.eu/m8g/> sh:prefix "cccev" .
+<https://example.org/ns/westerlo> sh:prefix "westerlo" .
 
 #
 # Constraint groups (can be used to generate form, e.g. based on order)
@@ -31,7 +33,25 @@ westerlo-constraints:criterionYellowWasteContainerInfoConstraintsGroup
 #
 # Reusable constraint fragments
 #
-westerlo-constraints:
+westerlo-constraints:criterionValueMinMax1
+    a sh:NodeShape ;
+	sh:property [
+	    a sh:PropertyShape ;
+	    sh:path cccev:value ;
+		sh:minInclusive 1 ;
+		sh:maxInclusive 1 ;
+	] .
+
+# test reponse
+#@prefix westerlo: <https://example.org/ns/westerlo> .
+#@prefix westerlo-constraints: <https://example.org/ns/westerlo-constraints> .
+#@prefix cccev: <http://data.europa.eu/m8g/> .
+#@prefix sh: <http://www.w3.org/ns/shacl#> .
+#
+#westerlo:myResponse a cccev:RequirementResponse ;
+#    cccev:validates westerlo-constraints:criterionValueMinMax1 ;
+#    cccev:value 3 ;
+#    sh:node westerlo-constraints:criterionValueMinMax1 .
 	
 #
 # Constraints regarding master data
@@ -41,18 +61,162 @@ westerlo-constraints:
 #
 # Constraints regarding the grey waste container
 #
-westerlo-constraints:criterionGreyWasteContainerInfo40LiterConstraint
+
+# possible values of 40 liter grey containers
+# what is restricted: RequirementResponses validating an CriteironRequirement
+# We target a specific subclass of cccev:validates subjects, thus we need custom targets as defined in SHACL Advanced Features
+westerlo-constraints:criterionGreyWasteContainer40LitersConstraints 
     a sh:NodeShape ;
+	sh:target [
+	    a sh:SPARQLTarget ;
+		sh:select """
+		    SELECT ?this
+			WHERE {
+			    ?this cccev:validates westerlo:greyWasteContainer40Amount .
+			}
+		""" ;
+	] ;
 	sh:property [
 	    a sh:PropertyShape ;
-	    sh:path
-	]
+	    sh:path cccev:value ;
+		sh:minInclusive 1 ;
+		sh:maxInclusive 3 ;
+	] .
+	
+# possible values of 120 liter grey containers
+westerlo-constraints:criterionGreyWasteContainer120LitersConstraints 
+    a sh:NodeShape ;
+	sh:target [
+	    a sh:SPARQLTarget ;
+		sh:select """
+		    SELECT ?this
+			WHERE {
+			    ?this cccev:validates westerlo:greyWasteContainer120Amount .
+			}
+		""" ;
+	] ;
+	sh:property [
+	    a sh:PropertyShape ;
+	    sh:path cccev:value ;
+		sh:minInclusive 1 ;
+		sh:maxInclusive 1 ;
+	] .
+
+# possible values of 240 grey liter containers
+westerlo-constraints:criterionGreyWasteContainer240LitersConstraints 
+    a sh:NodeShape ;
+	sh:target [
+	    a sh:SPARQLTarget ;
+		sh:select """
+		    SELECT ?this
+			WHERE {
+			    ?this cccev:validates westerlo:greyWasteContainer240Amount .
+			}
+		""" ;
+	] ;
+	sh:property [
+	    a sh:PropertyShape ;
+	    sh:path cccev:value ;
+		sh:minclusive 1 ;
+		sh:maxInclusive 1 ;
+	] .
+		
 
 #
 # Constraints regarding the green waste container
 #
-
+westerlo-constraints:criterionGreenWasteContainer40LitersConstraints 
+    a sh:NodeShape ;
+	sh:target [
+	    a sh:SPARQLTarget ;
+		sh:select """
+		    SELECT ?this
+			WHERE {
+			    ?this cccev:validates westerlo:greenWasteContainer40Amount .
+			}
+		""" ;
+	] ;
+	sh:property [
+	    a sh:PropertyShape ;
+	    sh:path cccev:value ;
+		sh:minInclusive 1 ;
+		sh:maxInclusive 3 ;
+	] .
+	
+# possible values of 120 liter grey containers
+westerlo-constraints:criterionGreenWasteContainer120LitersConstraints 
+    a sh:NodeShape ;
+	sh:target [
+	    a sh:SPARQLTarget ;
+		sh:select """
+		    SELECT ?this
+			WHERE {
+			    ?this cccev:validates westerlo:greenWasteContainer120Amount .
+			}
+		""" ;
+	] ;
+	sh:property [
+	    a sh:PropertyShape ;
+	    sh:path cccev:value ;
+		sh:minInclusive 1 ;
+		sh:maxInclusive 2 ;
+	] .
 
 #
 # Constraints regarding the yellow waste container
 #
+westerlo-constraints:criterionGreyWasteContainer40LitersConstraints 
+    a sh:NodeShape ;
+	sh:target [
+	    a sh:SPARQLTarget ;
+		sh:select """
+		    SELECT ?this
+			WHERE {
+			    ?this cccev:validates westerlo:yellowWasteContainer40Amount .
+			}
+		""" ;
+	] ;
+	sh:property [
+	    a sh:PropertyShape ;
+	    sh:path cccev:value ;
+		sh:minInclusive 1 ;
+		sh:maxInclusive 3 ;
+	] .
+	
+# possible values of 240 liter yellow containers
+westerlo-constraints:criterionYellowWasteContainer240LitersConstraints 
+    a sh:NodeShape ;
+	sh:target [
+	    a sh:SPARQLTarget ;
+		sh:select """
+		    SELECT ?this
+			WHERE {
+			    ?this cccev:validates westerlo:yellowWasteContainer240Amount .
+			}
+		""" ;
+	] ;
+	sh:property [
+	    a sh:PropertyShape ;
+	    sh:path cccev:value ;
+		sh:minInclusive 1 ;
+		sh:maxInclusive 1 ;
+	] .
+
+# possible values of 1100 yellow liter containers
+westerlo-constraints:criterionYellowWasteContainer1100LitersConstraints 
+    a sh:NodeShape ;
+	sh:target [
+	    a sh:SPARQLTarget ;
+		sh:select """
+		    SELECT ?this
+			WHERE {
+			    ?this cccev:validates westerlo:yellowWasteContainer1100Amount .
+			}
+		""" ;
+	] ;
+	sh:property [
+	    a sh:PropertyShape ;
+	    sh:path cccev:value ;
+		sh:minclusive 1 ;
+		sh:maxInclusive 1 ;
+	] .

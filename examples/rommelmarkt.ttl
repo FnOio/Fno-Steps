@@ -5,6 +5,7 @@
 @prefix p-plan: <http://purl.org/net/p-plan#> .
 @prefix cccev: <http://data.europa.eu/m8g/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix oslo-adres: <https://data.vlaanderen.be/ns/adres#> .
 @prefix oslo-steps: <https://example.org/ns/oslo-steps#> .
 
@@ -97,7 +98,7 @@ gent:criterionRommelMarktType a cccev:Criterion ;
 
 # The requirement group for the case it is a rommelmarkt
 gent:rommelMarktTypeFleaMarketGroup a cccev:RequirementGroup ;
-    cccev:hasCriterionRequirement gent:rommelMarktTypeFleaMarket ;
+    cccev:hasCriterionRequirement gent:rommelMarktTypeFleaMarket .
 	
 gent:rommelMarktTypeFleaMarket a cccev:CriterionRequirement ;
     rdfs:label "Rommel markt is an actual rommel market"@en ;
@@ -118,7 +119,18 @@ gent:rommelMarktTypeGarageGroup a cccev:RequirementGroup ;
 gent:rommelMarktTypeGarage a cccev:CriterionRequirement ;
     rdfs:label "Rommel markt is a garage sale"@en ;
 	cccev:expecteddatatype xsd:boolean .
-		
+
+# STEP definition
+oslo-steps:Step a rdfs:class .
+
+# Alternative flea market reqest step
+gent:requestRommelmarktAlternative a oslo-steps:Step ;
+    oslo-steps:produces gent:rommelMarktFilledRequest .
+    
+# gent:rommelMarktFilledRequest is a fact
+# miel uploads something: app:filledREquestMiel a gent:rommelMarktFilledRequest
+gent:RommelMarktFilledRequest rdfs:subClassOf cccev:Evidence .
+	
 # An example macro step referring to one or multiple Criterions
 gent:requestRommelmarkt a oslo-steps:Step ;
     rdfs:comment "A macro step providing information needed to file a flea market request"@en ;
@@ -128,7 +140,7 @@ gent:requestRommelmarkt a oslo-steps:Step ;
 		gent:criterionRommelMarktLocation,
 		gent:criterionRommelMarktOpeningHours,
 		gent:criterionRommelMarktType ;
-	oslo-steps:producesEvidence gent:rommelMarktFilledRequest .
+	oslo-steps:produces gent:rommelMarktFilledRequest .
 	# TODO: change, it should not produce a concrete evidence instance
 
 gent:rommelMarktFilledRequest a cccev:Evidence .
@@ -211,11 +223,12 @@ app:providedDate a oslo-steps:ExecutedStep ;
 	    cccev:value "25.04.2019"@en ;
 	] .
 
+
 # EXECUTED STEP: food stand info
 # Assumed we said yes and the amount 3	
 app:providedFoodstandInfo a oslo-steps:ExecutedStep ;
     rdfs:comment "" ;
-	p-plan:correspondsToStep provideFoodstandInfo ;
+	p-plan:correspondsToStep gent:provideFoodstandInfo ;
 	oslo-steps:emitsRequirementResponse [
 	    a cccev:RequirementResponse ;
 		cccev:validates gent:foodstandInfo ;
@@ -227,17 +240,16 @@ app:providedFoodstandInfo a oslo-steps:ExecutedStep ;
 		cccev:validates gent:foodstandAmount ;
 		cccev:provenBy app:userInput ;
 		cccev:value 3 ;
-	] ;
+	] .
 
-
-:ourAddress a prov:Entity .
-
-:ourAddress1 a prov:Entity ;
-    prov:specializationOf :ourAddress;
-	
-# activity which produces address2 from address1, via executing necessary steps
-...
-
-
-:ourAddress2 :streetName "new address"
-	
+# Alternative
+# Assumed we said no	
+app:providedFoodstandInfo a oslo-steps:ExecutedStep ;
+    rdfs:comment "" ;
+	p-plan:correspondsToStep gent:provideFoodstandInfo ;
+	oslo-steps:emitsRequirementResponse [
+	    a cccev:RequirementResponse ;
+		cccev:validates gent:foodstandInfo ;
+        cccev:provenBy app:userInput ;
+	    cccev:value "false"^^xsd:boolean ;
+	] .
