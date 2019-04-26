@@ -14,7 +14,7 @@
 # Steps which provides data
 westerlo:provideGreenWasteContainer40LiterAmount a oslo-steps:Step ;
     rdfs:label "Aantal 40 liter container(s)"@nl ;
-    rdfs:label "Amount 40 liter container(s)"@en .
+    rdfs:label "Amount 40 liter container(s)"@en ;
     p-plan:hasOutputVar westerlo:variableGreenWasteContainer40LiterAmount .
 	
 westerlo:variableGreenWasteContainer40LiterAmount a p-plan:Variable .
