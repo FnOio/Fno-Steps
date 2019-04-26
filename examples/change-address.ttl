@@ -1,4 +1,111 @@
 # This file contains the steps identified
 # for the change of address, description source: https://docs.google.com/spreadsheets/d/1Iw6w3Espwbw-tIvofDcL7SwahDAh7Hf3VDcaod190r0/edit#gid=836388458
 
-# TODO
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
+@prefix ex: <https://example.org/ns/example#> .
+
+#
+# Various kinds of data
+#
+
+#
+# data regarding a householder
+#
+ex:householderFirstName a p-plan:Variable ;
+  rdfs:label "Householder's first name"@en ;
+  rdfs:label "Gezinshoofd voornaam"@nl .
+
+ex:householderLastName a p-plan:Variable ;
+  rdfs:label "Householder's last name"@en ;
+  rdfs:label "Gezinshoofd naam"@nl .
+
+ex:householderGender a p-plan:Variable ;
+  rdfs:label "Householder's gender"@en ;
+  rdfs:label "Geslacht gezinshoofd"@nl .
+
+ex:householderEmail a p-plan:Variable ;
+  rdfs:label "Householder's email address"@en ;
+  rdfs:label "Email gezinshoofd"@nl .
+
+ex:householderMobilePhoneNumber a p-plan:Variable ;
+  rdfs:label "Householder's mobile phone number"@en ;
+  rdfs:label "GSM gezinshoofd"@nl .
+
+ex:householderPhoneNumber a p-plan:Variable ;
+  rdfs:label "Householder's phone number"@en ;
+  rdfs:label "Telefoon gezinshoofd"@nl .
+
+ex:householderNationalNumber a p-plan:Variable ;
+  rdfs:label "Householder's national number"@en ;
+  rdfs:label "Rijksregister gezinshoofd"@nl .
+
+ex:householderBankAccountNumber a p-plan:Variable ;
+  rdfs:label "householder's bank account number"@en ;
+  rdfs:label "rekeningsnummer gezinshoofd"@nl .
+
+ex:householderNationality a p-plan:Variable ;
+  rdfs:label "householder's nationality"@en ;
+  rdfs:label "nationaliteit gezinshoofd"@nl .
+
+ex:numberOfFamilyMembers a p-plan:Variable ;
+  rdfs:label "Number of family members"@en ;
+  rdfs:label "Aantal gezinsleden"@nl .
+
+#
+# data regarding moving
+#
+ex:movingData a p-plan:Variable ;
+  rdfs:label "Moving date"@en ;
+  rdfs:label "Verhuisdatum"@nl .
+
+#
+# data regarding waste disposal
+#
+ex:numberOf40LiterGreyWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 40 liter grey waste containers"@en ;
+  rdfs:label "Aantal 40 liter greijze restafval containers"@nl .
+
+ex:numberOf120LiterGreyWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 120 liter grey waste containers"@en ;
+  rdfs:label "Aantal 120 liter greijze restafval containers"@nl .
+
+ex:numberOf240LiterGreyWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 240 liter grey waste containers"@en ;
+  rdfs:label "Aantal 240 liter grijze restafval containers"@nl .
+
+ex:greyWasteContainerLockInfo a p-plan:Variable ;
+  rdfs:label "Grey waste container lock"@en ;
+  rdfs:label "Grijze restafval container slot"@nl .
+
+ex:numberOf40LiterGreenWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 40 liter green waste containers"@en ;
+  rdfs:label "Aantal 40 liter GFT containers"@nl .
+
+ex:numberOf120LiterGreenWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 120 liter green waste containers"@en ;
+  rdfs:label "Aantal 120 liter GFT containers"@nl .
+
+ex:greenWasteContainerOwnCompostInfo a p-plan:Variable ;
+  rdfs:label "Own compost"@en ;
+  rdfs:label "GFT zelf composteer"@nl .
+
+ex:greenWasteContainerLockInfo a p-plan:Variable ;
+  rdfs:label "Green waste container lock"@en ;
+  rdfs:label "GFT container slot"@nl .
+
+ex:numberOf40LiterPaperWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 40 liter paper waste contaienrs"@en ;
+  rdfs:label "Aantal 40 liter papier containers"@nl .
+
+ex:numberOf240LiterPaperWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 240 liter paper waste contaienrs"@en ;
+  rdfs:label "Aantal 240 liter papier containers"@nl .
+
+ex:numberOf1100LiterPaperWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 1100 liter paper waste contaienrs"@en ;
+  rdfs:label "Aantal 1100 liter papier containers"@nl .
+
+#
+# Steps to provide various kinds of data
+#
