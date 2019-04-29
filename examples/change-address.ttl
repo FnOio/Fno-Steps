@@ -64,7 +64,7 @@ ex:householderAddress a p-plan:Variable ;
 
 ex:householderProfession a p-plan:Variable ;
   rdfs:label "Householder's profession"@en ;
-  rdfs:label "beroep gezinshoofd"nl .
+  rdfs:label "beroep gezinshoofd"@nl .
 
 ex:numberOfFamilyMembers a p-plan:Variable ;
   rdfs:label "Number of family members"@en ;
@@ -101,6 +101,11 @@ ex:greyWasteContainerLockInfo a p-plan:Variable ;
   rdfs:label "Grey waste container lock"@en ;
   rdfs:label "Grijze restafval container slot"@nl .
 
+ex:greyWasteContainerInfo a p-plan:Variable ;
+  rdfs:label "Grey waste container(s)"@en ;
+  rdfs:label "Grijze restafvalcontainer(s)"@nl .
+
+
 ex:numberOf40LiterGreenWasteContainers a p-plan:Variable ;
   rdfs:label "Number of 40 liter green waste containers"@en ;
   rdfs:label "Aantal 40 liter GFT containers"@nl .
@@ -113,9 +118,18 @@ ex:greenWasteContainerOwnCompostInfo a p-plan:Variable ;
   rdfs:label "Own compost"@en ;
   rdfs:label "GFT zelf composteer"@nl .
 
+ex:greenWasteContainerStopCollectingInfo a p-plan:Variable ;
+  rdfs:label "Stop collecting green waste contaienr"@en ;
+  rdfs:label "Ophaling GFT-container door stopzetting"@nl .
+
 ex:greenWasteContainerLockInfo a p-plan:Variable ;
   rdfs:label "Green waste container lock"@en ;
   rdfs:label "GFT container slot"@nl .
+
+ex:greenWasteContainerInfo a p-plan:Variable ;
+  rdfs:label "Green GFT waste container(s)"@en ;
+  rdfs:label "Groene GFT container(s)"@nl .
+
 
 ex:numberOf40LiterPaperWasteContainers a p-plan:Variable ;
   rdfs:label "Number of 40 liter paper waste contaienrs"@en ;
@@ -126,8 +140,12 @@ ex:numberOf240LiterPaperWasteContainers a p-plan:Variable ;
   rdfs:label "Aantal 240 liter papier containers"@nl .
 
 ex:numberOf1100LiterPaperWasteContainers a p-plan:Variable ;
-  rdfs:label "Number of 1100 liter paper waste contaienrs"@en ;
+  rdfs:label "Number of 1100 liter paper waste containers"@en ;
   rdfs:label "Aantal 1100 liter papier containers"@nl .
+
+ex:paperWasteContainerInfo a p-plan:Variable ;
+  rdfs:label "Paper waste container(s)"@en ;
+  rdfs:label "Papiercontainer(s)"@nl .
 
 #
 # data regarding municipality
@@ -198,7 +216,7 @@ ex:provideHouseholderAddressManually a o-steps:Step ;
 
 ex:provideHouseholderProfessionManually a o-steps:Step ;
   rdfs:label "Householder's profession"@en ;
-  rdfs:label "beroep gezinshoofd"nl ;
+  rdfs:label "beroep gezinshoofd"@nl ;
   p-plan:hasOutputVar ex:householderProfession .
 
 ex:provideNumberOfFamilyMembersManually a o-steps:Step ;
@@ -258,6 +276,11 @@ ex:provideGreenWasteContainerOwnCompostInfoManually a o-steps:Step ;
   rdfs:label "Geen GFT containers, want ik composteer mijn GFT zelf"@nl ;
   p-plan:hasOutputVar ex:greenWasteContainerOwnCompostInfo .
 
+ex:provideGreenWasteContainerCollectionStopInfoManually a o-steps:Step ;
+  rdfs:label "Stop collecting green waste containers"@en ;
+  rdfs:label "Ophaling GFT-container door stopzetting"@nl .
+  p-plan:hasOutputVar ex:greenWasteContainerStopCollectingInfo .
+
 ex:provideGreenWasteContainerLockInfoManually a o-steps:Step ;
   rdfs:label "I request a lock for my green waste container(s)"@en ;
   rdfs:label "Ik vraag een slot voor mijn GFT container(s) aan"@nl ;
@@ -277,5 +300,21 @@ ex:proivdeNumberOf1100LiterPaperWasteContainersManually a o-steps:Step ;
   rdfs:label "Number of 1100 liter paper waste container(s)"@en ;
   rdfs:label "Aantal 1100 liter papier container(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf1100LiterPaperWasteContainers .
+
+
+#
+# higher level steps
+#
+ex:provideGreenWasteContainerInfo a o-steps:Step ;
+  rdfs:label "Groene GFT container(s)"@nl ;
+	rdfs:label "Green GFT waste container(s)"@en ;
+	rdfs:comment "Information regarding green waste container(s)"@en ;
+  p-plan:hasOutputVar ex:greenWasteContainerInfo ;
+  p-plan:hasInputVar 
+    ex:numberOf40LiterGreenWasteContainers ,
+    ex:numberOf120LiterGreenWasteContainers ,
+    ex:greenWasteContainerLockInfo ,
+    ex:greenWasteContainerOwnCompostInfo ,
+    ex:greenWasteContainerStopCollectingInfo .
 
 
