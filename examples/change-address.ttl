@@ -74,9 +74,21 @@ ex:numberOfFamilyMembers a p-plan:Variable ;
 #
 # data regarding moving
 #
+ex:applicantInfo a p-plan:Variable ;
+  rdfs:label "Applicant information"@en ;
+  rdfs:label "Aanvrager information"@nl .
+
 ex:movingDate a p-plan:Variable ;
   rdfs:label "Moving date"@en ;
   rdfs:label "Verhuisdatum"@nl .
+
+ex:movingAddress a p-plan:Variable ;
+  rdfs:label "Address to move to"@en ;
+  rdfs:label "Adres waarnar wordt verplaatst"@nl .
+
+ex:billingAddress a p-plan:Variable ;
+  rdfs:label "Billing address"@en ;
+  rdfs:label "Facturatieadres"@nl .
 
 ex:movingCity a p-plan:Variable ;
   rdfs:label "City to move to"@en ;
@@ -85,6 +97,10 @@ ex:movingCity a p-plan:Variable ;
 #
 # data regarding waste disposal
 #
+ex:wasteCollectionRequest a p-plan:Variable ;
+  rdfs:label "Waste collection request"@en ;
+  rdfs:label "Aanvrag afvalcontainers"@nl .
+
 ex:numberOf40LiterGreyWasteContainers a p-plan:Variable ;
   rdfs:label "Number of 40 liter grey waste containers"@en ;
   rdfs:label "Aantal 40 liter grijze restafval containers"@nl .
@@ -303,11 +319,49 @@ ex:proivdeNumberOf1100LiterPaperWasteContainersManually a o-steps:Step ;
 
 
 #
-# higher level steps
+# higher level steps regarding waste collection
 #
+ex:requestWasteCollection a o-steps:Step ;
+  rdfs:label "Application for waste collection"@en ;
+  rdfs:label "Aanvraag afvalcontainers"@nl ;
+  p-plan:hasOutputVar ex:wasteCollectionRequest ;
+  p-plan:hasInputVar
+    ex:applicantInfo ,
+    ex:greyWasteContainerInfo ,
+    ex:greenWasteContainerInfo ,
+    ex:paperWasteContainerInfo .
+
+ex:provideWasteCollectionApplicantInfo a o-steps:Step ;
+  rdfs:label "Applicant information"@en ;
+  rdfs:label "Aanvrager informatie"@nl ;
+  rdfs:comment "Information regarding the applicant requesting waste collection"@en ;
+  p-plan:hasOutputVar ex:applicantInfo ;
+  p-plan:hasInputVar
+    ex:householderFirstName ,
+    ex:householderLastName ,
+    ex:householderPhoneNumber ,
+    ex:householderMobilePhoneNumber ,
+    ex:householderEmail ,
+    ex:householderGender ,
+    ex:householderNationalNumber ,
+    ex:numberOfFamilyMembers ,
+    ex:movingAddress ,
+    ex:billingAddress .
+
+ex:provideGreyWasteContainerInfo a o-steps:Step ;
+  rdfs:label "Grey waste container(s)"@en ;
+  rdfs:label "Grijze restafvalcontainer(s)"@nl ;
+  rdfs:comment "Information regarding grey waste container(s)"@en ;
+  p-plan:hasOutputVar ex:greyWasteContainerInfo ;
+  p-plan:hasInputVar
+    ex:numberOf40LiterGreyWasteContainers ,
+    ex:numberOf120LiterGreyWasteContainers ,
+    ex:numberOf240LiterGreyWasteContainers ,
+    ex:greyWasteContainerLockInfo .
+
 ex:provideGreenWasteContainerInfo a o-steps:Step ;
-  rdfs:label "Groene GFT container(s)"@nl ;
 	rdfs:label "Green GFT waste container(s)"@en ;
+  rdfs:label "Groene GFT container(s)"@nl ;
 	rdfs:comment "Information regarding green waste container(s)"@en ;
   p-plan:hasOutputVar ex:greenWasteContainerInfo ;
   p-plan:hasInputVar 
@@ -317,4 +371,12 @@ ex:provideGreenWasteContainerInfo a o-steps:Step ;
     ex:greenWasteContainerOwnCompostInfo ,
     ex:greenWasteContainerStopCollectingInfo .
 
-
+ex:providePaperWasteContainerInfo a o-steps:Step ;
+  rdfs:label "Paper waste container(s)"@en ;
+  rdfs:label "Papier container(s)"@nl ;
+  rdfs:comment "Information regarding paper waste container(s)"@en ;
+  p-plan:hasOutputVar ex:paperWasteContainerInfo ;
+  p-plan:hasInputVar
+    ex:numberOf40LiterPaperWasteContainers ,
+    ex:numberOf240LiterPaperWasteContainers ,
+    ex:numberOf1100LiterPaperWasteContainers  .
