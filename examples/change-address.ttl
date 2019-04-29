@@ -54,9 +54,13 @@ ex:householderResidencePermit a p-plan:Variable ;
   rdfs:label "Householder's residency permit"@en ;
   rdfs:label "verblijfsvergunning"@nl .
 
-ex:householderBirthData a p-plan:Variable ;
+ex:householderBirthDate a p-plan:Variable ;
   rdfs:label "Householder's date of birth"@en ;
   rdfs:label "geboortedatum gezinshoofd"@nl .
+
+ex:householderCityOfBirth a p-plan:Variable ;
+  rdfs:label "Householder's city of birth"@en ;
+  rdfs:label "Geboorteplaats"@nl .
 
 ex:householderAddress a p-plan:Variable ;
   rdfs:label "Householder's address"@en ;
@@ -97,7 +101,7 @@ ex:movingCity a p-plan:Variable ;
 #
 # data regarding waste disposal
 #
-ex:wasteCollectionRequest a p-plan:Variable ;
+ex:wasteCollectionRequested a p-plan:Variable ;
   rdfs:label "Waste collection request"@en ;
   rdfs:label "Aanvrag afvalcontainers"@nl .
 
@@ -167,6 +171,26 @@ ex:paperWasteContainerInfo a p-plan:Variable ;
 # data regarding municipality
 #
 
+ex:addressChangeDeclared a p-plan:Variable ;
+  rdfs:label "Declared address change"@en ;
+  rdfs:label "Adreswijziging verklaard"@nl .
+
+ex:householderAtNewAddress a p-plan:Variable ;
+  rdfs:label "Met the householder at new address"@en ;
+  rdfs:label "Ontmoette de bewoner op nieuw adres"@nl .
+
+ex:addressChangeConfirmed a p-plan:Variable ;
+  rdfs:label "Confirmed address change"@en ;
+  rdfs:label "Adreswijziging bevestigd"@nl .
+
+
+ex:addressChangedOnEID a p-plan:Variable ;
+  rdfs:label "Address updated on eID card"@en ;
+  rdfs:label "Adreswijziging bevestigd op eID"@nl .
+
+ex:householderBringsEID a p-plan:Variable ;
+  rdfs:label "Householder brings eID"@en ;
+  rdfs:label "Gezinshoofd brengt eID"@nl .
 
 #
 # Steps to provide various kinds of data
@@ -324,7 +348,7 @@ ex:proivdeNumberOf1100LiterPaperWasteContainersManually a o-steps:Step ;
 ex:requestWasteCollection a o-steps:Step ;
   rdfs:label "Application for waste collection"@en ;
   rdfs:label "Aanvraag afvalcontainers"@nl ;
-  p-plan:hasOutputVar ex:wasteCollectionRequest ;
+  p-plan:hasOutputVar ex:wasteCollectionRequested ;
   p-plan:hasInputVar
     ex:applicantInfo ,
     ex:greyWasteContainerInfo ,
@@ -380,3 +404,43 @@ ex:providePaperWasteContainerInfo a o-steps:Step ;
     ex:numberOf40LiterPaperWasteContainers ,
     ex:numberOf240LiterPaperWasteContainers ,
     ex:numberOf1100LiterPaperWasteContainers  .
+
+#
+# higher level steps regarding declaration of address change
+# 
+
+ex:declareAddressChange a o-steps:Step ;
+  rdfs:label "Declaration of address change"@en ;
+  rdfs:label "Aangifte van adreswijziging"@nl ;
+  p-plan:hasOutputVar ex:addressChangeDeclared ;
+  p-plan:hasInputVar
+    ex:householderFirstName ,
+    ex:householderLastName ,
+    ex:householderNationalNumber ,
+    ex:householderBirthDate ,
+    ex:householderCityOfBirth ,
+    ex:householderNationality ,
+    ex:movingAddress ,
+    ex:movingDate ,
+    ex:householderProfession ,
+    ex:householderPhoneNumber ,
+    ex:householderMobilePhoneNumber ,
+    ex:householderEmail .
+
+# The police is confirming this in Belgium by a visit
+ex:confirmAddressChangeVisit a o-steps:Step ;
+  rdfs:label "Confirmation of address change"@en ;
+  rdfs:label "Bevestiging van adreswijziging"@nl ;
+  p-plan:hasOutputVar ex:addressChangeConfirmed ;
+  p-plan:hasInputVar
+    ex:addressChangeDeclared ,
+    ex:householderAtNewAddress .
+
+ex:addressChangeOnEIDInOffice a o-steps:Step ;
+  rdfs:label "Update address on eID card"@en ;
+  rdfs:label "Adreswijziging op eID kaart"@nl ;
+  p-plan:hasOutputVar ex:addressChangedOnEID ;
+  p-plan:hasInputVar
+    ex:addressChangeConfirmed ;
+    ex:householderBringsEID .
+
