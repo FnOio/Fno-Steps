@@ -79,19 +79,19 @@ ex:movingDate a p-plan:Variable ;
   rdfs:label "Verhuisdatum"@nl .
 
 ex:movingCity a p-plan:Variable ;
-  rdfs:label "City t"@en ;
-  rdfs:label "Plaats
+  rdfs:label "City to move to"@en ;
+  rdfs:label "Stad waarnaar wordt verplaatst"@nl .
 
 #
 # data regarding waste disposal
 #
 ex:numberOf40LiterGreyWasteContainers a p-plan:Variable ;
   rdfs:label "Number of 40 liter grey waste containers"@en ;
-  rdfs:label "Aantal 40 liter greijze restafval containers"@nl .
+  rdfs:label "Aantal 40 liter grijze restafval containers"@nl .
 
 ex:numberOf120LiterGreyWasteContainers a p-plan:Variable ;
   rdfs:label "Number of 120 liter grey waste containers"@en ;
-  rdfs:label "Aantal 120 liter greijze restafval containers"@nl .
+  rdfs:label "Aantal 120 liter grijze restafval containers"@nl .
 
 ex:numberOf240LiterGreyWasteContainers a p-plan:Variable ;
   rdfs:label "Number of 240 liter grey waste containers"@en ;
@@ -137,86 +137,145 @@ ex:numberOf1100LiterPaperWasteContainers a p-plan:Variable ;
 #
 # Steps to provide various kinds of data
 #
+
+#
+# Steps to provide information of the householder in a manual fashion
+#
 ex:provideHouseholderFirstNameManually a o-steps:Step ;
+  rdfs:label "Householder's first name"@en ;
+  rdfs:label "Gezinshoofd voornaam"@nl ;
   p-plan:hasOutputVar ex:householderFirstName .
 
 ex:provideHouseholderLastNameManually a o-steps:Step ;
+  rdfs:label "Householder's last name"@en ;
+  rdfs:label "Gezinshoofd naam"@nl ;
   p-plan:hasOutputVar ex:householderLastName .
 
 ex:provideHouseholderGenderManually a o-steps:Step ;
+  rdfs:label "Householder's gender"@en ;
+  rdfs:label "Geslacht gezinshoofd"@nl ;
   p-plan:hasOutputVar ex:householderGender .
 
 ex:provideHouseholderEmailManually a o-steps:Step ;
+  rdfs:label "Householder's email address"@en ;
+  rdfs:label "Email gezinshoofd"@nl ;
   p-plan:hasOutputVar ex:householderEmail .
 
 ex:provideHouseholderMobilePhoneNumberManually a o-steps:Step ;
+  rdfs:label "Householder's mobile phone number"@en ;
+  rdfs:label "GSM gezinshoofd"@nl ;
   p-plan:hasOutputVar ex:householderMobilePhoneNumber .
 
 ex:provideHouseholderPhoneNumberManually a o-steps:Step ;
+  rdfs:label "Householder's phone number"@en ;
+  rdfs:label "Telefoon gezinshoofd"@nl ;
   p-plan:hasOutputVar ex:householderPhoneNumber .
 
 ex:provideHouseholderNationalNumberManually a o-steps:Step ;
+  rdfs:label "Householder's national number"@en ;
+  rdfs:label "Rijksregister gezinshoofd"@nl ;
   p-plan:hasOutputVar ex:householderNationalNumber .
 
 ex:provideHouseholderBankAccountNumberManually a o-steps:Step ;
+  rdfs:label "Householder's bank account number"@en ;
+  rdfs:label "rekeningsnummer gezinshoofd"@nl ;
   p-plan:hasOutputVar ex:householderBankAccountNumber .
 
 ex:provideHouseholderResidencePermitManually a o-steps:Step ;
+  rdfs:label "Householder's residency permit"@en ;
+  rdfs:label "verblijfsvergunning"@nl ;
   p-plan:hasOutputVar ex:householderResidencePermit .
 
 ex:provideHouseholderBirthDataManually a o-steps:Step ;
+  rdfs:label "Householder's date of birth"@en ;
+  rdfs:label "geboortedatum gezinshoofd"@nl ;
   p-plan:hasOutputVar ex:householderBirthData .
 
 ex:provideHouseholderAddressManually a o-steps:Step ;
+  rdfs:label "Householder's address"@en ;
+  rdfs:label "adres gezinshoofd"@nl ;
   p-plan:hasOutputVar ex:householderAddress .
 
 ex:provideHouseholderProfessionManually a o-steps:Step ;
+  rdfs:label "Householder's profession"@en ;
+  rdfs:label "beroep gezinshoofd"nl ;
   p-plan:hasOutputVar ex:householderProfession .
 
 ex:provideNumberOfFamilyMembersManually a o-steps:Step ;
+  rdfs:label "Number of family members"@en ;
+  rdfs:label "Aantal gezinsleden"@nl ;
   p-plan:hasOutputVar ex:numberOfFamilyMembers .
 
+#
+# Steps to provide information about moving in a manual fashion
+#
 ex:provideMovingDateManually a o-steps:Step ;
+  rdfs:label "Moving date"@en ;
+  rdfs:label "Verhuisdatum"@nl ;
   p-plan:hasOutputVar ex:movingDate .
 
 ex:provideMovingCityManually a o-steps:Step ;
+  rdfs:label "City to move to"@en ;
+  rdfs:label "Stad waarnaar wordt verplaatst"@nl .
   p-plan:hasOutputVar ex:movingCity .
 
 #
-# Steps to provide waste collection information manually
+# Steps to provide waste collection information in a manual fashion
 #
 
 ex:provideNumberOf40LiterGreyWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 40 liter grey waste container(s)"@en ;
+  rdfs:label "Aantal 40 liter grijze restafvalcontainer(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf40LiterGreyWasteContainers .
 
 ex:provideNumberOf120LiterGreyWasteContainersManualy a o-steps:Step ;
+  rdfs:label "Number of 120 liter grey waste container(s)"@en ;
+  rdfs:label "Aantal 120 liter grijze restafvalcontainer(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf120LiterGreyWasteContainers .
 
 ex:provideNumberOf240LiterGreyWasteContainers a o-steps:Step ;
+  rdfs:label "Number of 240 liter grey waste container(s)"@en ;
+  rdfs:label "Aantal 240 liter grijze restafvalcontainer(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf240LiterGreyWasteContainers .
 
 ex:provideGreyWasteContainerLockInfoManually a o-steps:Step ;
+  rdfs:label "I request a lock for my grey waste container(s)"@en ;
+  rdfs:label "Ik vraag een slot voor mijn grijze restafvalcontainer(s) aan"@nl ;
   p-plan:hasOutputVar ex:greyWasteContainerLockInfo .
 
 ex:provideNumberOf40LiterGreenWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 40 liter green waste container(s)"@en ;
+  rdfs:label "Aantal 40 liter GFT container(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf40LiterGreenWasteContainers .
 
 ex:provideNumberOf120LiterGreenWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 120 liter green waste container(s)"@en ;
+  rdfs:label "Aantal 120 liter GFT container(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf120LiterGreenWasteContainers .
 
 ex:provideGreenWasteContainerOwnCompostInfoManually a o-steps:Step ;
+  rdfs:label "No green waste containers, because I compost on my own"@en ;
+  rdfs:label "Geen GFT containers, want ik composteer mijn GFT zelf"@nl ;
   p-plan:hasOutputVar ex:greenWasteContainerOwnCompostInfo .
 
 ex:provideGreenWasteContainerLockInfoManually a o-steps:Step ;
+  rdfs:label "I request a lock for my green waste container(s)"@en ;
+  rdfs:label "Ik vraag een slot voor mijn GFT container(s) aan"@nl ;
   p-plan:hasOutputVar ex:greenWasteContainerLockInfo .
 
 ex:provideNumberOf40LiterPaperWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 40 liter paper waste container(s)"@en ;
+  rdfs:label "Aantal 40 liter papier container(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf40LiterPaperWasteContainers .
 
 ex:provideNumberOf240LiterPaperWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 240 liter paper waste container(s)"@en ;
+  rdfs:label "Aantal 240 liter papier container(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf240LiterPaperWasteContainers .
 
 ex:proivdeNumberOf1100LiterPaperWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 1100 liter paper waste container(s)"@en ;
+  rdfs:label "Aantal 1100 liter papier container(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf1100LiterPaperWasteContainers .
 
 
