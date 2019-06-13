@@ -336,7 +336,7 @@ ex:provideNumberOf240LiterPaperWasteContainersManually a o-steps:Step ;
   rdfs:label "Aantal 240 liter papier container(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf240LiterPaperWasteContainers .
 
-ex:proivdeNumberOf1100LiterPaperWasteContainersManually a o-steps:Step ;
+ex:provideNumberOf1100LiterPaperWasteContainersManually a o-steps:Step ;
   rdfs:label "Number of 1100 liter paper waste container(s)"@en ;
   rdfs:label "Aantal 1100 liter papier container(s)"@nl ;
   p-plan:hasOutputVar ex:numberOf1100LiterPaperWasteContainers .
