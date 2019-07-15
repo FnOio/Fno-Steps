@@ -29,5 +29,9 @@ according to the step descriptions and the *costs* of each step.
 
 ## Main success scenario
 
-1. The user selects a goal
-1. WP gets all OSLO-STEPS descriptions
+1. The user selects a goal in the UI
+1. The UI asks for a workflow on hierarchy level n to reach the goal
+1. WP retrieves all OSLO-STEPS level n descriptions
+1. WP applies N3 rules to create N3 rules from the OSLO-STEPS description
+1. WP applies reasoning to find the optimal workflow with respect to costs attached to the steps description
+1. WP provides the UI with a workflow consisting of steps which are resolvable by an URI
