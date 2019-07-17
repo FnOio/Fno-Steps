@@ -274,7 +274,7 @@ ex:provideMovingDateManually a o-steps:Step ;
 
 ex:provideMovingCityManually a o-steps:Step ;
   rdfs:label "City to move to"@en ;
-  rdfs:label "Stad waarnaar wordt verplaatst"@nl .
+  rdfs:label "Stad waarnaar wordt verplaatst"@nl ;
   p-plan:hasOutputVar ex:movingCity .
 
 #
