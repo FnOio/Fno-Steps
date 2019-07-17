@@ -318,7 +318,7 @@ ex:provideGreenWasteContainerOwnCompostInfoManually a o-steps:Step ;
 
 ex:provideGreenWasteContainerCollectionStopInfoManually a o-steps:Step ;
   rdfs:label "Stop collecting green waste containers"@en ;
-  rdfs:label "Ophaling GFT-container door stopzetting"@nl .
+  rdfs:label "Ophaling GFT-container door stopzetting"@nl ;
   p-plan:hasOutputVar ex:greenWasteContainerStopCollectingInfo .
 
 ex:provideGreenWasteContainerLockInfoManually a o-steps:Step ;
@@ -441,6 +441,6 @@ ex:addressChangeOnEIDInOffice a o-steps:Step ;
   rdfs:label "Adreswijziging op eID kaart"@nl ;
   p-plan:hasOutputVar ex:addressChangedOnEID ;
   p-plan:hasInputVar
-    ex:addressChangeConfirmed ;
+    ex:addressChangeConfirmed ,
     ex:householderBringsEID .
 
