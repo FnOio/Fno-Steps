@@ -16,9 +16,10 @@ The SPARQL query column should state the name of the SPARQL query file, located 
 # Requirements
 
 | ID | Requirement | User story | Related competency questions | Proposed by |
-| R1 | Costs consist of different **cost components** | [cost aggregation](../user-stories/user-story-cost-aggregation.md) | | <Sven.Lieber@ugent.be> |
-| R2 | The number of **cost components** must be fixed before the planning of a workflow | [cost aggregation](../user-stories/user-story-cost-aggregation.md) | | <Sven.Lieber@ugent.be> |
-| R3 | **Cost components** are aggregated to **costs** based on a **cost aggregation function** | [cost aggregation](../user-stories/user-story-cost-aggregation.md) | | <Sven.Lieber@ugent.be> |
+|----|-------------|------------|------------------------------|-------------|
+| R1 | Costs consist of different **cost components** | [cost aggregation](../user-stories/user-story-cost-aggregation.md) |- | <Sven.Lieber@ugent.be> |
+| R2 | The number of **cost components** must be fixed before the planning of a workflow | [cost aggregation](../user-stories/user-story-cost-aggregation.md) |- | <Sven.Lieber@ugent.be> |
+| R3 | **Cost components** are aggregated to **costs** based on a **cost aggregation function** | [cost aggregation](../user-stories/user-story-cost-aggregation.md) |- | <Sven.Lieber@ugent.be> |
 
 
 
