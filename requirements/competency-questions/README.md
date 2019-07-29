@@ -7,8 +7,24 @@ The Expected Answer column should state the expected answer
 The Motivating Scenario column should state the name of the user story, located in the user-stories folder
 The SPARQL query column should state the name of the SPARQL query file, located in the sparql-queries folder
 
+# Competency Questions
+
 | ID   | Question                           | Expected Answer                   | Motivating Scenario | SPARQL query          |
 |------|------------------------------------|-----------------------------------|---------------------|-----------------------|
+| CQ1  | question | answer | [Workflow planning](../use-cases/use-case-workflow-planning.md) | [cq-1.sparql](queries/cq-1.sparql) |
+
+# Requirements
+
+| ID | Requirement | User story | Related competency questions | Proposed by |
+| R1 | Costs consist of different **cost components** | [cost aggregation](../user-stories/user-story-cost-aggregation.md) | | <Sven.Lieber@ugent.be> |
+| R2 | The number of **cost components** must be fixed before the planning of a workflow | [cost aggregation](../user-stories/user-story-cost-aggregation.md) | | <Sven.Lieber@ugent.be> |
+| R3 | **Cost components** are aggregated to **costs** based on a **cost aggregation function** | [cost aggregation](../user-stories/user-story-cost-aggregation.md) | | <Sven.Lieber@ugent.be> |
+
+
+
+
+
+
 
 
 Unordered set of questions:
