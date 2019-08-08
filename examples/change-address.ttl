@@ -1,34 +1,34 @@
+# This file contains the steps identified
+# for the change of address, description source: https://docs.google.com/spreadsheets/d/1Iw6w3Espwbw-tIvofDcL7SwahDAh7Hf3VDcaod190r0/edit#gid=836388458
+
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix gent: <https://example.org/ns/gent#> .
-@prefix westerlo: <https://example.org/ns/westerlo#> .
-@prefix app: <https://example.org/ns/app#> .
 @prefix p-plan: <http://purl.org/net/p-plan#> .
-@prefix cccev: <http://data.europa.eu/m8g/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix oslo-adres: <https://data.vlaanderen.be/ns/adres#> .
-@prefix oslo-persoon: <https://data.vlaanderen.be/ns/persoon#> .
-@prefix oslo-steps: <https://example.org/ns/oslo-steps#> .
+@prefix o-address: <https://data.vlaanderen.be/ns/adres#> .
+@prefix o-steps: <https://example.org/ns/oslo-steps#> .
+@prefix ex: <https://example.org/ns/example#> .
 
-# Change address
+#
+# Various kinds of data
+#
 
-# 1 month before relocation
-# - inform the waste collection department
+#
+# data regarding a householder
+#
+ex:householderFirstName a p-plan:Variable ;
+  rdfs:label "Householder's first name"@en ;
+  rdfs:label "Gezinshoofd voornaam"@nl .
 
-# CRITERION: new Address
-westerlo:criterionNewAddress a cccev:Criterion ;
-    rdfs:label "Nieuw Adres"@nl ;
-	rdfs:label "New address"@en ;
-	rdfs:comment "The address for which waste containers are requested" ;
-	cccev:fulfilledBy westerlo:criterionNewAddressGroup .
+ex:householderLastName a p-plan:Variable ;
+  rdfs:label "Householder's last name"@en ;
+  rdfs:label "Gezinshoofd naam"@nl .
 
-westerlo:criterionNewAddressGroup a cccev:RequirementGroup ;
-    cccev:hasCriterionRequirement westerlo:criterionNewAddressRequirement .
+ex:householderGender a p-plan:Variable ;
+  rdfs:label "Householder's gender"@en ;
+  rdfs:label "Geslacht gezinshoofd"@nl .
 
-westerlo:criterionNewAddressRequirement a cccev:CriterionRequirement ;
-    rdfs:label "Address of new home"@en ;
-	cccev:expecteddatatype oslo-adres:Adres .
+ex:householderEmail a p-plan:Variable ;
+  rdfs:label "Householder's email address"@en ;
+  rdfs:label "Email gezinshoofd"@nl .
 
 # CRITERION: invoice address
 westerlo:criterionInvoiceAddress a cccev:Criterion ;
@@ -36,56 +36,65 @@ westerlo:criterionInvoiceAddress a cccev:Criterion ;
 	rdfs:label "Invoice address"@en ;
 	rdfs:comment "The invoice address for which waste containers are requested"@en ;
 	cccev:fulfilledBy westerlo:criterionInvoiceAddressGroup .
+ex:householderMobilePhoneNumber a p-plan:Variable ;
+  rdfs:label "Householder's mobile phone number"@en ;
+  rdfs:label "GSM gezinshoofd"@nl .
 
-westerlo:criterionInvoiceAddressGroup a cccev:RequirementGroup ;
-    cccev:hasCriterionRequirement westerlo:criterionInvoiceAddressRequirement .
+ex:householderPhoneNumber a p-plan:Variable ;
+  rdfs:label "Householder's phone number"@en ;
+  rdfs:label "Telefoon gezinshoofd"@nl .
 
-westerlo:criterionInvoiceAddressRequirement a cccev:CriterionRequirement ;
-    rdfs:label "Invoice address"@en ;
-	cccev:expecteddatatype oslo-adres:Adres .
+ex:householderNationalNumber a p-plan:Variable ;
+  rdfs:label "Householder's national number"@en ;
+  rdfs:label "Rijksregister gezinshoofd"@nl .
 
-# CRITERION: gender of householder
-westerlo:criterionHouseholderGender a cccev:Criterion ;
-    rdfs:label "Geslacht gezinshoofd"@nl ;
-	rdfs:label "Householder gender"@en ;
-	rdfs:comment "The gender of the householder" ;
-	cccev:fulfilledBy westerlo:criterionHouseholderGenderGroup .
+ex:householderBankAccountNumber a p-plan:Variable ;
+  rdfs:label "Householder's bank account number"@en ;
+  rdfs:label "rekeningsnummer gezinshoofd"@nl .
 
-westerlo:criterionHouseholderGenderGroup a cccev:RequirementGroup ;
-    cccev:hasCriterionRequirement westerlo:criterionHouseholderGenderRequirement .
+ex:householderNationality a p-plan:Variable ;
+  rdfs:label "Householder's nationality"@en ;
+  rdfs:label "nationaliteit gezinshoofd"@nl .
 
-westerlo:criterionHouseholderGenderRequirement a cccev:CriterionRequirement ;
-    rdfs:label "Householder gender"@en ;
-	cccev:expecteddatatype oslo-persoon:geslacht .
+ex:householderResidencePermit a p-plan:Variable ;
+  rdfs:label "Householder's residency permit"@en ;
+  rdfs:label "verblijfsvergunning"@nl .
 
-# CRITERION: name of householder
+ex:householderBirthDate a p-plan:Variable ;
+  rdfs:label "Householder's date of birth"@en ;
+  rdfs:label "geboortedatum gezinshoofd"@nl .
 
-# CRITERION: phone number 
+ex:householderCityOfBirth a p-plan:Variable ;
+  rdfs:label "Householder's city of birth"@en ;
+  rdfs:label "Geboorteplaats"@nl .
 
-# CRITERION: mobile phone number 
+ex:householderAddress a p-plan:Variable ;
+  rdfs:label "Householder's address"@en ;
+  rdfs:label "adres gezinshoofd"@nl .
 
-# CRITERION: Email address 
+ex:householderProfession a p-plan:Variable ;
+  rdfs:label "Householder's profession"@en ;
+  rdfs:label "beroep gezinshoofd"@nl .
 
-# CRITERION: Moving date
+ex:numberOfFamilyMembers a p-plan:Variable ;
+  rdfs:label "Number of family members"@en ;
+  rdfs:label "Aantal gezinsleden"@nl .
 
-# CRITERION: National number of householder
 
-# CRITERION: Amount of family members
+#
+# data regarding moving
+#
+ex:applicantInfo a p-plan:Variable ;
+  rdfs:label "Applicant information"@en ;
+  rdfs:label "Aanvrager information"@nl .
 
-# CRITERION: grey waste container info
-westerlo:criterionGreyWasteContainerInfo a cccev:Criterion ;
-    rdfs:label "Grijze restafval container(s)"@nl ;
-	rdfs:label "Grey waste container(s)"@en ;
-	rdfs:comment "Information regarding grey waste container(s)"@en ;
-	cccev:fulfilledBy westerlo:greyWasteContainerGroup .
+ex:movingDate a p-plan:Variable ;
+  rdfs:label "Moving date"@en ;
+  rdfs:label "Verhuisdatum"@nl .
 
-westerlo:greyWasteContainerGroup a cccev:RequirementGroup ;
-    cccev:hasCriterionRequirement 
-		westerlo:greyWasteContainer40Amount, 
-		westerlo:greyWasteContainer120Amount,
-        westerlo:greyWasteContainer240Amount,
-		westerlo:greyWasteContainerDelivery, 
-		westerlo:greyWasteContainerLock .
+ex:movingAddress a p-plan:Variable ;
+  rdfs:label "Address to move to"@en ;
+  rdfs:label "Adres waarnar wordt verplaatst"@nl .
 
 gent:greyWasteContainerGroup a cccev:RequirementGroup ;
     cccev:hasCriterionRequirement 
@@ -102,6 +111,9 @@ westerlo:greyWasteContainer40Amount a cccev:CriterionRequirement ;
     rdfs:label "Aantal 40 liter container(s)"@nl ;
 	rdfs:label "Amount 40 liter container(s)"@en ;
 	cccev:expecteddatatype xsd:integer .
+ex:billingAddress a p-plan:Variable ;
+  rdfs:label "Billing address"@en ;
+  rdfs:label "Facturatieadres"@nl .
 
 westerlo:greyWasteContainer120Amount a cccev:CriterionRequirement ;
     rdfs:label "Aantal 120 liter container(s)"@nl ;
@@ -129,6 +141,9 @@ westerlo:criterionGreenWasteContainerInfo a cccev:Criterion ;
 	rdfs:label "Green GFT waste container(s)"@en ;
 	rdfs:comment "Information regarding green waste container(s)"@en ;
 	cccev:fulfilledBy westerlo:greenWasteContainerGroup, westerlo:greenWasteOwnGroup .
+ex:movingCity a p-plan:Variable ;
+  rdfs:label "City to move to"@en ;
+  rdfs:label "Stad waarnaar wordt verplaatst"@nl .
 
 # Green GFT group 1: request container(s)
 westerlo:greenWasteContainerGroup a cccev:RequirementGroup ;
@@ -138,11 +153,16 @@ westerlo:greenWasteContainerGroup a cccev:RequirementGroup ;
 		westerlo:greenWasteContainerDelivery, 
 		westerlo:wasteContainerLock,
 		westerlo:greenWasteOwnStopCollecting .
+#
+# data regarding waste disposal
+#
+ex:wasteCollectionRequested a p-plan:Variable ;
+  rdfs:label "Waste collection request"@en ;
+  rdfs:label "Aanvrag afvalcontainers"@nl .
 
-westerlo:greenWasteContainer40Amount a cccev:CriterionRequirement ;
-    rdfs:label "Aantal 40 liter container(s)"@nl ;
-	rdfs:label "Amount 40 liter container(s)"@en ;
-	cccev:expecteddatatype xsd:integer .
+ex:numberOf40LiterGreyWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 40 liter grey waste containers"@en ;
+  rdfs:label "Aantal 40 liter grijze restafval containers"@nl .
 
 westerlo:greenWasteContainer120Amount a cccev:CriterionRequirement ;
     rdfs:label "Aantal 120 liter container(s)"@nl ;
@@ -170,101 +190,338 @@ westerlo:greenWasteOwnStopCollecting a cccev:CriterionRequirement ;
     rdfs:label "Ophaling GFT-container door stopzetting"@nl ;
 	rdfs:label "Stop collecting GFT-container"@en ;
 	cccev:expecteddatatype xsd:boolean .
+ex:numberOf120LiterGreyWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 120 liter grey waste containers"@en ;
+  rdfs:label "Aantal 120 liter grijze restafval containers"@nl .
 
-# CRITERION: yellow paper waste container info
-westerlo:criterionYellowWasteContainerInfo a cccev:Criterion ;
-    rdfs:label "Gele papier container(s)"@nl ;
-	rdfs:label "Yellow paper waste container(s)"@en ;
-	rdfs:comment "Information regarding yellow paper waste container(s)"@en ;
-	cccev:fulfilledBy westerlo:yellowWasteContainerGroup .
+ex:numberOf240LiterGreyWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 240 liter grey waste containers"@en ;
+  rdfs:label "Aantal 240 liter grijze restafval containers"@nl .
 
-westerlo:yellowWasteContainerGroup a cccev:RequirementGroup ;
-    cccev:hasCriterionRequirement 
-		westerlo:yellowWasteContainer40Amount, 
-		westerlo:yellowWasteContainer240Amount,
-        westerlo:yellowWasteContainer1100Amount,
-		westerlo:yellowWasteContainerDelivery .
+ex:greyWasteContainerLockInfo a p-plan:Variable ;
+  rdfs:label "Grey waste container lock"@en ;
+  rdfs:label "Grijze restafval container slot"@nl .
 
-westerlo:yellowWasteContainer40Amount a cccev:CriterionRequirement ;
-    rdfs:label "Aantal 40 liter container(s)"@nl ;
-	rdfs:label "Amount 40 liter container(s)"@en ;
-	cccev:expecteddatatype xsd:integer .
-	
-westerlo:yellowWasteContainer240Amount a cccev:CriterionRequirement ;
-    rdfs:label "Aantal 240 liter container(s)"@nl ;
-	rdfs:label "Amount 240 liter container(s)"@en ;
-	cccev:expecteddatatype xsd:integer .
+ex:greyWasteContainerInfo a p-plan:Variable ;
+  rdfs:label "Grey waste container(s)"@en ;
+  rdfs:label "Grijze restafvalcontainer(s)"@nl .
 
-westerlo:yellowWasteContainer1100Amount a cccev:CriterionRequirement ;
-    rdfs:label "Aantal 1100 liter container(s)"@nl ;
-	rdfs:label "Amount 1100 liter container(s)"@en ;
-	cccev:expecteddatatype xsd:integer .
-	
-westerlo:yellowWasteContainerDelivery a cccev:CriterionRequirement ;
-    rdfs:label "Container(s) leveren"@nl ;
-	rdfs:label "Deliver container(s)"@en ;
-	cccev:expecteddatatype xsd:boolean .
 
-#
-# Steps to provide general information about person requesting something
-#
+ex:numberOf40LiterGreenWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 40 liter green waste containers"@en ;
+  rdfs:label "Aantal 40 liter GFT containers"@nl .
 
-westerlo:provideNewAddressManually a oslo-steps:Step ;
-    rdfs:comment "Provide the addres to move to manuallly"@en ;
-	oslo-steps:requiresInputData westerlo:criterionNewAddress .
-	
-westerlo:provideInvoiceAddressManually a oslo-steps:Step ;
-    rdfs:comment "Provide the invoice address manuallly"@en ;
-	oslo-steps:requiresInputData westerlo:criterionInvoiceAddress .
-	
-westerlo:provideHouseholderFirstNameManually a oslo-steps:Step ;
-    rdfs:comment "Provide the first name of the householder manuallly"@en .
-	
-westerlo:provideHousholderLastNameManually a oslo-steps:Step ;
-    rdfs:comment "Provide the last name of the householder manuallly"@en .
-	
-westerlo:provideHouseholderGenderManually a oslo-steps:Step ;
-    rdfs:comment "Provide the gender of the householder manuallly"@en ;
-	oslo-steps:requiresInputData westerlo:criterionHouseholderGender .
-	
-westerlo:providePhoneNumberManually a oslo-steps:Step ;
-    rdfs:comment "Provide the phone number manuallly"@en .
-	
-westerlo:provideMobilPhoneNumberManually a oslo-steps:Step ;
-    rdfs:comment "Provide the mobile phone number manually"@en .
-	
-westerlo:provideEmailAddressManually a oslo-steps:Step ;
-    rdfs:comment "Provide the email address manually"@en .
-	
-westerlo:provideMovingDateManually a oslo-steps:Step ;
-    rdfs:comment "Provide the moving date manually"@en .
-	
-westerlo:provideHouseholderNationalNumberManually a oslo-steps:Step ;
-    rdfs:comment "Provide the national number of the householder manually"@en .
-	
-westerlo:provideAmountOfFamilyMembersManually a oslo-steps:Step ;
-    rdfs:comment "Provide the amount of familiy members manually"@en .
+ex:numberOf120LiterGreenWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 120 liter green waste containers"@en ;
+  rdfs:label "Aantal 120 liter GFT containers"@nl .
+
+ex:greenWasteContainerOwnCompostInfo a p-plan:Variable ;
+  rdfs:label "Own compost"@en ;
+  rdfs:label "GFT zelf composteer"@nl .
+
+ex:greenWasteContainerStopCollectingInfo a p-plan:Variable ;
+  rdfs:label "Stop collecting green waste contaienr"@en ;
+  rdfs:label "Ophaling GFT-container door stopzetting"@nl .
+
+ex:greenWasteContainerLockInfo a p-plan:Variable ;
+  rdfs:label "Green waste container lock"@en ;
+  rdfs:label "GFT container slot"@nl .
+
+ex:greenWasteContainerInfo a p-plan:Variable ;
+  rdfs:label "Green GFT waste container(s)"@en ;
+  rdfs:label "Groene GFT container(s)"@nl .
+
+
+ex:numberOf40LiterPaperWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 40 liter paper waste contaienrs"@en ;
+  rdfs:label "Aantal 40 liter papier containers"@nl .
+
+ex:numberOf240LiterPaperWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 240 liter paper waste contaienrs"@en ;
+  rdfs:label "Aantal 240 liter papier containers"@nl .
+
+ex:numberOf1100LiterPaperWasteContainers a p-plan:Variable ;
+  rdfs:label "Number of 1100 liter paper waste containers"@en ;
+  rdfs:label "Aantal 1100 liter papier containers"@nl .
+
+ex:paperWasteContainerInfo a p-plan:Variable ;
+  rdfs:label "Paper waste container(s)"@en ;
+  rdfs:label "Papiercontainer(s)"@nl .
 
 #
-# Steps to provide information to request different kind of waste containers
+# data regarding municipality
 #
-westerlo:provideGreyWasteContainerInfoManually a oslo-steps:Step ;
-    rdfs:comment "Provide information to request a grey waste container"@en ;
-    oslo-steps:requiresInputData westerlo:criterionGreyWasteContainerInfo .
 
-westerlo:provideGreenWasteContainerInfoManually oslo-steps:Step ;
-    rdfs:comment "Provide information to request a green waste container"@en ;
-    oslo-steps:requiresInputData westerlo:criterionGreenWasteContainerInfo .
+ex:addressChangeDeclared a p-plan:Variable ;
+  rdfs:label "Declared address change"@en ;
+  rdfs:label "Adreswijziging verklaard"@nl .
 
-westerlo:provideYellowWasteContainerInfoManually a oslo-steps:Step ;
-    rdfs:comment "Provide information to request a yellow paper waste container"@en ;
-    oslo-steps:requiresInputData westerlo:criterionYellowWasteContainerInfo .	
+ex:householderAtNewAddress a p-plan:Variable ;
+  rdfs:label "Met the householder at new address"@en ;
+  rdfs:label "Ontmoette de bewoner op nieuw adres"@nl .
+
+ex:addressChangeConfirmed a p-plan:Variable ;
+  rdfs:label "Confirmed address change"@en ;
+  rdfs:label "Adreswijziging bevestigd"@nl .
 
 
-# 2 weeks before relocation
-# - Inform about a change of address
+ex:addressChangedOnEID a p-plan:Variable ;
+  rdfs:label "Address updated on eID card"@en ;
+  rdfs:label "Adreswijziging bevestigd op eID"@nl .
 
-# 1 week after the relocation
+ex:householderBringsEID a p-plan:Variable ;
+  rdfs:label "Householder brings eID"@en ;
+  rdfs:label "Gezinshoofd brengt eID"@nl .
 
-# more than 1 month after the relocation
-# - Invitation to change data on electronic identity card
+#
+# Steps to provide various kinds of data
+#
+
+#
+# Steps to provide information of the householder in a manual fashion
+#
+ex:provideHouseholderFirstNameManually a o-steps:Step ;
+  rdfs:label "Householder's first name"@en ;
+  rdfs:label "Gezinshoofd voornaam"@nl ;
+  p-plan:hasOutputVar ex:householderFirstName .
+
+ex:provideHouseholderLastNameManually a o-steps:Step ;
+  rdfs:label "Householder's last name"@en ;
+  rdfs:label "Gezinshoofd naam"@nl ;
+  p-plan:hasOutputVar ex:householderLastName .
+
+ex:provideHouseholderGenderManually a o-steps:Step ;
+  rdfs:label "Householder's gender"@en ;
+  rdfs:label "Geslacht gezinshoofd"@nl ;
+  p-plan:hasOutputVar ex:householderGender .
+
+ex:provideHouseholderEmailManually a o-steps:Step ;
+  rdfs:label "Householder's email address"@en ;
+  rdfs:label "Email gezinshoofd"@nl ;
+  p-plan:hasOutputVar ex:householderEmail .
+
+ex:provideHouseholderMobilePhoneNumberManually a o-steps:Step ;
+  rdfs:label "Householder's mobile phone number"@en ;
+  rdfs:label "GSM gezinshoofd"@nl ;
+  p-plan:hasOutputVar ex:householderMobilePhoneNumber .
+
+ex:provideHouseholderPhoneNumberManually a o-steps:Step ;
+  rdfs:label "Householder's phone number"@en ;
+  rdfs:label "Telefoon gezinshoofd"@nl ;
+  p-plan:hasOutputVar ex:householderPhoneNumber .
+
+ex:provideHouseholderNationalNumberManually a o-steps:Step ;
+  rdfs:label "Householder's national number"@en ;
+  rdfs:label "Rijksregister gezinshoofd"@nl ;
+  p-plan:hasOutputVar ex:householderNationalNumber .
+
+ex:provideHouseholderBankAccountNumberManually a o-steps:Step ;
+  rdfs:label "Householder's bank account number"@en ;
+  rdfs:label "rekeningsnummer gezinshoofd"@nl ;
+  p-plan:hasOutputVar ex:householderBankAccountNumber .
+
+ex:provideHouseholderResidencePermitManually a o-steps:Step ;
+  rdfs:label "Householder's residency permit"@en ;
+  rdfs:label "verblijfsvergunning"@nl ;
+  p-plan:hasOutputVar ex:householderResidencePermit .
+
+ex:provideHouseholderBirthDataManually a o-steps:Step ;
+  rdfs:label "Householder's date of birth"@en ;
+  rdfs:label "geboortedatum gezinshoofd"@nl ;
+  p-plan:hasOutputVar ex:householderBirthDate .
+
+ex:provideHouseholderAddressManually a o-steps:Step ;
+  rdfs:label "Householder's address"@en ;
+  rdfs:label "adres gezinshoofd"@nl ;
+  p-plan:hasOutputVar ex:householderAddress .
+
+ex:provideHouseholderProfessionManually a o-steps:Step ;
+  rdfs:label "Householder's profession"@en ;
+  rdfs:label "beroep gezinshoofd"@nl ;
+  p-plan:hasOutputVar ex:householderProfession .
+
+ex:provideNumberOfFamilyMembersManually a o-steps:Step ;
+  rdfs:label "Number of family members"@en ;
+  rdfs:label "Aantal gezinsleden"@nl ;
+  p-plan:hasOutputVar ex:numberOfFamilyMembers .
+
+#
+# Steps to provide information about moving in a manual fashion
+#
+ex:provideMovingDateManually a o-steps:Step ;
+  rdfs:label "Moving date"@en ;
+  rdfs:label "Verhuisdatum"@nl ;
+  p-plan:hasOutputVar ex:movingDate .
+
+ex:provideMovingCityManually a o-steps:Step ;
+  rdfs:label "City to move to"@en ;
+  rdfs:label "Stad waarnaar wordt verplaatst"@nl ;
+  p-plan:hasOutputVar ex:movingCity .
+
+#
+# Steps to provide waste collection information in a manual fashion
+#
+
+ex:provideNumberOf40LiterGreyWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 40 liter grey waste container(s)"@en ;
+  rdfs:label "Aantal 40 liter grijze restafvalcontainer(s)"@nl ;
+  p-plan:hasOutputVar ex:numberOf40LiterGreyWasteContainers .
+
+ex:provideNumberOf120LiterGreyWasteContainersManualy a o-steps:Step ;
+  rdfs:label "Number of 120 liter grey waste container(s)"@en ;
+  rdfs:label "Aantal 120 liter grijze restafvalcontainer(s)"@nl ;
+  p-plan:hasOutputVar ex:numberOf120LiterGreyWasteContainers .
+
+ex:provideNumberOf240LiterGreyWasteContainers a o-steps:Step ;
+  rdfs:label "Number of 240 liter grey waste container(s)"@en ;
+  rdfs:label "Aantal 240 liter grijze restafvalcontainer(s)"@nl ;
+  p-plan:hasOutputVar ex:numberOf240LiterGreyWasteContainers .
+
+ex:provideGreyWasteContainerLockInfoManually a o-steps:Step ;
+  rdfs:label "I request a lock for my grey waste container(s)"@en ;
+  rdfs:label "Ik vraag een slot voor mijn grijze restafvalcontainer(s) aan"@nl ;
+  p-plan:hasOutputVar ex:greyWasteContainerLockInfo .
+
+ex:provideNumberOf40LiterGreenWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 40 liter green waste container(s)"@en ;
+  rdfs:label "Aantal 40 liter GFT container(s)"@nl ;
+  p-plan:hasOutputVar ex:numberOf40LiterGreenWasteContainers .
+
+ex:provideNumberOf120LiterGreenWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 120 liter green waste container(s)"@en ;
+  rdfs:label "Aantal 120 liter GFT container(s)"@nl ;
+  p-plan:hasOutputVar ex:numberOf120LiterGreenWasteContainers .
+
+ex:provideGreenWasteContainerOwnCompostInfoManually a o-steps:Step ;
+  rdfs:label "No green waste containers, because I compost on my own"@en ;
+  rdfs:label "Geen GFT containers, want ik composteer mijn GFT zelf"@nl ;
+  p-plan:hasOutputVar ex:greenWasteContainerOwnCompostInfo .
+
+ex:provideGreenWasteContainerCollectionStopInfoManually a o-steps:Step ;
+  rdfs:label "Stop collecting green waste containers"@en ;
+  rdfs:label "Ophaling GFT-container door stopzetting"@nl ;
+  p-plan:hasOutputVar ex:greenWasteContainerStopCollectingInfo .
+
+ex:provideGreenWasteContainerLockInfoManually a o-steps:Step ;
+  rdfs:label "I request a lock for my green waste container(s)"@en ;
+  rdfs:label "Ik vraag een slot voor mijn GFT container(s) aan"@nl ;
+  p-plan:hasOutputVar ex:greenWasteContainerLockInfo .
+
+ex:provideNumberOf40LiterPaperWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 40 liter paper waste container(s)"@en ;
+  rdfs:label "Aantal 40 liter papier container(s)"@nl ;
+  p-plan:hasOutputVar ex:numberOf40LiterPaperWasteContainers .
+
+ex:provideNumberOf240LiterPaperWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 240 liter paper waste container(s)"@en ;
+  rdfs:label "Aantal 240 liter papier container(s)"@nl ;
+  p-plan:hasOutputVar ex:numberOf240LiterPaperWasteContainers .
+
+ex:provideNumberOf1100LiterPaperWasteContainersManually a o-steps:Step ;
+  rdfs:label "Number of 1100 liter paper waste container(s)"@en ;
+  rdfs:label "Aantal 1100 liter papier container(s)"@nl ;
+  p-plan:hasOutputVar ex:numberOf1100LiterPaperWasteContainers .
+
+
+#
+# higher level steps regarding waste collection
+#
+ex:requestWasteCollection a o-steps:Step ;
+  rdfs:label "Application for waste collection"@en ;
+  rdfs:label "Aanvraag afvalcontainers"@nl ;
+  p-plan:hasOutputVar ex:wasteCollectionRequested ;
+  p-plan:hasInputVar
+    ex:applicantInfo ,
+    ex:greyWasteContainerInfo ,
+    ex:greenWasteContainerInfo ,
+    ex:paperWasteContainerInfo .
+
+ex:provideWasteCollectionApplicantInfo a o-steps:Step ;
+  rdfs:label "Applicant information"@en ;
+  rdfs:label "Aanvrager informatie"@nl ;
+  rdfs:comment "Information regarding the applicant requesting waste collection"@en ;
+  p-plan:hasOutputVar ex:applicantInfo ;
+  p-plan:hasInputVar
+    ex:householderFirstName ,
+    ex:householderLastName ,
+    ex:householderPhoneNumber ,
+    ex:householderMobilePhoneNumber ,
+    ex:householderEmail ,
+    ex:householderGender ,
+    ex:householderNationalNumber ,
+    ex:numberOfFamilyMembers ,
+    ex:movingAddress ,
+    ex:billingAddress .
+
+ex:provideGreyWasteContainerInfo a o-steps:Step ;
+  rdfs:label "Grey waste container(s)"@en ;
+  rdfs:label "Grijze restafvalcontainer(s)"@nl ;
+  rdfs:comment "Information regarding grey waste container(s)"@en ;
+  p-plan:hasOutputVar ex:greyWasteContainerInfo ;
+  p-plan:hasInputVar
+    ex:numberOf40LiterGreyWasteContainers ,
+    ex:numberOf120LiterGreyWasteContainers ,
+    ex:numberOf240LiterGreyWasteContainers ,
+    ex:greyWasteContainerLockInfo .
+
+ex:provideGreenWasteContainerInfo a o-steps:Step ;
+	rdfs:label "Green GFT waste container(s)"@en ;
+  rdfs:label "Groene GFT container(s)"@nl ;
+	rdfs:comment "Information regarding green waste container(s)"@en ;
+  p-plan:hasOutputVar ex:greenWasteContainerInfo ;
+  p-plan:hasInputVar 
+    ex:numberOf40LiterGreenWasteContainers ,
+    ex:numberOf120LiterGreenWasteContainers ,
+    ex:greenWasteContainerLockInfo ,
+    ex:greenWasteContainerOwnCompostInfo ,
+    ex:greenWasteContainerStopCollectingInfo .
+
+ex:providePaperWasteContainerInfo a o-steps:Step ;
+  rdfs:label "Paper waste container(s)"@en ;
+  rdfs:label "Papier container(s)"@nl ;
+  rdfs:comment "Information regarding paper waste container(s)"@en ;
+  p-plan:hasOutputVar ex:paperWasteContainerInfo ;
+  p-plan:hasInputVar
+    ex:numberOf40LiterPaperWasteContainers ,
+    ex:numberOf240LiterPaperWasteContainers ,
+    ex:numberOf1100LiterPaperWasteContainers  .
+
+#
+# higher level steps regarding declaration of address change
+# 
+
+ex:declareAddressChange a o-steps:Step ;
+  rdfs:label "Declaration of address change"@en ;
+  rdfs:label "Aangifte van adreswijziging"@nl ;
+  p-plan:hasOutputVar ex:addressChangeDeclared ;
+  p-plan:hasInputVar
+    ex:householderFirstName ,
+    ex:householderLastName ,
+    ex:householderNationalNumber ,
+    ex:householderBirthDate ,
+    ex:householderCityOfBirth ,
+    ex:householderNationality ,
+    ex:movingAddress ,
+    ex:movingDate ,
+    ex:householderProfession ,
+    ex:householderPhoneNumber ,
+    ex:householderMobilePhoneNumber ,
+    ex:householderEmail .
+
+# The police is confirming this in Belgium by a visit
+ex:confirmAddressChangeVisit a o-steps:Step ;
+  rdfs:label "Confirmation of address change"@en ;
+  rdfs:label "Bevestiging van adreswijziging"@nl ;
+  p-plan:hasOutputVar ex:addressChangeConfirmed ;
+  p-plan:hasInputVar
+    ex:addressChangeDeclared ,
+    ex:householderAtNewAddress .
+
+ex:addressChangeOnEIDInOffice a o-steps:Step ;
+  rdfs:label "Update address on eID card"@en ;
+  rdfs:label "Adreswijziging op eID kaart"@nl ;
+  p-plan:hasOutputVar ex:addressChangedOnEID ;
+  p-plan:hasInputVar
+    ex:addressChangeConfirmed ,
+    ex:householderBringsEID .
+
