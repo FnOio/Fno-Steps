@@ -30,12 +30,6 @@ ex:householderEmail a p-plan:Variable ;
   rdfs:label "Householder's email address"@en ;
   rdfs:label "Email gezinshoofd"@nl .
 
-# CRITERION: invoice address
-westerlo:criterionInvoiceAddress a cccev:Criterion ;
-    rdfs:label "Facturatieadres Adres"@nl ;
-	rdfs:label "Invoice address"@en ;
-	rdfs:comment "The invoice address for which waste containers are requested"@en ;
-	cccev:fulfilledBy westerlo:criterionInvoiceAddressGroup .
 ex:householderMobilePhoneNumber a p-plan:Variable ;
   rdfs:label "Householder's mobile phone number"@en ;
   rdfs:label "GSM gezinshoofd"@nl .
@@ -96,63 +90,14 @@ ex:movingAddress a p-plan:Variable ;
   rdfs:label "Address to move to"@en ;
   rdfs:label "Adres waarnar wordt verplaatst"@nl .
 
-gent:greyWasteContainerGroup a cccev:RequirementGroup ;
-    cccev:hasCriterionRequirement 
-		gent:greyWasteContainer40Amount, 
-		gent:greyWasteContainer120Amount,
-		gent:greyWasteContainerDelivery, 
-		gent:wasteContainerLock .
-		
-		
-test:greyWasteContainer120lRequirement rdfs:subclassOf cccev:CriterionRequirement .
-
-
-westerlo:greyWasteContainer40Amount a cccev:CriterionRequirement ;
-    rdfs:label "Aantal 40 liter container(s)"@nl ;
-	rdfs:label "Amount 40 liter container(s)"@en ;
-	cccev:expecteddatatype xsd:integer .
 ex:billingAddress a p-plan:Variable ;
   rdfs:label "Billing address"@en ;
   rdfs:label "Facturatieadres"@nl .
 
-westerlo:greyWasteContainer120Amount a cccev:CriterionRequirement ;
-    rdfs:label "Aantal 120 liter container(s)"@nl ;
-	rdfs:label "Amount 120 liter container(s)"@en ;
-	cccev:expecteddatatype xsd:integer .
-	
-westerlo:greyWasteContainer240Amount a cccev:CriterionRequirement ;
-    rdfs:label "Aantal 240 liter container(s)"@nl ;
-	rdfs:label "Amount 240 liter container(s)"@en ;
-	cccev:expecteddatatype xsd:integer .
-	
-westerlo:greyWasteContainerDelivery a cccev:CriterionRequirement ;
-    rdfs:label "Container(s) leveren"@nl ;
-	rdfs:label "Deliver container(s)"@en ;
-	cccev:expecteddatatype xsd:boolean .
-	
-westerlo:wasteContainerLock a cccev:CriterionRequirement ;
-    rdfs:label "Ik vraag een slot aan voor 35 euro per stuk bij plaatsing"@nl ;
-	rdfs:label "I request a lock for 35 euro per piece on placement"@en
-	cccev:expecteddatatype xsd:boolean .
-	
-# CRITERION: Green GFT (biological) waste container info
-westerlo:criterionGreenWasteContainerInfo a cccev:Criterion ;
-    rdfs:label "Groene GFT container(s)"@nl ;
-	rdfs:label "Green GFT waste container(s)"@en ;
-	rdfs:comment "Information regarding green waste container(s)"@en ;
-	cccev:fulfilledBy westerlo:greenWasteContainerGroup, westerlo:greenWasteOwnGroup .
 ex:movingCity a p-plan:Variable ;
   rdfs:label "City to move to"@en ;
   rdfs:label "Stad waarnaar wordt verplaatst"@nl .
 
-# Green GFT group 1: request container(s)
-westerlo:greenWasteContainerGroup a cccev:RequirementGroup ;
-    cccev:hasCriterionRequirement 
-		westerlo:greenWasteContainer40Amount, 
-		westerlo:greenWasteContainer120Amount,
-		westerlo:greenWasteContainerDelivery, 
-		westerlo:wasteContainerLock,
-		westerlo:greenWasteOwnStopCollecting .
 #
 # data regarding waste disposal
 #
@@ -164,32 +109,6 @@ ex:numberOf40LiterGreyWasteContainers a p-plan:Variable ;
   rdfs:label "Number of 40 liter grey waste containers"@en ;
   rdfs:label "Aantal 40 liter grijze restafval containers"@nl .
 
-westerlo:greenWasteContainer120Amount a cccev:CriterionRequirement ;
-    rdfs:label "Aantal 120 liter container(s)"@nl ;
-	rdfs:label "Amount 120 liter container(s)"@en ;
-	cccev:expecteddatatype xsd:integer .
-		
-westerlo:greenWasteContainerDelivery a cccev:CriterionRequirement ;
-    rdfs:label "Container(s) leveren"@nl ;
-	rdfs:label "Deliver container(s)"@en ;
-	cccev:expecteddatatype xsd:boolean .
-	
-	
-# Green GFT group 2: own compost
-westerlo:greenWasteOwnGroup a cccev:RequirementGroup ;
-    cccev:hasCriterionRequirement
-	    westerlo:greenWasteOwn,
-		westerlo:greenWasteOwnStopCollecting .
-		
-westerlo:greenWasteOwn a cccev:CriterionRequirement ;
-    rdfs:label "Geen, want ik composteer mijn GFT zelf"@nl ;
-	rdfs:label "None, because I compost my GFT on my own"@en ;
-	cccev:expecteddatatype xsd:boolean .
-	
-westerlo:greenWasteOwnStopCollecting a cccev:CriterionRequirement ;
-    rdfs:label "Ophaling GFT-container door stopzetting"@nl ;
-	rdfs:label "Stop collecting GFT-container"@en ;
-	cccev:expecteddatatype xsd:boolean .
 ex:numberOf120LiterGreyWasteContainers a p-plan:Variable ;
   rdfs:label "Number of 120 liter grey waste containers"@en ;
   rdfs:label "Aantal 120 liter grijze restafval containers"@nl .
@@ -524,4 +443,3 @@ ex:addressChangeOnEIDInOffice a o-steps:Step ;
   p-plan:hasInputVar
     ex:addressChangeConfirmed ,
     ex:householderBringsEID .
-
