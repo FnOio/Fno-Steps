@@ -34,7 +34,7 @@ westerlo:criterionNewAddressRequirement a cccev:CriterionRequirement ;
 westerlo:criterionInvoiceAddress a cccev:Criterion ;
     rdfs:label "Facturatieadres Adres"@nl ;
 	rdfs:label "Invoice address"@en ;
-	rdfs:comment "The invoice address for which waste containers are requested" ;
+	rdfs:comment "The invoice address for which waste containers are requested"@en ;
 	cccev:fulfilledBy westerlo:criterionInvoiceAddressGroup .
 
 westerlo:criterionInvoiceAddressGroup a cccev:RequirementGroup ;
@@ -87,6 +87,17 @@ westerlo:greyWasteContainerGroup a cccev:RequirementGroup ;
 		westerlo:greyWasteContainerDelivery, 
 		westerlo:greyWasteContainerLock .
 
+gent:greyWasteContainerGroup a cccev:RequirementGroup ;
+    cccev:hasCriterionRequirement 
+		gent:greyWasteContainer40Amount, 
+		gent:greyWasteContainer120Amount,
+		gent:greyWasteContainerDelivery, 
+		gent:wasteContainerLock .
+		
+		
+test:greyWasteContainer120lRequirement rdfs:subclassOf cccev:CriterionRequirement .
+
+
 westerlo:greyWasteContainer40Amount a cccev:CriterionRequirement ;
     rdfs:label "Aantal 40 liter container(s)"@nl ;
 	rdfs:label "Amount 40 liter container(s)"@en ;
@@ -107,9 +118,9 @@ westerlo:greyWasteContainerDelivery a cccev:CriterionRequirement ;
 	rdfs:label "Deliver container(s)"@en ;
 	cccev:expecteddatatype xsd:boolean .
 	
-westerlo:greyWasteContainerLock a cccev:CriterionRequirement ;
+westerlo:wasteContainerLock a cccev:CriterionRequirement ;
     rdfs:label "Ik vraag een slot aan voor 35 euro per stuk bij plaatsing"@nl ;
-	rdfs:label "I request a slot for 35 euro per piece on placement"@en
+	rdfs:label "I request a lock for 35 euro per piece on placement"@en
 	cccev:expecteddatatype xsd:boolean .
 	
 # CRITERION: Green GFT (biological) waste container info
@@ -125,7 +136,7 @@ westerlo:greenWasteContainerGroup a cccev:RequirementGroup ;
 		westerlo:greenWasteContainer40Amount, 
 		westerlo:greenWasteContainer120Amount,
 		westerlo:greenWasteContainerDelivery, 
-		westerlo:greenWasteContainerLock,
+		westerlo:wasteContainerLock,
 		westerlo:greenWasteOwnStopCollecting .
 
 westerlo:greenWasteContainer40Amount a cccev:CriterionRequirement ;
@@ -143,10 +154,6 @@ westerlo:greenWasteContainerDelivery a cccev:CriterionRequirement ;
 	rdfs:label "Deliver container(s)"@en ;
 	cccev:expecteddatatype xsd:boolean .
 	
-westerlo:greenWasteContainerLock a cccev:CriterionRequirement ;
-    rdfs:label "Ik vraag een slot aan voor 35 euro per stuk bij plaatsing"@nl ;
-	rdfs:label "I request a lock for 35 euro per piece on placement"@en
-	cccev:expecteddatatype xsd:boolean .
 	
 # Green GFT group 2: own compost
 westerlo:greenWasteOwnGroup a cccev:RequirementGroup ;
