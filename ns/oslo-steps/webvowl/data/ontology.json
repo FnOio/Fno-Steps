@@ -31,16 +31,16 @@
         "value" : "o-steps",
         "type" : "label"
       } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
-        "language" : "en",
-        "value" : "0.1",
-        "type" : "label"
-      } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
         "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en",
+        "value" : "0.1",
         "type" : "label"
       } ],
       "title" : [ {
@@ -62,10 +62,10 @@
     "id" : "9",
     "type" : "owl:Class"
   }, {
-    "id" : "11",
+    "id" : "10",
     "type" : "owl:Class"
   }, {
-    "id" : "10",
+    "id" : "11",
     "type" : "owl:Class"
   }, {
     "id" : "5",
@@ -156,27 +156,6 @@
     "id" : "9",
     "superClasses" : [ "10" ]
   }, {
-    "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#Bundle",
-    "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Bundle",
-      "en" : "Bundle"
-    },
-    "comment" : {
-      "en" : "A o-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a o-steps:Plan"
-    },
-    "id" : "11",
-    "superClasses" : [ "12" ]
-  }, {
     "iri" : "http://www.w3.org/ns/shacl#NodeShape",
     "baseIri" : "http://www.w3.org/ns/shacl",
     "instances" : 0,
@@ -198,6 +177,27 @@
     },
     "attributes" : [ "external" ],
     "id" : "10"
+  }, {
+    "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#Bundle",
+    "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Bundle",
+      "en" : "Bundle"
+    },
+    "comment" : {
+      "en" : "A o-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a o-steps:Plan"
+    },
+    "id" : "11",
+    "superClasses" : [ "12" ]
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#State",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
@@ -485,7 +485,7 @@
       "en" : "correspondsToVariable"
     },
     "domain" : "1",
-    "attributes" : [ "object", "external", "functional" ],
+    "attributes" : [ "external", "functional", "object" ],
     "id" : "0"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#requiresState",
@@ -532,32 +532,32 @@
       "en" : "isStepOfPlan"
     },
     "domain" : "14",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "13"
   }, {
     "range" : "1",
     "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "15"
   }, {
     "range" : "1",
     "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "16"
   }, {
     "range" : "14",
     "domain" : "4",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "17"
   }, {
     "range" : "2",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "18"
   }, {
     "range" : "12",
     "domain" : "11",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "19"
   }, {
     "iri" : "http://purl.org/net/p-plan#correspondsToStep",
@@ -582,12 +582,12 @@
       "en" : "correspondsToStep"
     },
     "domain" : "8",
-    "attributes" : [ "object", "external", "functional" ],
+    "attributes" : [ "external", "functional", "object" ],
     "id" : "20"
   }, {
     "range" : "22",
     "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "21"
   }, {
     "iri" : "http://purl.org/net/p-plan#isSubPlanOfPlan",
@@ -613,17 +613,17 @@
     },
     "superproperty" : [ "24" ],
     "domain" : "7",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "23"
   }, {
     "range" : "7",
     "domain" : "6",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "25"
   }, {
     "range" : "27",
     "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "26"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
@@ -634,12 +634,12 @@
     },
     "domain" : "28",
     "subproperty" : [ "23" ],
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "24"
   }, {
     "range" : "10",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "29"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#producesState",
@@ -708,7 +708,7 @@
       "en" : "isDecomposedAsPlan"
     },
     "domain" : "30",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "33"
   } ]
 }
