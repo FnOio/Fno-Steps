@@ -53,7 +53,7 @@
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "6",
+    "id" : "3",
     "type" : "owl:Class"
   }, {
     "id" : "8",
@@ -62,13 +62,13 @@
     "id" : "9",
     "type" : "owl:Class"
   }, {
-    "id" : "11",
-    "type" : "owl:Class"
-  }, {
     "id" : "10",
     "type" : "owl:Class"
   }, {
-    "id" : "5",
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
     "type" : "owl:Class"
   }, {
     "id" : "1",
@@ -83,7 +83,7 @@
     "id" : "30",
     "type" : "owl:Class"
   }, {
-    "id" : "4",
+    "id" : "6",
     "type" : "owl:Class"
   }, {
     "id" : "2",
@@ -95,7 +95,7 @@
     "id" : "22",
     "type" : "owl:Class"
   }, {
-    "id" : "7",
+    "id" : "4",
     "type" : "owl:Class"
   }, {
     "id" : "27",
@@ -123,8 +123,8 @@
     "comment" : {
       "en" : "A o-steps:Plan is a specific type of p-plan:Plan. It is composed of smaller steps that require and produce states."
     },
-    "id" : "6",
-    "superClasses" : [ "7" ]
+    "id" : "3",
+    "superClasses" : [ "4" ]
   }, {
     "iri" : "http://purl.org/net/p-plan#Activity",
     "baseIri" : "http://purl.org/net/p-plan",
@@ -156,27 +156,6 @@
     "id" : "9",
     "superClasses" : [ "10" ]
   }, {
-    "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#Bundle",
-    "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Bundle",
-      "en" : "Bundle"
-    },
-    "comment" : {
-      "en" : "A o-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a o-steps:Plan"
-    },
-    "id" : "11",
-    "superClasses" : [ "12" ]
-  }, {
     "iri" : "http://www.w3.org/ns/shacl#NodeShape",
     "baseIri" : "http://www.w3.org/ns/shacl",
     "instances" : 0,
@@ -199,6 +178,27 @@
     "attributes" : [ "external" ],
     "id" : "10"
   }, {
+    "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#Bundle",
+    "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Bundle",
+      "en" : "Bundle"
+    },
+    "comment" : {
+      "en" : "A o-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a o-steps:Plan"
+    },
+    "id" : "11",
+    "superClasses" : [ "12" ]
+  }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#State",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
     "instances" : 0,
@@ -217,7 +217,7 @@
     "comment" : {
       "en" : "A state in the sense of a particular condition something is in. In our case a state could be represented as a set of RDF statements."
     },
-    "id" : "5",
+    "id" : "7",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "http://purl.org/net/p-plan#Entity",
@@ -226,7 +226,7 @@
     "label" : {
       "IRI-based" : "Entity"
     },
-    "subClasses" : [ "12", "7" ],
+    "subClasses" : [ "12", "4" ],
     "attributes" : [ "external" ],
     "id" : "1"
   }, {
@@ -258,10 +258,7 @@
       "IRI-based" : "Step",
       "en" : "Step"
     },
-    "subClasses" : [ "4" ],
-    "comment" : {
-      "en" : "A p-plan:Step represents the planned execution activity"
-    },
+    "subClasses" : [ "6" ],
     "attributes" : [ "external" ],
     "id" : "14"
   }, {
@@ -292,7 +289,7 @@
     "comment" : {
       "en" : "The Workflow Coalition defines a step as: 'A description of a piece of work that forms one logical step within a process'. Furthermore, such a step may be either a workflow, or the smallest unit of work which is scheduled based on pre/post-conditions (states)."
     },
-    "id" : "4",
+    "id" : "6",
     "superClasses" : [ "14" ]
   }, {
     "iri" : "http://purl.org/net/p-plan#Variable",
@@ -316,10 +313,7 @@
       "IRI-based" : "Variable",
       "en" : "Variable"
     },
-    "subClasses" : [ "5" ],
-    "comment" : {
-      "en" : "A p-plan:Variable represents a description of the input of the planned Activity (p-plan:Step)"
-    },
+    "subClasses" : [ "7" ],
     "attributes" : [ "external" ],
     "id" : "2"
   }, {
@@ -377,12 +371,9 @@
       "IRI-based" : "Plan",
       "en" : "Plan"
     },
-    "subClasses" : [ "6" ],
-    "comment" : {
-      "en" : "A p-plan:Plan is a specific type of prov:Plan. It is composed of smaller steps that use and produce Variables."
-    },
+    "subClasses" : [ "3" ],
     "attributes" : [ "external" ],
-    "id" : "7",
+    "id" : "4",
     "superClasses" : [ "1", "27" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Plan",
@@ -391,7 +382,7 @@
     "label" : {
       "IRI-based" : "Plan"
     },
-    "subClasses" : [ "7" ],
+    "subClasses" : [ "4" ],
     "attributes" : [ "external" ],
     "id" : "27"
   }, {
@@ -420,7 +411,7 @@
     "id" : "0",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "3",
+    "id" : "5",
     "type" : "owl:objectProperty"
   }, {
     "id" : "13",
@@ -494,15 +485,12 @@
       "en" : "correspondsToVariable"
     },
     "domain" : "1",
-    "comment" : {
-      "en" : "p-plan:correspondsToVariable binds a p-plan:Entity (used by a p-plan:Activity in the execution of a plan) to the p-plan:Variable it represented it in the p-plan:Plan."
-    },
-    "attributes" : [ "functional", "external", "object" ],
+    "attributes" : [ "external", "functional", "object" ],
     "id" : "0"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#requiresState",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
-    "range" : "5",
+    "range" : "7",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -515,16 +503,16 @@
       "IRI-based" : "requiresState",
       "en" : "requiresState"
     },
-    "domain" : "4",
+    "domain" : "6",
     "comment" : {
       "en" : "o-steps:requiresState binds a o-steps:Step to the o-steps:State the step requires to produce the state bound via o-steps:producesState."
     },
     "attributes" : [ "object" ],
-    "id" : "3"
+    "id" : "5"
   }, {
     "iri" : "http://purl.org/net/p-plan#isStepOfPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "7",
+    "range" : "4",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -544,9 +532,6 @@
       "en" : "isStepOfPlan"
     },
     "domain" : "14",
-    "comment" : {
-      "en" : "p-plan:isStepOfPlan links a p-plan:Step to the p-plan:Plan which it corresponds to."
-    },
     "attributes" : [ "external", "object" ],
     "id" : "13"
   }, {
@@ -556,17 +541,17 @@
     "id" : "15"
   }, {
     "range" : "1",
-    "domain" : "7",
+    "domain" : "4",
     "attributes" : [ "anonymous", "object" ],
     "id" : "16"
   }, {
     "range" : "14",
-    "domain" : "4",
+    "domain" : "6",
     "attributes" : [ "anonymous", "object" ],
     "id" : "17"
   }, {
     "range" : "2",
-    "domain" : "5",
+    "domain" : "7",
     "attributes" : [ "anonymous", "object" ],
     "id" : "18"
   }, {
@@ -597,10 +582,7 @@
       "en" : "correspondsToStep"
     },
     "domain" : "8",
-    "comment" : {
-      "en" : "p-plan:correspondsToStep links a p-plan:Activity to its planned p-plan:Step"
-    },
-    "attributes" : [ "functional", "external", "object" ],
+    "attributes" : [ "external", "functional", "object" ],
     "id" : "20"
   }, {
     "range" : "22",
@@ -610,7 +592,7 @@
   }, {
     "iri" : "http://purl.org/net/p-plan#isSubPlanOfPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "7",
+    "range" : "4",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -630,20 +612,17 @@
       "en" : "isSubPlanOfPlan"
     },
     "superproperty" : [ "24" ],
-    "domain" : "7",
-    "comment" : {
-      "en" : "A p-plan:Plan may be a subplan of another bigger p-plan:Plan. p-plan:isSubPlanOfPlan is used to state the link among the two different plans. Note that if p1 is a p-plan:subPlan of p2, p1will not necessarily be a step of p2. A multistep will represent p1 in p2, and link to p1 with the p-plan.hasStepDecomposition relationship."
-    },
+    "domain" : "4",
     "attributes" : [ "external", "object" ],
     "id" : "23"
   }, {
-    "range" : "7",
-    "domain" : "6",
+    "range" : "4",
+    "domain" : "3",
     "attributes" : [ "anonymous", "object" ],
     "id" : "25"
   }, {
     "range" : "27",
-    "domain" : "7",
+    "domain" : "4",
     "attributes" : [ "anonymous", "object" ],
     "id" : "26"
   }, {
@@ -665,7 +644,7 @@
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#producesState",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
-    "range" : "5",
+    "range" : "7",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -678,7 +657,7 @@
       "IRI-based" : "producesState",
       "en" : "producesState"
     },
-    "domain" : "4",
+    "domain" : "6",
     "comment" : {
       "en" : "o-steps:producesState binds a o-steps:Step to the o-steps:State the step produces."
     },
@@ -700,7 +679,7 @@
       "IRI-based" : "hasStateShape",
       "en" : "hasStateShape"
     },
-    "domain" : "5",
+    "domain" : "7",
     "comment" : {
       "en" : "Links a o-steps:State to a description of the state as o-steps:StateShape."
     },
@@ -709,7 +688,7 @@
   }, {
     "iri" : "http://purl.org/net/p-plan#isDecomposedAsPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "7",
+    "range" : "4",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -729,9 +708,6 @@
       "en" : "isDecomposedAsPlan"
     },
     "domain" : "30",
-    "comment" : {
-      "en" : "The p-plan:isDecomposedAsPlan relationship binds a p-plan:MultiStep to the p-plan:Plan holding the definition of that step. That is, p-plan:isDecomposedAsPlan links the MultiStep to the Plan sptecification where it is decomposed."
-    },
     "attributes" : [ "external", "object" ],
     "id" : "33"
   } ]

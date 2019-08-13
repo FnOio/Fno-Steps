@@ -54,7 +54,6 @@
                                                         owl:FunctionalProperty ;
                                                rdfs:domain <http://purl.org/net/p-plan#Activity> ;
                                                rdfs:range <http://purl.org/net/p-plan#Step> ;
-                                               rdfs:comment "p-plan:correspondsToStep links a p-plan:Activity to its planned p-plan:Step"@en ;
                                                rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
                                                rdfs:label "correspondsToStep"@en ;
                                                <http://www.w3.org/ns/prov#definition> "p-plan:correspondsToStep links a p-plan:Activity to its planned p-plan:Step"@en .
@@ -65,7 +64,6 @@
                                                             owl:FunctionalProperty ;
                                                    rdfs:domain <http://purl.org/net/p-plan#Entity> ;
                                                    rdfs:range <http://purl.org/net/p-plan#Variable> ;
-                                                   rdfs:comment "p-plan:correspondsToVariable binds a p-plan:Entity (used by a p-plan:Activity in the execution of a plan) to the p-plan:Variable it represented it in the p-plan:Plan."@en ;
                                                    rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
                                                    rdfs:label "correspondsToVariable"@en ;
                                                    <http://www.w3.org/ns/prov#definition> "p-plan:correspondsToVariable binds a p-plan:Entity (used by a p-plan:Activity in the execution of a plan) to the p-plan:Variable it represented it in the p-plan:Plan."@en .
@@ -75,7 +73,6 @@
 <http://purl.org/net/p-plan#isDecomposedAsPlan> rdf:type owl:ObjectProperty ;
                                                 rdfs:domain <http://purl.org/net/p-plan#MultiStep> ;
                                                 rdfs:range <http://purl.org/net/p-plan#Plan> ;
-                                                rdfs:comment "The p-plan:isDecomposedAsPlan relationship binds a p-plan:MultiStep to the p-plan:Plan holding the definition of that step. That is, p-plan:isDecomposedAsPlan links the MultiStep to the Plan sptecification where it is decomposed."@en ;
                                                 rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
                                                 rdfs:label "isDecomposedAsPlan"@en ;
                                                 <http://www.w3.org/ns/prov#definition> "The p-plan:isDecomposedAsPlan relationship binds a p-plan:MultiStep to the p-plan:Plan holding the definition of that step. That is, p-plan:isDecomposedAsPlan links the MultiStep to the Plan sptecification where it is decomposed."@en .
@@ -85,7 +82,6 @@
 <http://purl.org/net/p-plan#isStepOfPlan> rdf:type owl:ObjectProperty ;
                                           rdfs:domain <http://purl.org/net/p-plan#Step> ;
                                           rdfs:range <http://purl.org/net/p-plan#Plan> ;
-                                          rdfs:comment "p-plan:isStepOfPlan links a p-plan:Step to the p-plan:Plan which it corresponds to."@en ;
                                           rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
                                           rdfs:label "isStepOfPlan"@en ;
                                           <http://www.w3.org/ns/prov#definition> "p-plan:isStepOfPlan links a p-plan:Step to the p-plan:Plan which it corresponds to."@en .
@@ -96,7 +92,6 @@
                                              rdfs:subPropertyOf owl:topObjectProperty ;
                                              rdfs:domain <http://purl.org/net/p-plan#Plan> ;
                                              rdfs:range <http://purl.org/net/p-plan#Plan> ;
-                                             rdfs:comment "A p-plan:Plan may be a subplan of another bigger p-plan:Plan. p-plan:isSubPlanOfPlan is used to state the link among the two different plans. Note that if p1 is a p-plan:subPlan of p2, p1will not necessarily be a step of p2. A multistep will represent p1 in p2, and link to p1 with the p-plan.hasStepDecomposition relationship."@en ;
                                              rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
                                              rdfs:label "isSubPlanOfPlan"@en ;
                                              <http://www.w3.org/ns/prov#definition> "A p-plan:Plan may be a subplan of another bigger p-plan:Plan. p-plan:isSubPlanOfPlan is used to state the link among the two different plans. Note that if p1 is a p-plan:subPlan of p2, p1will not necessarily be a step of p2. A multistep will represent p1 in p2, and link to p1 with the p-plan.hasStepDecomposition relationship."@en .
@@ -158,7 +153,6 @@
 <http://purl.org/net/p-plan#Plan> rdf:type owl:Class ;
                                   rdfs:subClassOf <http://purl.org/net/p-plan#Entity> ,
                                                   <http://www.w3.org/ns/prov#Plan> ;
-                                  rdfs:comment "A p-plan:Plan is a specific type of prov:Plan. It is composed of smaller steps that use and produce Variables."@en ;
                                   rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
                                   rdfs:label "Plan"@en ;
                                   <http://www.w3.org/ns/prov#definition> "A p-plan:Plan is a specific type of prov:Plan. It is composed of smaller steps that use and produce Variables."@en .
@@ -166,7 +160,6 @@
 
 ###  http://purl.org/net/p-plan#Step
 <http://purl.org/net/p-plan#Step> rdf:type owl:Class ;
-                                  rdfs:comment "A p-plan:Step represents the planned execution activity"@en ;
                                   rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
                                   rdfs:label "Step"@en ;
                                   <http://www.w3.org/ns/prov#definition> "A p-plan:Step represents the planned execution activity"@en .
@@ -174,7 +167,6 @@
 
 ###  http://purl.org/net/p-plan#Variable
 <http://purl.org/net/p-plan#Variable> rdf:type owl:Class ;
-                                      rdfs:comment "A p-plan:Variable represents a description of the input of the planned Activity (p-plan:Step)"@en ;
                                       rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
                                       rdfs:label "Variable"@en ;
                                       <http://www.w3.org/ns/prov#definition> "A p-plan:Variable represents a description of the input of the planned Activity (p-plan:Step)"@en .

@@ -31,16 +31,16 @@
         "value" : "o-steps",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "en",
         "value" : "0.1",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
         "type" : "label"
       } ],
       "title" : [ {
@@ -259,9 +259,6 @@
       "en" : "Step"
     },
     "subClasses" : [ "4" ],
-    "comment" : {
-      "en" : "A p-plan:Step represents the planned execution activity"
-    },
     "attributes" : [ "external" ],
     "id" : "14"
   }, {
@@ -317,9 +314,6 @@
       "en" : "Variable"
     },
     "subClasses" : [ "5" ],
-    "comment" : {
-      "en" : "A p-plan:Variable represents a description of the input of the planned Activity (p-plan:Step)"
-    },
     "attributes" : [ "external" ],
     "id" : "2"
   }, {
@@ -378,9 +372,6 @@
       "en" : "Plan"
     },
     "subClasses" : [ "6" ],
-    "comment" : {
-      "en" : "A p-plan:Plan is a specific type of prov:Plan. It is composed of smaller steps that use and produce Variables."
-    },
     "attributes" : [ "external" ],
     "id" : "7",
     "superClasses" : [ "1", "27" ]
@@ -494,10 +485,7 @@
       "en" : "correspondsToVariable"
     },
     "domain" : "1",
-    "comment" : {
-      "en" : "p-plan:correspondsToVariable binds a p-plan:Entity (used by a p-plan:Activity in the execution of a plan) to the p-plan:Variable it represented it in the p-plan:Plan."
-    },
-    "attributes" : [ "functional", "external", "object" ],
+    "attributes" : [ "object", "external", "functional" ],
     "id" : "0"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#requiresState",
@@ -544,35 +532,32 @@
       "en" : "isStepOfPlan"
     },
     "domain" : "14",
-    "comment" : {
-      "en" : "p-plan:isStepOfPlan links a p-plan:Step to the p-plan:Plan which it corresponds to."
-    },
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "13"
   }, {
     "range" : "1",
     "domain" : "12",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "15"
   }, {
     "range" : "1",
     "domain" : "7",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "16"
   }, {
     "range" : "14",
     "domain" : "4",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "17"
   }, {
     "range" : "2",
     "domain" : "5",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "18"
   }, {
     "range" : "12",
     "domain" : "11",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "19"
   }, {
     "iri" : "http://purl.org/net/p-plan#correspondsToStep",
@@ -597,15 +582,12 @@
       "en" : "correspondsToStep"
     },
     "domain" : "8",
-    "comment" : {
-      "en" : "p-plan:correspondsToStep links a p-plan:Activity to its planned p-plan:Step"
-    },
-    "attributes" : [ "functional", "external", "object" ],
+    "attributes" : [ "object", "external", "functional" ],
     "id" : "20"
   }, {
     "range" : "22",
     "domain" : "12",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "21"
   }, {
     "iri" : "http://purl.org/net/p-plan#isSubPlanOfPlan",
@@ -631,20 +613,17 @@
     },
     "superproperty" : [ "24" ],
     "domain" : "7",
-    "comment" : {
-      "en" : "A p-plan:Plan may be a subplan of another bigger p-plan:Plan. p-plan:isSubPlanOfPlan is used to state the link among the two different plans. Note that if p1 is a p-plan:subPlan of p2, p1will not necessarily be a step of p2. A multistep will represent p1 in p2, and link to p1 with the p-plan.hasStepDecomposition relationship."
-    },
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "23"
   }, {
     "range" : "7",
     "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "25"
   }, {
     "range" : "27",
     "domain" : "7",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "26"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
@@ -655,12 +634,12 @@
     },
     "domain" : "28",
     "subproperty" : [ "23" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "24"
   }, {
     "range" : "10",
     "domain" : "9",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "29"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#producesState",
@@ -729,10 +708,7 @@
       "en" : "isDecomposedAsPlan"
     },
     "domain" : "30",
-    "comment" : {
-      "en" : "The p-plan:isDecomposedAsPlan relationship binds a p-plan:MultiStep to the p-plan:Plan holding the definition of that step. That is, p-plan:isDecomposedAsPlan links the MultiStep to the Plan sptecification where it is decomposed."
-    },
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "33"
   } ]
 }

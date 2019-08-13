@@ -38,10 +38,6 @@
 }, {
   "@id" : "http://purl.org/net/p-plan#Plan",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A p-plan:Plan is a specific type of prov:Plan. It is composed of smaller steps that use and produce Variables."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://purl.org/net/p-plan#"
   } ],
@@ -61,10 +57,6 @@
 }, {
   "@id" : "http://purl.org/net/p-plan#Step",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A p-plan:Step represents the planned execution activity"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://purl.org/net/p-plan#"
   } ],
@@ -79,10 +71,6 @@
 }, {
   "@id" : "http://purl.org/net/p-plan#Variable",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A p-plan:Variable represents a description of the input of the planned Activity (p-plan:Step)"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://purl.org/net/p-plan#"
   } ],
@@ -97,10 +85,6 @@
 }, {
   "@id" : "http://purl.org/net/p-plan#correspondsToStep",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "p-plan:correspondsToStep links a p-plan:Activity to its planned p-plan:Step"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/net/p-plan#Activity"
   } ],
@@ -121,10 +105,6 @@
 }, {
   "@id" : "http://purl.org/net/p-plan#correspondsToVariable",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "p-plan:correspondsToVariable binds a p-plan:Entity (used by a p-plan:Activity in the execution of a plan) to the p-plan:Variable it represented it in the p-plan:Plan."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/net/p-plan#Entity"
   } ],
@@ -145,10 +125,6 @@
 }, {
   "@id" : "http://purl.org/net/p-plan#isDecomposedAsPlan",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The p-plan:isDecomposedAsPlan relationship binds a p-plan:MultiStep to the p-plan:Plan holding the definition of that step. That is, p-plan:isDecomposedAsPlan links the MultiStep to the Plan sptecification where it is decomposed."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/net/p-plan#MultiStep"
   } ],
@@ -169,10 +145,6 @@
 }, {
   "@id" : "http://purl.org/net/p-plan#isStepOfPlan",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "p-plan:isStepOfPlan links a p-plan:Step to the p-plan:Plan which it corresponds to."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/net/p-plan#Step"
   } ],
@@ -193,10 +165,6 @@
 }, {
   "@id" : "http://purl.org/net/p-plan#isSubPlanOfPlan",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A p-plan:Plan may be a subplan of another bigger p-plan:Plan. p-plan:isSubPlanOfPlan is used to state the link among the two different plans. Note that if p1 is a p-plan:subPlan of p2, p1will not necessarily be a step of p2. A multistep will represent p1 in p2, and link to p1 with the p-plan.hasStepDecomposition relationship."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/net/p-plan#Plan"
   } ],
