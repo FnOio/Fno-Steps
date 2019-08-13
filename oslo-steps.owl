@@ -1,24 +1,21 @@
-@prefix : <http://fast.ilabt.imec.be/ns/oslo-steps#> .
+@prefix : <http://fast.ilabt.imec.be/oslo-steps#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix dct: <http://purl.org/dc/terms/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://fast.ilabt.imec.be/ns/oslo-steps> .
+@base <http://fast.ilabt.imec.be/oslo-steps> .
 
 <http://fast.ilabt.imec.be/oslo-steps> rdf:type owl:Ontology ;
-                                        vann:preferredNamespacePrefix "o-steps" ;
-                                        vann:preferredNamespaceUri "http://fast.ilabt.imec.be/ns/oslo-steps#" ;
-                                        rdfs:label "OSLO-STEPS vocabulary"@en ;
-                                        dct:title "OSLO-STEPS vocabulary"@en ;
-                                        dct:description "This is the OSLO-STEPS vocabulary, aiming to describe steps of public services from a user perspective developed in the FAST project (http://www.project-fast.org)"@en ;
                                         owl:versionIRI <http://fast.ilabt.imec.be/ns/oslo-steps/0.1#> ;
-                                        rdfs:comment """Version 0.1: an initial draft of the OSLO-STEPS vocabulary defined during the first year of the FAST project (http://www.project-fast.org)"""@en ;
+                                        <http://purl.org/dc/terms/creator> <https://sven-lieber.org/profile#me> ;
+                                        <http://purl.org/vocab/vann/preferredNamespaceUri> "http://fast.ilabt.imec.be/ns/oslo-steps#" ;
                                         owl:versionInfo "0.1"@en ;
-                                        dct:creator <https://sven-lieber.org/profile#me> .
+                                        <http://purl.org/vocab/vann/preferredNamespacePrefix> "o-steps" ;
+                                        <http://purl.org/dc/terms/description> "This is the OSLO-STEPS vocabulary, aiming to describe steps of public services from a user perspective developed in the FAST project (http://www.project-fast.org)"@en ;
+                                        rdfs:label "OSLO-STEPS vocabulary"@en ;
+                                        rdfs:comment "Version 0.1: an initial draft of the OSLO-STEPS vocabulary defined during the first year of the FAST project (http://www.project-fast.org)"@en ;
+                                        <http://purl.org/dc/terms/title> "OSLO-STEPS vocabulary"@en .
 
 #################################################################
 #    Annotation properties
@@ -32,12 +29,34 @@
 #    Object Properties
 #################################################################
 
-###  http://fast.ilabt.imec.be/oslo-steps#hasStateShape
-:hasStateShape rdf:type owl:ObjectProperty ;
-               rdfs:domain :State ;
-               rdfs:range :StateShape ;
-               rdfs:comment "Links a o-steps:State to a description of the state as o-steps:StateShape."@en ;
-               rdfs:label "hasStateShape"@en .
+###  http://fast.ilabt.imec.be/ns/oslo-steps#hasStateShape
+<http://fast.ilabt.imec.be/ns/oslo-steps#hasStateShape> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <http://fast.ilabt.imec.be/ns/oslo-steps#State> ;
+                                                        rdfs:range <http://fast.ilabt.imec.be/ns/oslo-steps#StateShape> ;
+                                                        rdfs:comment "Links a o-steps:State to a description of the state as o-steps:StateShape."@en ;
+                                                        rdfs:isDefinedBy "http://fast.ilabt.imec.be/ns/oslo-steps#" ;
+                                                        rdfs:label "hasStateShape"@en .
+
+
+###  http://fast.ilabt.imec.be/oslo-steps#producesState
+:producesState rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://purl.org/net/p-plan#hasOutputVar> ;
+               rdfs:domain <http://fast.ilabt.imec.be/ns/oslo-steps#Step> ;
+               rdfs:range <http://fast.ilabt.imec.be/ns/oslo-steps#State> ;
+               owl:propertyDisjointWith :requiresState ;
+               rdfs:comment "o-steps:producesState binds a o-steps:Step to the o-steps:State the step produces."@en ;
+               rdfs:isDefinedBy "http://fast.ilabt.imec.be/ns/oslo-steps#" ;
+               rdfs:label "producesState"@en .
+
+
+###  http://fast.ilabt.imec.be/oslo-steps#requiresState
+:requiresState rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://purl.org/net/p-plan#hasInputVar> ;
+               rdfs:domain <http://fast.ilabt.imec.be/ns/oslo-steps#Step> ;
+               rdfs:range <http://fast.ilabt.imec.be/ns/oslo-steps#State> ;
+               rdfs:comment "o-steps:requiresState binds a o-steps:Step to the o-steps:State the step requires to produce the state bound via o-steps:producesState."@en ;
+               rdfs:isDefinedBy "http://fast.ilabt.imec.be/ns/oslo-steps#" ;
+               rdfs:label "requiresState"@en .
 
 
 ###  http://purl.org/net/p-plan#correspondsToStep
@@ -62,6 +81,28 @@
                                                    <http://www.w3.org/ns/prov#definition> "p-plan:correspondsToVariable binds a p-plan:Entity (used by a p-plan:Activity in the execution of a plan) to the p-plan:Variable it represented it in the p-plan:Plan."@en .
 
 
+###  http://purl.org/net/p-plan#hasInputVar
+<http://purl.org/net/p-plan#hasInputVar> rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf <http://purl.org/net/p-plan#isInputVarOf> ;
+                                         rdfs:domain <http://purl.org/net/p-plan#Step> ;
+                                         rdfs:range <http://purl.org/net/p-plan#Variable> ;
+                                         rdfs:comment "p-plan:hasInputVar binds a p-plan:Step to the p-plan:Variable that takes as input for the planned execution"@en ;
+                                         rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
+                                         rdfs:label "hasInputVar"@en ;
+                                         <http://www.w3.org/ns/prov#definition> "p-plan:hasInputVar binds a p-plan:Step to the p-plan:Variable that takes as input for the planned execution"@en .
+
+
+###  http://purl.org/net/p-plan#hasOutputVar
+<http://purl.org/net/p-plan#hasOutputVar> rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf <http://purl.org/net/p-plan#isOutputVarOf> ;
+                                          rdfs:domain <http://purl.org/net/p-plan#Step> ;
+                                          rdfs:range <http://purl.org/net/p-plan#Variable> ;
+                                          rdfs:comment "p-plan:hasOutputVar binds a p-plan:Step to the p-plan:Variable that will be produced as output in the planned execution"@en ;
+                                          rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
+                                          rdfs:label "hasOutputVar"@en ;
+                                          <http://www.w3.org/ns/prov#definition> "p-plan:hasOutputVar binds a p-plan:Step to the p-plan:Variable that will be produced as output in the planned execution"@en .
+
+
 ###  http://purl.org/net/p-plan#isDecomposedAsPlan
 <http://purl.org/net/p-plan#isDecomposedAsPlan> rdf:type owl:ObjectProperty ;
                                                 rdfs:domain <http://purl.org/net/p-plan#MultiStep> ;
@@ -70,6 +111,14 @@
                                                 rdfs:isDefinedBy <http://purl.org/net/p-plan#> ;
                                                 rdfs:label "isDecomposedAsPlan"@en ;
                                                 <http://www.w3.org/ns/prov#definition> "The p-plan:isDecomposedAsPlan relationship binds a p-plan:MultiStep to the p-plan:Plan holding the definition of that step. That is, p-plan:isDecomposedAsPlan links the MultiStep to the Plan sptecification where it is decomposed."@en .
+
+
+###  http://purl.org/net/p-plan#isInputVarOf
+<http://purl.org/net/p-plan#isInputVarOf> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/net/p-plan#isOutputVarOf
+<http://purl.org/net/p-plan#isOutputVarOf> rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/net/p-plan#isStepOfPlan
@@ -97,44 +146,44 @@
 #    Classes
 #################################################################
 
-###  http://fast.ilabt.imec.be/oslo-steps#Bundle
-:Bundle rdf:type owl:Class ;
-        rdfs:subClassOf <http://purl.org/net/p-plan#Bundle> ;
-        rdfs:comment "A o-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a o-steps:Plan"@en ;
-        rdfs:isDefinedBy "https://fast.ilabt.imec.be/ns/oslo-steps#" ;
-        rdfs:label "Bundle"@en .
+###  http://fast.ilabt.imec.be/ns/oslo-steps#Bundle
+<http://fast.ilabt.imec.be/ns/oslo-steps#Bundle> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://purl.org/net/p-plan#Bundle> ;
+                                                 rdfs:comment "A o-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a o-steps:Plan"@en ;
+                                                 rdfs:isDefinedBy "https://fast.ilabt.imec.be/ns/oslo-steps#" ;
+                                                 rdfs:label "Bundle"@en .
 
 
-###  http://fast.ilabt.imec.be/oslo-steps#Plan
-:Plan rdf:type owl:Class ;
-      rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ;
-      rdfs:comment "A o-steps:Plan is a specific type of p-plan:Plan. It is composed of smaller steps that require and produce states."@en ;
-      rdfs:isDefinedBy "https://fast.ilabt.imec.be/ns/oslo-steps#" ;
-      rdfs:label "Plan"@en .
+###  http://fast.ilabt.imec.be/ns/oslo-steps#Plan
+<http://fast.ilabt.imec.be/ns/oslo-steps#Plan> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://purl.org/net/p-plan#Plan> ;
+                                               rdfs:comment "A o-steps:Plan is a specific type of p-plan:Plan. It is composed of smaller steps that require and produce states."@en ;
+                                               rdfs:isDefinedBy "https://fast.ilabt.imec.be/ns/oslo-steps#" ;
+                                               rdfs:label "Plan"@en .
 
 
-###  http://fast.ilabt.imec.be/oslo-steps#State
-:State rdf:type owl:Class ;
-       rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
-       rdfs:comment "A state in the sense of a particular condition something is in. In our case a state could be represented as a set of RDF statements."@en ;
-       rdfs:isDefinedBy "https://fast.ilabt.imec.be/ns/oslo-steps#" ;
-       rdfs:label "State"@en .
+###  http://fast.ilabt.imec.be/ns/oslo-steps#State
+<http://fast.ilabt.imec.be/ns/oslo-steps#State> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+                                                rdfs:comment "A state in the sense of a particular condition something is in. In our case a state could be represented as a set of RDF statements."@en ;
+                                                rdfs:isDefinedBy "https://fast.ilabt.imec.be/ns/oslo-steps#" ;
+                                                rdfs:label "State"@en .
 
 
-###  http://fast.ilabt.imec.be/oslo-steps#StateShape
-:StateShape rdf:type owl:Class ;
-            rdfs:subClassOf <http://www.w3.org/ns/shacl#NodeShape> ;
-            rdfs:comment "A state shape is a shape that specifies a set of triples representing a state, and is described as constraints."@en ;
-            rdfs:isDefinedBy "http://fast.ilabt.imec.be/ns/oslo-steps#" ;
-            rdfs:label "State shape"@en .
+###  http://fast.ilabt.imec.be/ns/oslo-steps#StateShape
+<http://fast.ilabt.imec.be/ns/oslo-steps#StateShape> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.w3.org/ns/shacl#NodeShape> ;
+                                                     rdfs:comment "A state shape is a shape that specifies a set of triples representing a state, and is described as constraints."@en ;
+                                                     rdfs:isDefinedBy "http://fast.ilabt.imec.be/ns/oslo-steps#" ;
+                                                     rdfs:label "State shape"@en .
 
 
-###  http://fast.ilabt.imec.be/oslo-steps#Step
-:Step rdf:type owl:Class ;
-      rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
-      rdfs:comment "The Workflow Coalition defines an activity and its 'step' synonym as: 'A description of ap iece of work that forms one logical step within a process'. Furthermore, such an activity may be either a workflow, or the smallest unit of work which is scheduled based on pre/post-conditions (states)."@en ;
-      rdfs:isDefinedBy "https://fast.ilabt.imec.be/ns/oslo-steps#" ;
-      rdfs:label "Step"@en .
+###  http://fast.ilabt.imec.be/ns/oslo-steps#Step
+<http://fast.ilabt.imec.be/ns/oslo-steps#Step> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+                                               rdfs:comment "The Workflow Coalition defines an activity and its 'step' synonym as: 'A description of ap iece of work that forms one logical step within a process'. Furthermore, such an activity may be either a workflow, or the smallest unit of work which is scheduled based on pre/post-conditions (states)."@en ;
+                                               rdfs:isDefinedBy "https://fast.ilabt.imec.be/ns/oslo-steps#" ;
+                                               rdfs:label "Step"@en .
 
 
 ###  http://purl.org/net/p-plan#Activity
