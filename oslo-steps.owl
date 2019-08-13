@@ -1,14 +1,24 @@
-@prefix : <http://fast.ilabt.imec.be/oslo-steps#> .
+@prefix : <http://fast.ilabt.imec.be/ns/oslo-steps#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://fast.ilabt.imec.be/oslo-steps> .
+@base <http://fast.ilabt.imec.be/ns/oslo-steps> .
 
 <http://fast.ilabt.imec.be/oslo-steps> rdf:type owl:Ontology ;
+                                        vann:preferredNamespacePrefix "o-steps" ;
+                                        vann:preferredNamespaceUri "http://fast.ilabt.imec.be/ns/oslo-steps#" ;
+                                        rdfs:label "OSLO-STEPS vocabulary"@en ;
+                                        dct:title "OSLO-STEPS vocabulary"@en ;
+                                        dct:description "This is the OSLO-STEPS vocabulary, aiming to describe steps of public services from a user perspective developed in the FAST project (http://www.project-fast.org)"@en ;
                                         owl:versionIRI <http://fast.ilabt.imec.be/ns/oslo-steps/0.1#> ;
-                                        owl:versionInfo "This is an initial draft of the OSLO-STEPS vocabulary defined during the first year of the FAST project (http://www.project-fast.org)"@en .
+                                        rdfs:comment """Version 0.1: an initial draft of the OSLO-STEPS vocabulary defined during the first year of the FAST project (http://www.project-fast.org)"""@en ;
+                                        owl:versionInfo "0.1"@en ;
+                                        dct:creator <https://sven-lieber.org/profile#me> .
 
 #################################################################
 #    Annotation properties
