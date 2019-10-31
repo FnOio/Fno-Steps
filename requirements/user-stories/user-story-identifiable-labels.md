@@ -13,6 +13,9 @@ creates different labels with possibly varying quality.
 Different natural language descriptions influences the cost of a step,
 and thus one need to be able to refer to a specific description and assign a cost.
 
+# Related use case
+
+
 # Source
 
 Discussion with representatives from project partner *Endare*.
