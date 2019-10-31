@@ -32,7 +32,7 @@ then
 fi
 
 vocConfigFile=$1
-vocFile="oslo-steps.owl"
+vocFile="oslo-steps-v0.2.owl"
 vocOutputFolder="./ns/oslo-steps/0.2"
 vocLang="en"
 vocRewriteBase="ns/oslo-steps"
