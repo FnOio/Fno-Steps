@@ -9,10 +9,10 @@
 <https://fast.ilabt.imec.be/ns/oslo-steps#> rdf:type owl:Ontology ;
                                              owl:versionIRI <https://fast.ilabt.imec.be/ns/oslo-steps/0.2#> ;
                                              <http://purl.org/dc/terms/creator> <https://sven-lieber.org/profile#me> ;
+                                             rdfs:comment "Version 0.2: Added support for identifiable labels using skosXL and introduced three subclasses of a step to represent hierarchies. Version 0.1: an initial draft of the OSLO-STEPS vocabulary defined during the first year of the FAST project (http://www.project-fast.org)"@en ;
                                              <http://purl.org/vocab/vann/preferredNamespacePrefix> "o-steps" ;
                                              <http://purl.org/vocab/vann/preferredNamespaceUri> "https://fast.ilabt.imec.be/ns/oslo-steps#" ;
                                              <http://purl.org/dc/terms/description> "This is the OSLO-STEPS vocabulary, aiming to describe steps of public services from a user perspective developed in the FAST project (http://www.project-fast.org)"@en ;
-                                             rdfs:comment "Version 0.2: Added support for identifiable labels using skosXL. Version 0.1: an initial draft of the OSLO-STEPS vocabulary defined during the first year of the FAST project (http://www.project-fast.org)"@en ;
                                              owl:versionInfo "0.2"@en ;
                                              rdfs:label "OSLO-STEPS vocabulary"@en ;
                                              <http://purl.org/dc/terms/title> "OSLO-STEPS vocabulary"@en .
@@ -250,6 +250,30 @@
         rdfs:comment "A o-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a o-steps:Plan"@en ;
         rdfs:isDefinedBy <https://fast.ilabt.imec.be/ns/oslo-steps#> ;
         rdfs:label "Bundle"@en .
+
+
+###  https://fast.ilabt.imec.be/ns/oslo-steps#ComponentLevelStep
+:ComponentLevelStep rdf:type owl:Class ;
+                    rdfs:subClassOf :Step ;
+                    rdfs:comment "Three hierarchy levels are defined within the FAST project. A ComponentLevelStep represents the lowest level."@en ;
+                    rdfs:isDefinedBy <https://fast.ilabt.imec.be/ns/oslo-steps#> ;
+                    rdfs:label "ComponentLevelStep"@en .
+
+
+###  https://fast.ilabt.imec.be/ns/oslo-steps#ContainerLevelStep
+:ContainerLevelStep rdf:type owl:Class ;
+                    rdfs:subClassOf :Step ;
+                    rdfs:comment "Three hierarchy levels are defined within the FAST project. A ContainerLevelStep represents the middle-level."@en ;
+                    rdfs:isDefinedBy <https://fast.ilabt.imec.be/ns/oslo-steps#> ;
+                    rdfs:label "ContainerLevelStep"@en .
+
+
+###  https://fast.ilabt.imec.be/ns/oslo-steps#JourneyLevelStep
+:JourneyLevelStep rdf:type owl:Class ;
+                  rdfs:subClassOf :Step ;
+                  rdfs:comment "Three hierarchy levels are defined within the FAST project. A JourneyLevelStep represents the highest-level."@en ;
+                  rdfs:isDefinedBy <https://fast.ilabt.imec.be/ns/oslo-steps#> ;
+                  rdfs:label "JourneyLevelStep"@en .
 
 
 ###  https://fast.ilabt.imec.be/ns/oslo-steps#Plan
