@@ -1,6 +1,6 @@
-<html><h2 id="crossreference" class="list">Cross reference for OSLO-STEPS vocabulary classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="crossreference" class="list">Cross reference for OSLO-STEPS vocabulary classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 This section provides details for each class and property defined by OSLO-STEPS vocabulary.
-<div id="classes">
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
@@ -8,6 +8,37 @@ This section provides details for each class and property defined by OSLO-STEPS 
       </li>
       <li>
          <a href="#Bundle" title="https://fast.ilabt.imec.be/ns/oslo-steps#Bundle">Bundle</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">
+            <span>collection</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ComponentLevelStep"
+            title="https://fast.ilabt.imec.be/ns/oslo-steps#ComponentLevelStep">ComponentLevelStep</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">
+            <span>concept</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+            title="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+            <span>concept scheme</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ContainerLevelStep"
+            title="https://fast.ilabt.imec.be/ns/oslo-steps#ContainerLevelStep">ContainerLevelStep</a>
+      </li>
+      <li>
+         <a href="#JourneyLevelStep"
+            title="https://fast.ilabt.imec.be/ns/oslo-steps#JourneyLevelStep">JourneyLevelStep</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2008/05/skos-xl#Label" title="http://www.w3.org/2008/05/skos-xl#Label">Label</a>
       </li>
       <li>
          <a href="#http://www.w3.org/ns/shacl#NodeShape" title="http://www.w3.org/ns/shacl#NodeShape">Node shape</a>
@@ -57,8 +88,12 @@ This section provides details for each class and property defined by OSLO-STEPS 
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://www.w3.org/ns/prov#Bundle">bundle</span>
-            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://purl.org/net/p-plan#Entity">entity</span>
+            <a href="http://www.w3.org/ns/prov#Bundle"
+               target="_blank"
+               title="http://www.w3.org/ns/prov#Bundle">bundle</a>
+            <sup class="type-c" title="class">c</sup>, <a href="http://purl.org/net/p-plan#Entity"
+               target="_blank"
+               title="http://purl.org/net/p-plan#Entity">entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
@@ -88,6 +123,165 @@ This section provides details for each class and property defined by OSLO-STEPS 
          <dt>has super-classes</dt>
          <dd>
             <a href="#http://purl.org/net/p-plan#Bundle" title="http://purl.org/net/p-plan#Bundle">Bundle</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/2004/02/skos/core#Collection">
+      <h3>collection<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#Collection</p>
+      <dl class="description">
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://www.w3.org/2008/05/skos-xl#Label" title="http://www.w3.org/2008/05/skos-xl#Label">Label</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ComponentLevelStep">
+      <h3>ComponentLevelStep<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://fast.ilabt.imec.be/ns/oslo-steps#ComponentLevelStep</p>
+      <div class="comment">
+         <span class="markdown">Three hierarchy levels are defined within the FAST project. A ComponentLevelStep represents the lowest level.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://fast.ilabt.imec.be/ns/oslo-steps#">https://fast.ilabt.imec.be/ns/oslo-steps#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Step" title="https://fast.ilabt.imec.be/ns/oslo-steps#Step">Step</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/2004/02/skos/core#Concept">
+      <h3>concept<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#Concept</p>
+      <dl class="description">
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://www.w3.org/2008/05/skos-xl#Label" title="http://www.w3.org/2008/05/skos-xl#Label">Label</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+      <h3>concept scheme<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#ConceptScheme</p>
+      <dl class="description">
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://www.w3.org/2008/05/skos-xl#Label" title="http://www.w3.org/2008/05/skos-xl#Label">Label</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ContainerLevelStep">
+      <h3>ContainerLevelStep<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://fast.ilabt.imec.be/ns/oslo-steps#ContainerLevelStep</p>
+      <div class="comment">
+         <span class="markdown">Three hierarchy levels are defined within the FAST project. A ContainerLevelStep represents the middle-level.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://fast.ilabt.imec.be/ns/oslo-steps#">https://fast.ilabt.imec.be/ns/oslo-steps#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Step" title="https://fast.ilabt.imec.be/ns/oslo-steps#Step">Step</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="JourneyLevelStep">
+      <h3>JourneyLevelStep<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://fast.ilabt.imec.be/ns/oslo-steps#JourneyLevelStep</p>
+      <div class="comment">
+         <span class="markdown">Three hierarchy levels are defined within the FAST project. A JourneyLevelStep represents the highest-level.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://fast.ilabt.imec.be/ns/oslo-steps#">https://fast.ilabt.imec.be/ns/oslo-steps#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Step" title="https://fast.ilabt.imec.be/ns/oslo-steps#Step">Step</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/2008/05/skos-xl#Label">
+      <h3>Label<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2008/05/skos-xl#Label</p>
+      <div class="comment">
+         <span class="markdown">A special class of lexical entities.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2008/05/skos-xl">http://www.w3.org/2008/05/skos-xl</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd/>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://www.w3.org/2008/05/skos-xl#literalForm" title="http://www.w3.org/2008/05/skos-xl#literalForm">literal form</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://www.w3.org/2008/05/skos-xl#altLabel" title="http://www.w3.org/2008/05/skos-xl#altLabel">alternative label</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasDescription"
+               title="https://fast.ilabt.imec.be/ns/oslo-steps#hasDescription">has description</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/2008/05/skos-xl#prefLabel" title="http://www.w3.org/2008/05/skos-xl#prefLabel">preferred label</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">collection</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">concept</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+               title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -136,8 +330,12 @@ This section provides details for each class and property defined by OSLO-STEPS 
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://purl.org/net/p-plan#Entity">entity</span>
-            <sup class="type-c" title="class">c</sup>, <span class="dotted" title="http://www.w3.org/ns/prov#Plan">plan</span>
+            <a href="http://purl.org/net/p-plan#Entity"
+               target="_blank"
+               title="http://purl.org/net/p-plan#Entity">entity</a>
+            <sup class="type-c" title="class">c</sup>, <a href="http://www.w3.org/ns/prov#Plan"
+               target="_blank"
+               title="http://www.w3.org/ns/prov#Plan">plan</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
@@ -236,6 +434,12 @@ This section provides details for each class and property defined by OSLO-STEPS 
                title="https://fast.ilabt.imec.be/ns/oslo-steps#requiresState">requiresState</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#emptyState"
+               title="https://fast.ilabt.imec.be/ns/oslo-steps#emptyState">Empty state</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="StateShape">
@@ -292,7 +496,9 @@ This section provides details for each class and property defined by OSLO-STEPS 
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#http://purl.org/net/p-plan#isStepOfPlan" title="http://purl.org/net/p-plan#isStepOfPlan">isStepOfPlan</a>
+            <a href="#hasDescription"
+               title="https://fast.ilabt.imec.be/ns/oslo-steps#hasDescription">has description</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.org/net/p-plan#isStepOfPlan" title="http://purl.org/net/p-plan#isStepOfPlan">isStepOfPlan</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
@@ -322,6 +528,16 @@ This section provides details for each class and property defined by OSLO-STEPS 
          <dt>has super-classes</dt>
          <dd>
             <a href="#http://purl.org/net/p-plan#Step" title="http://purl.org/net/p-plan#Step">Step</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#ComponentLevelStep"
+               title="https://fast.ilabt.imec.be/ns/oslo-steps#ComponentLevelStep">ComponentLevelStep</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ContainerLevelStep"
+               title="https://fast.ilabt.imec.be/ns/oslo-steps#ContainerLevelStep">ContainerLevelStep</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#JourneyLevelStep"
+               title="https://fast.ilabt.imec.be/ns/oslo-steps#JourneyLevelStep">JourneyLevelStep</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -363,14 +579,23 @@ This section provides details for each class and property defined by OSLO-STEPS 
          </dd>
       </dl>
    </div>
-</div><div id="objectproperties">
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
+      <li>
+         <a href="#http://www.w3.org/2008/05/skos-xl#altLabel" title="http://www.w3.org/2008/05/skos-xl#altLabel">alternative label</a>
+      </li>
       <li>
          <a href="#http://purl.org/net/p-plan#correspondsToStep" title="http://purl.org/net/p-plan#correspondsToStep">correspondsToStep</a>
       </li>
       <li>
          <a href="#http://purl.org/net/p-plan#correspondsToVariable" title="http://purl.org/net/p-plan#correspondsToVariable">correspondsToVariable</a>
+      </li>
+      <li>
+         <a href="#hasDescription"
+            title="https://fast.ilabt.imec.be/ns/oslo-steps#hasDescription">
+            <span>has description</span>
+         </a>
       </li>
       <li>
          <a href="#hasStateShape"
@@ -386,6 +611,9 @@ This section provides details for each class and property defined by OSLO-STEPS 
          <a href="#http://purl.org/net/p-plan#isSubPlanOfPlan" title="http://purl.org/net/p-plan#isSubPlanOfPlan">isSubPlanOfPlan</a>
       </li>
       <li>
+         <a href="#http://www.w3.org/2008/05/skos-xl#prefLabel" title="http://www.w3.org/2008/05/skos-xl#prefLabel">preferred label</a>
+      </li>
+      <li>
          <a href="#producesState"
             title="https://fast.ilabt.imec.be/ns/oslo-steps#producesState">producesState</a>
       </li>
@@ -394,6 +622,35 @@ This section provides details for each class and property defined by OSLO-STEPS 
             title="https://fast.ilabt.imec.be/ns/oslo-steps#requiresState">requiresState</a>
       </li>
    </ul>
+   <div class="entity" id="http://www.w3.org/2008/05/skos-xl#altLabel">
+      <h3>alternative label<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2008/05/skos-xl#altLabel</p>
+      <div class="comment">
+         <span class="markdown">If C skosxl:altLabel L and L skosxl:literalForm V, then X skos:altLabel V.</span>
+      </div>
+      <div class="comment">
+         <span class="markdown">The property skosxl:altLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:altLabel.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2008/05/skos-xl">http://www.w3.org/2008/05/skos-xl</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2008/05/skos-xl#Label" title="http://www.w3.org/2008/05/skos-xl#Label">Label</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="http://purl.org/net/p-plan#correspondsToStep">
       <h3>correspondsToStep<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -412,11 +669,14 @@ This section provides details for each class and property defined by OSLO-STEPS 
       </dl>
       <div class="description">
          <p>
-            <strong>has characteristics:</strong> functional</p>
+            <strong>has characteristics:
+                </strong> functional</p>
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="http://purl.org/net/p-plan#Activity">activity</span>
+               <a href="http://purl.org/net/p-plan#Activity"
+                  target="_blank"
+                  title="http://purl.org/net/p-plan#Activity">activity</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -445,16 +705,41 @@ This section provides details for each class and property defined by OSLO-STEPS 
       </dl>
       <div class="description">
          <p>
-            <strong>has characteristics:</strong> functional</p>
+            <strong>has characteristics:
+                </strong> functional</p>
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="http://purl.org/net/p-plan#Entity">entity</span>
+               <a href="http://purl.org/net/p-plan#Entity"
+                  target="_blank"
+                  title="http://purl.org/net/p-plan#Entity">entity</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#http://purl.org/net/p-plan#Variable" title="http://purl.org/net/p-plan#Variable">Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasDescription">
+      <h3>has description<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://fast.ilabt.imec.be/ns/oslo-steps#hasDescription</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://purl.org/net/p-plan#Step" title="http://purl.org/net/p-plan#Step">Step</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2008/05/skos-xl#Label" title="http://www.w3.org/2008/05/skos-xl#Label">Label</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -512,7 +797,9 @@ This section provides details for each class and property defined by OSLO-STEPS 
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="http://purl.org/net/p-plan#MultiStep">multi step</span>
+               <a href="http://purl.org/net/p-plan#MultiStep"
+                  target="_blank"
+                  title="http://purl.org/net/p-plan#MultiStep">multi step</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -574,7 +861,9 @@ This section provides details for each class and property defined by OSLO-STEPS 
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</span>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
             </dd>
             <dt>has domain</dt>
             <dd>
@@ -584,6 +873,35 @@ This section provides details for each class and property defined by OSLO-STEPS 
             <dt>has range</dt>
             <dd>
                <a href="#http://purl.org/net/p-plan#Plan" title="http://purl.org/net/p-plan#Plan">Plan</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/2008/05/skos-xl#prefLabel">
+      <h3>preferred label<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2008/05/skos-xl#prefLabel</p>
+      <div class="comment">
+         <span class="markdown">If C skosxl:prefLabel L and L skosxl:literalForm V, then X skos:prefLabel V.</span>
+      </div>
+      <div class="comment">
+         <span class="markdown">The property skosxl:prefLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:prefLabel.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2008/05/skos-xl">http://www.w3.org/2008/05/skos-xl</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2008/05/skos-xl#Label" title="http://www.w3.org/2008/05/skos-xl#Label">Label</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -651,6 +969,74 @@ This section provides details for each class and property defined by OSLO-STEPS 
          </dl>
       </div>
    </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://www.w3.org/2008/05/skos-xl#literalForm" title="http://www.w3.org/2008/05/skos-xl#literalForm">literal form</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://www.w3.org/2008/05/skos-xl#literalForm">
+      <h3>literal form<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2008/05/skos-xl#literalForm</p>
+      <div class="comment">
+         <span class="markdown">If two instances of the class skosxl:Label have the same literal form, they are not necessarily the same resource.</span>
+      </div>
+      <div class="comment">
+         <span class="markdown">The property skosxl:literalForm is used to give the literal form of an skosxl:Label.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2008/05/skos-xl">http://www.w3.org/2008/05/skos-xl</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2008/05/skos-xl#Label" title="http://www.w3.org/2008/05/skos-xl#Label">Label</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#emptyState"
+            title="https://fast.ilabt.imec.be/ns/oslo-steps#emptyState">Empty state</a>
+      </li>
+   </ul>
+   <div class="entity" id="emptyState">
+      <h3>Empty state<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://fast.ilabt.imec.be/ns/oslo-steps#emptyState</p>
+      <div class="comment">
+         <span class="markdown">This state represents an empty state. It can be used by steps which for example do not require any state, instead they would specify o-steps:requiresState o-steps:emptyState.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://fast.ilabt.imec.be/ns/oslo-steps#">https://fast.ilabt.imec.be/ns/oslo-steps#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#State" title="https://fast.ilabt.imec.be/ns/oslo-steps#State">State</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <div   class="entity">
@@ -660,4 +1046,3 @@ This section provides details for each class and property defined by OSLO-STEPS 
 <sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
 </div>
 </div>
-</html>

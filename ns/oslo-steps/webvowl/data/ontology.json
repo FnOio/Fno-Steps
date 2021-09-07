@@ -16,7 +16,7 @@
       "en" : "OSLO-STEPS vocabulary"
     },
     "comments" : {
-      "en" : "Version 0.2: Added support for identifiable labels using skosXL. Version 0.1: an initial draft of the OSLO-STEPS vocabulary defined during the first year of the FAST project (http://www.project-fast.org)"
+      "en" : "Version 0.2: Added support for identifiable labels using skosXL and introduced three subclasses of a step to represent hierarchies. Version 0.1: an initial draft of the OSLO-STEPS vocabulary defined during the first year of the FAST project (http://www.project-fast.org)"
     },
     "other" : {
       "creator" : [ {
@@ -31,16 +31,16 @@
         "value" : "o-steps",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "en",
         "value" : "0.2",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
         "type" : "label"
       } ],
       "title" : [ {
@@ -62,46 +62,52 @@
     "id" : "9",
     "type" : "owl:Class"
   }, {
-    "id" : "13",
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
     "type" : "owl:Class"
   }, {
     "id" : "15",
     "type" : "owl:Class"
   }, {
-    "id" : "16",
+    "id" : "17",
     "type" : "owl:Class"
   }, {
-    "id" : "23",
-    "type" : "owl:Class"
-  }, {
-    "id" : "22",
+    "id" : "18",
     "type" : "owl:Class"
   }, {
     "id" : "30",
     "type" : "owl:Class"
   }, {
-    "id" : "31",
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "37",
     "type" : "owl:Class"
   }, {
     "id" : "1",
     "type" : "owl:Thing"
   }, {
-    "id" : "35",
+    "id" : "41",
     "type" : "rdfs:Literal"
   }, {
     "id" : "5",
     "type" : "owl:Class"
   }, {
-    "id" : "14",
+    "id" : "16",
     "type" : "owl:Thing"
   }, {
-    "id" : "33",
+    "id" : "39",
     "type" : "owl:Class"
   }, {
     "id" : "4",
     "type" : "owl:Class"
   }, {
-    "id" : "42",
+    "id" : "48",
     "type" : "owl:Class"
   }, {
     "id" : "2",
@@ -113,13 +119,16 @@
     "id" : "8",
     "type" : "owl:Class"
   }, {
-    "id" : "27",
+    "id" : "29",
     "type" : "owl:Class"
   }, {
-    "id" : "11",
+    "id" : "34",
     "type" : "owl:Class"
   }, {
-    "id" : "20",
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
@@ -153,6 +162,27 @@
     "id" : "7",
     "superClasses" : [ "8" ]
   }, {
+    "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#ContainerLevelStep",
+    "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ContainerLevelStep",
+      "en" : "ContainerLevelStep"
+    },
+    "comment" : {
+      "en" : "Three hierarchy levels are defined within the FAST project. A ContainerLevelStep represents the middle-level."
+    },
+    "id" : "9",
+    "superClasses" : [ "4" ]
+  }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
     "instances" : 0,
@@ -160,7 +190,28 @@
       "IRI-based" : "Concept"
     },
     "attributes" : [ "external" ],
-    "id" : "9"
+    "id" : "10"
+  }, {
+    "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#ComponentLevelStep",
+    "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ComponentLevelStep",
+      "en" : "ComponentLevelStep"
+    },
+    "comment" : {
+      "en" : "Three hierarchy levels are defined within the FAST project. A ComponentLevelStep represents the lowest level."
+    },
+    "id" : "14",
+    "superClasses" : [ "4" ]
   }, {
     "iri" : "http://purl.org/net/p-plan#Entity",
     "baseIri" : "http://purl.org/net/p-plan",
@@ -168,9 +219,9 @@
     "label" : {
       "IRI-based" : "Entity"
     },
-    "subClasses" : [ "8", "11" ],
+    "subClasses" : [ "8", "12" ],
     "attributes" : [ "external" ],
-    "id" : "13"
+    "id" : "15"
   }, {
     "iri" : "http://purl.org/net/p-plan#MultiStep",
     "baseIri" : "http://purl.org/net/p-plan",
@@ -179,7 +230,7 @@
       "IRI-based" : "MultiStep"
     },
     "attributes" : [ "external" ],
-    "id" : "15"
+    "id" : "17"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#ConceptScheme",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -188,7 +239,7 @@
       "IRI-based" : "ConceptScheme"
     },
     "attributes" : [ "external" ],
-    "id" : "16"
+    "id" : "18"
   }, {
     "iri" : "http://www.w3.org/ns/shacl#PropertyShape",
     "baseIri" : "http://www.w3.org/ns/shacl",
@@ -209,7 +260,7 @@
       "en" : "A property shape is a shape that specifies constraints on the values of a focus node for a given property or path."
     },
     "attributes" : [ "external" ],
-    "id" : "23"
+    "id" : "30"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#Plan",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
@@ -229,8 +280,8 @@
     "comment" : {
       "en" : "A o-steps:Plan is a specific type of p-plan:Plan. It is composed of smaller steps that require and produce states."
     },
-    "id" : "22",
-    "superClasses" : [ "11" ]
+    "id" : "27",
+    "superClasses" : [ "12" ]
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#StateShape",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
@@ -250,8 +301,8 @@
     "comment" : {
       "en" : "A state shape is a shape that specifies a set of triples representing a state, and is described as constraints."
     },
-    "id" : "30",
-    "superClasses" : [ "31" ]
+    "id" : "36",
+    "superClasses" : [ "37" ]
   }, {
     "iri" : "http://www.w3.org/ns/shacl#NodeShape",
     "baseIri" : "http://www.w3.org/ns/shacl",
@@ -268,12 +319,12 @@
       "IRI-based" : "NodeShape",
       "en" : "Node shape"
     },
-    "subClasses" : [ "30" ],
+    "subClasses" : [ "36" ],
     "comment" : {
       "en" : "A node shape is a shape that specifies constraint that need to be met with respect to focus nodes."
     },
     "attributes" : [ "external" ],
-    "id" : "31"
+    "id" : "37"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
@@ -283,7 +334,7 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "35",
+    "id" : "41",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -304,6 +355,25 @@
       "IRI-based" : "State",
       "en" : "State"
     },
+    "individuals" : [ {
+      "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#emptyState",
+      "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "This state represents an empty state. It can be used by steps which for example do not require any state, instead they would specify o-steps:requiresState o-steps:emptyState."
+      },
+      "labels" : {
+        "IRI-based" : "emptyState",
+        "en" : "Empty state"
+      }
+    } ],
     "comment" : {
       "en" : "A state in the sense of a particular condition something is in. In our case a state could be represented as a set of RDF statements."
     },
@@ -312,7 +382,7 @@
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "14",
+    "id" : "16",
     "label" : {
       "undefined" : "Thing"
     }
@@ -340,7 +410,7 @@
     },
     "subClasses" : [ "4" ],
     "attributes" : [ "external" ],
-    "id" : "33"
+    "id" : "39"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#Step",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
@@ -357,11 +427,12 @@
       "IRI-based" : "Step",
       "en" : "Step"
     },
+    "subClasses" : [ "14", "34", "9" ],
     "comment" : {
       "en" : "The Workflow Coalition defines a step as: 'A description of a piece of work that forms one logical step within a process'. Furthermore, such a step may be either a workflow, or the smallest unit of work which is scheduled based on pre/post-conditions (states)."
     },
     "id" : "4",
-    "superClasses" : [ "33" ]
+    "superClasses" : [ "39" ]
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#Collection",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -370,7 +441,7 @@
       "IRI-based" : "Collection"
     },
     "attributes" : [ "external" ],
-    "id" : "42"
+    "id" : "48"
   }, {
     "iri" : "http://www.w3.org/2008/05/skos-xl#Label",
     "baseIri" : "http://www.w3.org/2008/05/skos-xl",
@@ -442,7 +513,7 @@
     },
     "attributes" : [ "external" ],
     "id" : "8",
-    "superClasses" : [ "27", "13" ]
+    "superClasses" : [ "29", "15" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Bundle",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -452,7 +523,28 @@
     },
     "subClasses" : [ "8" ],
     "attributes" : [ "external" ],
-    "id" : "27"
+    "id" : "29"
+  }, {
+    "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#JourneyLevelStep",
+    "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "JourneyLevelStep",
+      "en" : "JourneyLevelStep"
+    },
+    "comment" : {
+      "en" : "Three hierarchy levels are defined within the FAST project. A JourneyLevelStep represents the highest-level."
+    },
+    "id" : "34",
+    "superClasses" : [ "4" ]
   }, {
     "iri" : "http://purl.org/net/p-plan#Plan",
     "baseIri" : "http://purl.org/net/p-plan",
@@ -475,10 +567,10 @@
       "IRI-based" : "Plan",
       "en" : "Plan"
     },
-    "subClasses" : [ "22" ],
+    "subClasses" : [ "27" ],
     "attributes" : [ "external" ],
-    "id" : "11",
-    "superClasses" : [ "13", "20" ]
+    "id" : "12",
+    "superClasses" : [ "15", "21" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Plan",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -486,9 +578,9 @@
     "label" : {
       "IRI-based" : "Plan"
     },
-    "subClasses" : [ "11" ],
+    "subClasses" : [ "12" ],
     "attributes" : [ "external" ],
-    "id" : "20"
+    "id" : "21"
   } ],
   "property" : [ {
     "id" : "0",
@@ -497,22 +589,22 @@
     "id" : "3",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "10",
+    "id" : "11",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "12",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "17",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "18",
+    "id" : "13",
     "type" : "owl:objectProperty"
   }, {
     "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "20",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "21",
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "24",
@@ -524,46 +616,55 @@
     "id" : "28",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "29",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "32",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "34",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "36",
+    "id" : "31",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "37",
+    "id" : "32",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
     "type" : "owl:objectProperty"
   }, {
     "id" : "38",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "39",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "40",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "42",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "41",
-    "type" : "owl:disjointWith"
-  }, {
     "id" : "43",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "44",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "45",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "46",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "47",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "49",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "52",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "53",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
@@ -625,7 +726,7 @@
   }, {
     "iri" : "http://purl.org/net/p-plan#isSubPlanOfPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "11",
+    "range" : "12",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -644,21 +745,21 @@
       "IRI-based" : "isSubPlanOfPlan",
       "en" : "isSubPlanOfPlan"
     },
-    "superproperty" : [ "12" ],
-    "domain" : "11",
+    "superproperty" : [ "13" ],
+    "domain" : "12",
     "attributes" : [ "external", "object" ],
-    "id" : "10"
+    "id" : "11"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
     "baseIri" : "http://www.w3.org/2002/07/owl",
-    "range" : "14",
+    "range" : "16",
     "label" : {
       "IRI-based" : "topObjectProperty"
     },
-    "domain" : "14",
-    "subproperty" : [ "10" ],
+    "domain" : "16",
+    "subproperty" : [ "11" ],
     "attributes" : [ "external", "object" ],
-    "id" : "12"
+    "id" : "13"
   }, {
     "iri" : "http://www.w3.org/2008/05/skos-xl#altLabel",
     "baseIri" : "http://www.w3.org/2008/05/skos-xl",
@@ -692,11 +793,16 @@
       "en" : "If C skosxl:altLabel L and L skosxl:literalForm V, then X skos:altLabel V."
     },
     "attributes" : [ "external", "object" ],
-    "id" : "17"
+    "id" : "19"
+  }, {
+    "range" : "21",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "20"
   }, {
     "iri" : "http://purl.org/net/p-plan#isDecomposedAsPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "11",
+    "range" : "12",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -715,34 +821,44 @@
       "IRI-based" : "isDecomposedAsPlan",
       "en" : "isDecomposedAsPlan"
     },
-    "domain" : "15",
+    "domain" : "17",
     "attributes" : [ "external", "object" ],
-    "id" : "18"
-  }, {
-    "range" : "20",
-    "domain" : "11",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "19"
-  }, {
-    "range" : "11",
-    "domain" : "22",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "21"
-  }, {
-    "range" : "25",
-    "domain" : "5",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "24"
-  }, {
-    "range" : "27",
-    "domain" : "8",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "26"
+    "id" : "22"
   }, {
     "range" : "8",
     "domain" : "7",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "23"
+  }, {
+    "range" : "25",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "24"
+  }, {
+    "range" : "12",
+    "domain" : "27",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "26"
+  }, {
+    "range" : "29",
+    "domain" : "8",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "28"
+  }, {
+    "range" : "4",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "31"
+  }, {
+    "range" : "4",
+    "domain" : "9",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "32"
+  }, {
+    "range" : "4",
+    "domain" : "34",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "33"
   }, {
     "iri" : "http://purl.org/net/p-plan#correspondsToVariable",
     "baseIri" : "http://purl.org/net/p-plan",
@@ -765,13 +881,13 @@
       "IRI-based" : "correspondsToVariable",
       "en" : "correspondsToVariable"
     },
-    "domain" : "13",
+    "domain" : "15",
     "attributes" : [ "functional", "external", "object" ],
-    "id" : "29"
+    "id" : "35"
   }, {
     "iri" : "http://purl.org/net/p-plan#isStepOfPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "11",
+    "range" : "12",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -790,23 +906,23 @@
       "IRI-based" : "isStepOfPlan",
       "en" : "isStepOfPlan"
     },
-    "domain" : "33",
+    "domain" : "39",
     "attributes" : [ "external", "object" ],
-    "id" : "32"
+    "id" : "38"
   }, {
     "range" : "2",
-    "domain" : "16",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "34"
+    "domain" : "18",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "40"
   }, {
-    "range" : "31",
-    "domain" : "30",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "36"
+    "range" : "37",
+    "domain" : "36",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "42"
   }, {
     "iri" : "http://purl.org/net/p-plan#correspondsToStep",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "33",
+    "range" : "39",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -827,32 +943,32 @@
     },
     "domain" : "6",
     "attributes" : [ "functional", "external", "object" ],
-    "id" : "37"
-  }, {
-    "range" : "13",
-    "domain" : "8",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "38"
-  }, {
-    "range" : "13",
-    "domain" : "11",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "39"
-  }, {
-    "range" : "33",
-    "domain" : "4",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "40"
-  }, {
-    "range" : "2",
-    "domain" : "42",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "41"
-  }, {
-    "range" : "2",
-    "domain" : "9",
-    "attributes" : [ "anonymous", "object" ],
     "id" : "43"
+  }, {
+    "range" : "15",
+    "domain" : "8",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "44"
+  }, {
+    "range" : "15",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "45"
+  }, {
+    "range" : "39",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "46"
+  }, {
+    "range" : "2",
+    "domain" : "48",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "47"
+  }, {
+    "range" : "2",
+    "domain" : "10",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "49"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#producesState",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
@@ -874,11 +990,11 @@
       "en" : "o-steps:producesState binds a o-steps:Step to the o-steps:State the step produces."
     },
     "attributes" : [ "object" ],
-    "id" : "44"
+    "id" : "50"
   }, {
     "iri" : "http://www.w3.org/2008/05/skos-xl#literalForm",
     "baseIri" : "http://www.w3.org/2008/05/skos-xl",
-    "range" : "35",
+    "range" : "41",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -903,11 +1019,11 @@
       "en" : "If two instances of the class skosxl:Label have the same literal form, they are not necessarily the same resource."
     },
     "attributes" : [ "datatype", "external" ],
-    "id" : "45"
+    "id" : "51"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#hasStateShape",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
-    "range" : "30",
+    "range" : "36",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -925,7 +1041,7 @@
       "en" : "Links a o-steps:State to a description of the state as o-steps:StateShape."
     },
     "attributes" : [ "object" ],
-    "id" : "46"
+    "id" : "52"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#hasDescription",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
@@ -933,8 +1049,8 @@
     "label" : {
       "IRI-based" : "hasDescription"
     },
-    "domain" : "33",
+    "domain" : "39",
     "attributes" : [ "object" ],
-    "id" : "47"
+    "id" : "53"
   } ]
 }

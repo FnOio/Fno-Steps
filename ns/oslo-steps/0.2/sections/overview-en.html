@@ -1,13 +1,44 @@
-<html><h2 id="overv" class="list">OSLO-STEPS vocabulary: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="overv" class="list">OSLO-STEPS vocabulary: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
-<ul class="hlist">
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
       <a href="#http://purl.org/net/p-plan#Bundle" title="http://purl.org/net/p-plan#Bundle">Bundle</a>
    </li>
    <li>
       <a href="#Bundle" title="https://fast.ilabt.imec.be/ns/oslo-steps#Bundle">Bundle</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">
+         <span>collection</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ComponentLevelStep"
+         title="https://fast.ilabt.imec.be/ns/oslo-steps#ComponentLevelStep">ComponentLevelStep</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">
+         <span>concept</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+         title="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+         <span>concept scheme</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ContainerLevelStep"
+         title="https://fast.ilabt.imec.be/ns/oslo-steps#ContainerLevelStep">ContainerLevelStep</a>
+   </li>
+   <li>
+      <a href="#JourneyLevelStep"
+         title="https://fast.ilabt.imec.be/ns/oslo-steps#JourneyLevelStep">JourneyLevelStep</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2008/05/skos-xl#Label" title="http://www.w3.org/2008/05/skos-xl#Label">Label</a>
    </li>
    <li>
       <a href="#http://www.w3.org/ns/shacl#NodeShape" title="http://www.w3.org/ns/shacl#NodeShape">Node shape</a>
@@ -37,12 +68,21 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#http://purl.org/net/p-plan#Variable" title="http://purl.org/net/p-plan#Variable">Variable</a>
    </li>
-</ul><h4>Object Properties</h4><ul class="hlist">
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://www.w3.org/2008/05/skos-xl#altLabel" title="http://www.w3.org/2008/05/skos-xl#altLabel">alternative label</a>
+   </li>
    <li>
       <a href="#http://purl.org/net/p-plan#correspondsToStep" title="http://purl.org/net/p-plan#correspondsToStep">correspondsToStep</a>
    </li>
    <li>
       <a href="#http://purl.org/net/p-plan#correspondsToVariable" title="http://purl.org/net/p-plan#correspondsToVariable">correspondsToVariable</a>
+   </li>
+   <li>
+      <a href="#hasDescription"
+         title="https://fast.ilabt.imec.be/ns/oslo-steps#hasDescription">
+         <span>has description</span>
+      </a>
    </li>
    <li>
       <a href="#hasStateShape"
@@ -58,6 +98,9 @@ This ontology has the following classes and properties.</span>
       <a href="#http://purl.org/net/p-plan#isSubPlanOfPlan" title="http://purl.org/net/p-plan#isSubPlanOfPlan">isSubPlanOfPlan</a>
    </li>
    <li>
+      <a href="#http://www.w3.org/2008/05/skos-xl#prefLabel" title="http://www.w3.org/2008/05/skos-xl#prefLabel">preferred label</a>
+   </li>
+   <li>
       <a href="#producesState"
          title="https://fast.ilabt.imec.be/ns/oslo-steps#producesState">producesState</a>
    </li>
@@ -65,4 +108,13 @@ This ontology has the following classes and properties.</span>
       <a href="#requiresState"
          title="https://fast.ilabt.imec.be/ns/oslo-steps#requiresState">requiresState</a>
    </li>
-</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html#"></iframe> </html>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://www.w3.org/2008/05/skos-xl#literalForm" title="http://www.w3.org/2008/05/skos-xl#literalForm">literal form</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#emptyState"
+         title="https://fast.ilabt.imec.be/ns/oslo-steps#emptyState">Empty state</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 

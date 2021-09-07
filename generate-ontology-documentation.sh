@@ -1,5 +1,5 @@
 
-widocoJarFile="widoco-1.4.11-jar-with-dependencies.jar"
+widocoJarFile="widoco-1.4.15-jar-with-dependencies.jar"
 function executeWidoco {
 
 ontologyFile=$1
@@ -25,20 +25,18 @@ ontologyRewriteBase=$5
 
 function main {
 
-# Create the initial version under 0.1 but also the latest version
+# Create the version but also the latest version
 
-vocOutputFolderVersion="./ns/oslo-steps/0.1"
+vocOutputFolderVersion="./ns/oslo-steps/0.2"
 vocOutputFolderLatest="./ns/oslo-steps/"
-vocFile="oslo-steps.owl"
+vocFile="oslo-steps-v0.2.owl"
 vocConfigFile="oslo-steps-widoco.conf"
 vocLang="en"
 vocRewriteBaseVersion="/ns/oslo-steps"
 vocRewriteBaseLatest="/ns/oslo-steps"
 
-
 executeWidoco $vocFile $vocOutputFolderLatest $vocConfigFile $vocLang $vocRewriteBaseLatest
 executeWidoco $vocFile $vocOutputFolderVersion $vocConfigFile $vocLang $vocRewriteBaseVersion
-
 
 
 }
