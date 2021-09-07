@@ -22,7 +22,6 @@ ontologyRewriteBase=$5
   -rewriteBase $ontologyRewriteBase
 }
 
-
 function main {
 
 # Create the version but also the latest version
@@ -38,8 +37,6 @@ vocRewriteBaseLatest="/ns/oslo-steps"
 executeWidoco $vocFile $vocOutputFolderLatest $vocConfigFile $vocLang $vocRewriteBaseLatest
 executeWidoco $vocFile $vocOutputFolderVersion $vocConfigFile $vocLang $vocRewriteBaseVersion
 
-
 }
-
 
 main

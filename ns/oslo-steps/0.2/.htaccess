@@ -11,7 +11,7 @@ AddType application/ld+json .jsonld
 # Rewrite engine setup
 RewriteEngine On
 #Change the path to the folder here
-RewriteBase C:/Program Files/Git/ns/oslo-steps/./ns/oslo-steps/0.2 
+RewriteBase /ns/oslo-steps/0.2 
 
 # Rewrite rule to serve HTML content from the vocabulary URI if requested
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
