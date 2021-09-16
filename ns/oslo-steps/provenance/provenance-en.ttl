@@ -8,8 +8,10 @@
 	 dc:creator <https://sven-lieber.org/profile#me>;
 	 prov:wasAttributedTo <https://ben.de-meester.org/#me>;
 	 dc:contributor <https://ben.de-meester.org/#me>;
+	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 	 prov:specializationOf <https://fast.ilabt.imec.be/ns/oslo-steps#>;
 	 prov:wasRevisionOf <https://fast.ilabt.imec.be/ns/oslo-steps/0.1#>;
 	 prov:wasGeneratedAt "31-10-2019";
 .
+:agent0 a prov:Agent; foaf:name "Dörthe Arndt".

@@ -9,6 +9,9 @@
     "@id" : "http://www.w3.org/2008/05/skos-xl#literalForm"
   } ]
 }, {
+  "@id" : "http://creativecommons.org/ns#license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/dc/terms/creator",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -351,6 +354,9 @@
 }, {
   "@id" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://creativecommons.org/ns#license" : [ {
+    "@id" : "http://creativecommons.org/licenses/by/4.0/"
+  } ],
   "http://purl.org/dc/terms/creator" : [ {
     "@id" : "https://sven-lieber.org/profile#me"
   } ],

@@ -1,5 +1,6 @@
 <https://fast.ilabt.imec.be/ns/oslo-steps#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://fast.ilabt.imec.be/ns/oslo-steps#> <http://www.w3.org/2002/07/owl#versionIRI> <https://fast.ilabt.imec.be/ns/oslo-steps/0.2#> .
+<https://fast.ilabt.imec.be/ns/oslo-steps#> <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/4.0/> .
 <https://fast.ilabt.imec.be/ns/oslo-steps#> <http://purl.org/dc/terms/creator> <https://sven-lieber.org/profile#me> .
 <https://fast.ilabt.imec.be/ns/oslo-steps#> <http://purl.org/dc/terms/description> "This is the OSLO-STEPS vocabulary, aiming to describe steps of public services from a user perspective developed in the FAST project (http://www.project-fast.org)"@en .
 <https://fast.ilabt.imec.be/ns/oslo-steps#> <http://purl.org/dc/terms/title> "OSLO-STEPS vocabulary"@en .
@@ -16,6 +17,9 @@
 # #
 # #################################################################
 # 
+# 
+# http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/terms/creator
 <http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .

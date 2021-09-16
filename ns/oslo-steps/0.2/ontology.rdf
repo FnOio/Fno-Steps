@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://fast.ilabt.imec.be/ns/oslo-steps#"
      xml:base="https://fast.ilabt.imec.be/ns/oslo-steps"
+     xmlns:ns="http://creativecommons.org/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -12,6 +13,7 @@
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://fast.ilabt.imec.be/ns/oslo-steps#">
         <owl:versionIRI rdf:resource="https://fast.ilabt.imec.be/ns/oslo-steps/0.2#"/>
+        <ns:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <terms:creator rdf:resource="https://sven-lieber.org/profile#me"/>
         <terms:description xml:lang="en">This is the OSLO-STEPS vocabulary, aiming to describe steps of public services from a user perspective developed in the FAST project (http://www.project-fast.org)</terms:description>
         <terms:title xml:lang="en">OSLO-STEPS vocabulary</terms:title>
@@ -33,6 +35,13 @@
      -->
 
 
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
     
 
 

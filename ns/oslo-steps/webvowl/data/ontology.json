@@ -19,6 +19,12 @@
       "en" : "Version 0.2: Added support for identifiable labels using skosXL and introduced three subclasses of a step to represent hierarchies. Version 0.1: an initial draft of the OSLO-STEPS vocabulary defined during the first year of the FAST project (http://www.project-fast.org)"
     },
     "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "http://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
@@ -31,16 +37,16 @@
         "value" : "o-steps",
         "type" : "label"
       } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
-        "language" : "en",
-        "value" : "0.2",
-        "type" : "label"
-      } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
         "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en",
+        "value" : "0.2",
         "type" : "label"
       } ],
       "title" : [ {
@@ -59,7 +65,7 @@
     "id" : "7",
     "type" : "owl:Class"
   }, {
-    "id" : "9",
+    "id" : "8",
     "type" : "owl:Class"
   }, {
     "id" : "10",
@@ -116,7 +122,7 @@
     "id" : "25",
     "type" : "owl:Class"
   }, {
-    "id" : "8",
+    "id" : "9",
     "type" : "owl:Class"
   }, {
     "id" : "29",
@@ -141,27 +147,6 @@
     "attributes" : [ "external" ],
     "id" : "6"
   }, {
-    "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#Bundle",
-    "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Bundle",
-      "en" : "Bundle"
-    },
-    "comment" : {
-      "en" : "A o-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a o-steps:Plan"
-    },
-    "id" : "7",
-    "superClasses" : [ "8" ]
-  }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#ContainerLevelStep",
     "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
     "instances" : 0,
@@ -180,8 +165,29 @@
     "comment" : {
       "en" : "Three hierarchy levels are defined within the FAST project. A ContainerLevelStep represents the middle-level."
     },
-    "id" : "9",
+    "id" : "7",
     "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#Bundle",
+    "baseIri" : "https://fast.ilabt.imec.be/ns/oslo-steps",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://fast.ilabt.imec.be/ns/oslo-steps#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Bundle",
+      "en" : "Bundle"
+    },
+    "comment" : {
+      "en" : "A o-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a o-steps:Plan"
+    },
+    "id" : "8",
+    "superClasses" : [ "9" ]
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -219,7 +225,7 @@
     "label" : {
       "IRI-based" : "Entity"
     },
-    "subClasses" : [ "8", "12" ],
+    "subClasses" : [ "9", "12" ],
     "attributes" : [ "external" ],
     "id" : "15"
   }, {
@@ -427,7 +433,7 @@
       "IRI-based" : "Step",
       "en" : "Step"
     },
-    "subClasses" : [ "14", "34", "9" ],
+    "subClasses" : [ "14", "34", "7" ],
     "comment" : {
       "en" : "The Workflow Coalition defines a step as: 'A description of a piece of work that forms one logical step within a process'. Furthermore, such a step may be either a workflow, or the smallest unit of work which is scheduled based on pre/post-conditions (states)."
     },
@@ -507,12 +513,12 @@
       "IRI-based" : "Bundle",
       "en" : "Bundle"
     },
-    "subClasses" : [ "7" ],
+    "subClasses" : [ "8" ],
     "comment" : {
       "en" : "A p-plan:Bundle is a specific type of prov:Bundle that contains the provenance assertions of the execution of a p-plan:Plan"
     },
     "attributes" : [ "external" ],
-    "id" : "8",
+    "id" : "9",
     "superClasses" : [ "29", "15" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Bundle",
@@ -521,7 +527,7 @@
     "label" : {
       "IRI-based" : "Bundle"
     },
-    "subClasses" : [ "8" ],
+    "subClasses" : [ "9" ],
     "attributes" : [ "external" ],
     "id" : "29"
   }, {
@@ -797,7 +803,7 @@
   }, {
     "range" : "21",
     "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "20"
   }, {
     "iri" : "http://purl.org/net/p-plan#isDecomposedAsPlan",
@@ -825,39 +831,39 @@
     "attributes" : [ "external", "object" ],
     "id" : "22"
   }, {
-    "range" : "8",
-    "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
+    "range" : "9",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "23"
   }, {
     "range" : "25",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "24"
   }, {
     "range" : "12",
     "domain" : "27",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "26"
   }, {
     "range" : "29",
-    "domain" : "8",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "28"
   }, {
     "range" : "4",
     "domain" : "14",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "31"
   }, {
     "range" : "4",
-    "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "32"
   }, {
     "range" : "4",
     "domain" : "34",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "33"
   }, {
     "iri" : "http://purl.org/net/p-plan#correspondsToVariable",
@@ -882,7 +888,7 @@
       "en" : "correspondsToVariable"
     },
     "domain" : "15",
-    "attributes" : [ "functional", "external", "object" ],
+    "attributes" : [ "external", "object", "functional" ],
     "id" : "35"
   }, {
     "iri" : "http://purl.org/net/p-plan#isStepOfPlan",
@@ -912,12 +918,12 @@
   }, {
     "range" : "2",
     "domain" : "18",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "40"
   }, {
     "range" : "37",
     "domain" : "36",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "42"
   }, {
     "iri" : "http://purl.org/net/p-plan#correspondsToStep",
@@ -942,32 +948,32 @@
       "en" : "correspondsToStep"
     },
     "domain" : "6",
-    "attributes" : [ "functional", "external", "object" ],
+    "attributes" : [ "external", "object", "functional" ],
     "id" : "43"
   }, {
     "range" : "15",
-    "domain" : "8",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "44"
   }, {
     "range" : "15",
     "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "45"
   }, {
     "range" : "39",
     "domain" : "4",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "46"
   }, {
     "range" : "2",
     "domain" : "48",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "47"
   }, {
     "range" : "2",
     "domain" : "10",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "49"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#producesState",
@@ -1016,9 +1022,9 @@
     "cardinality" : "1",
     "domain" : "2",
     "comment" : {
-      "en" : "If two instances of the class skosxl:Label have the same literal form, they are not necessarily the same resource."
+      "en" : "The range of skosxl:literalForm is the class of RDF plain literals."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "51"
   }, {
     "iri" : "https://fast.ilabt.imec.be/ns/oslo-steps#hasStateShape",

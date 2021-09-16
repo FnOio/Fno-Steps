@@ -15,6 +15,7 @@
                                              <http://purl.org/vocab/vann/preferredNamespaceUri> "https://fast.ilabt.imec.be/ns/oslo-steps#" ;
                                              rdfs:comment "Version 0.2: Added support for identifiable labels using skosXL and introduced three subclasses of a step to represent hierarchies. Version 0.1: an initial draft of the OSLO-STEPS vocabulary defined during the first year of the FAST project (http://www.project-fast.org)"@en ;
                                              rdfs:label "OSLO-STEPS vocabulary"@en ;
+                                             cc:license <http://creativecommons.org/licenses/by/4.0/> ;
                                              owl:versionInfo "0.2"@en .
 
 #################################################################
