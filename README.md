@@ -1,11 +1,12 @@
-# OSLO-STEPS
+# FnO-Steps
 
-This repository contains the OSLO-STEPS data model, as presented in:
+This repository contains the FnO-Steps data model,
+originally presented as OSLO-steps in:
 
 Dörthe Arndt, Sven Lieber, Raf Buyle, Sander Goossens, David De Block,
 Ben De Meester, and Erik Mannens. 2021.
-*Dynamic Workflow Composition with OSLO-steps: Data Re-use and Simplification
-of Automated Administration.*
+Dynamic Workflow Composition with OSLO-steps: Data Re-use and Simplification
+of Automated Administration.
 In Proceedings of the 11th Knowledge Capture Conference (K-CAP ’21),
 December 2–3, 2021, Virtual Event, USA. ACM, New York, NY, USA,
 4 pages.
