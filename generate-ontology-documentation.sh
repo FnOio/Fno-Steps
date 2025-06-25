@@ -1,5 +1,8 @@
+#!/usr/bin/env bash
 
-widocoJarFile="widoco-1.4.15-jar-with-dependencies.jar"
+set -x
+
+widocoJarFile="widoco-1.4.26-jar-with-dependencies.jar"
 function executeWidoco {
 
 ontologyFile=$1
@@ -16,23 +19,28 @@ ontologyRewriteBase=$5
   -rewriteAll \
   -confFile $ontologyConfigFile \
   -lang $ontologyLang \
-  -htaccess \
   -webVowl \
+  -htaccess \
   -licensius \
   -rewriteBase $ontologyRewriteBase
+
+mv $ontologyOutputFolder/index-en.html $ontologyOutputFolder/index.html
 }
 
 function main {
 
 # Create the version but also the latest version
 
-vocOutputFolderVersion="./ns/oslo-steps/0.2"
-vocOutputFolderLatest="./ns/oslo-steps/"
-vocFile="oslo-steps-v0.2.owl"
-vocConfigFile="oslo-steps-widoco.conf"
+vocOutputFolderVersion="./ns/fno-steps/0.1"
+vocOutputFolderLatest="./ns/fno-steps/"
+vocFile="fno-steps-v0.1.owl"
+vocConfigFile="fno-steps-widoco.conf"
 vocLang="en"
-vocRewriteBaseVersion="/ns/oslo-steps"
-vocRewriteBaseLatest="/ns/oslo-steps"
+vocRewriteBaseVersion="/ns/fno-steps"
+vocRewriteBaseLatest="/ns/fno-steps"
+
+# Remove old dir
+rm -rf ns/
 
 executeWidoco $vocFile $vocOutputFolderLatest $vocConfigFile $vocLang $vocRewriteBaseLatest
 executeWidoco $vocFile $vocOutputFolderVersion $vocConfigFile $vocLang $vocRewriteBaseVersion
