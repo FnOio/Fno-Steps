@@ -65,7 +65,7 @@
     "id" : "6",
     "type" : "owl:Class"
   }, {
-    "id" : "8",
+    "id" : "7",
     "type" : "owl:Class"
   }, {
     "id" : "11",
@@ -107,7 +107,7 @@
     "id" : "35",
     "type" : "owl:Class"
   }, {
-    "id" : "40",
+    "id" : "39",
     "type" : "owl:Class"
   }, {
     "id" : "50",
@@ -128,7 +128,7 @@
     "id" : "30",
     "type" : "owl:Class"
   }, {
-    "id" : "7",
+    "id" : "8",
     "type" : "owl:Class"
   }, {
     "id" : "20",
@@ -165,6 +165,15 @@
     "attributes" : [ "external" ],
     "id" : "5"
   }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
     "iri" : "https://w3id.org/imec/ns/fno-steps#Plan",
     "baseIri" : "https://w3id.org/imec/ns/fno-steps",
     "instances" : 0,
@@ -183,17 +192,8 @@
     "comment" : {
       "en" : "A fno-steps:Plan is a specific type of p-plan:Plan. It is composed of smaller steps that require and produce states."
     },
-    "id" : "6",
-    "superClasses" : [ "7" ]
-  }, {
-    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
-    "baseIri" : "http://www.w3.org/2004/02/skos/core",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Concept"
-    },
-    "attributes" : [ "external" ],
-    "id" : "8"
+    "id" : "7",
+    "superClasses" : [ "8" ]
   }, {
     "iri" : "http://purl.org/net/p-plan#Entity",
     "baseIri" : "http://purl.org/net/p-plan",
@@ -201,7 +201,7 @@
     "label" : {
       "IRI-based" : "Entity"
     },
-    "subClasses" : [ "12", "7" ],
+    "subClasses" : [ "12", "8" ],
     "attributes" : [ "external" ],
     "id" : "11"
   }, {
@@ -434,7 +434,7 @@
     },
     "subClasses" : [ "18" ],
     "attributes" : [ "external" ],
-    "id" : "40"
+    "id" : "39"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#Collection",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -465,7 +465,7 @@
       "en" : "The Workflow Coalition defines a step as: 'A description of a piece of work that forms one logical step within a process'. Furthermore, such a step may be either a workflow, or the smallest unit of work which is scheduled based on pre/post-conditions (states)."
     },
     "id" : "18",
-    "superClasses" : [ "40" ]
+    "superClasses" : [ "39" ]
   }, {
     "iri" : "http://www.w3.org/2008/05/skos-xl#Label",
     "baseIri" : "http://www.w3.org/2008/05/skos-xl",
@@ -570,9 +570,9 @@
       "IRI-based" : "Plan",
       "en" : "Plan"
     },
-    "subClasses" : [ "6" ],
+    "subClasses" : [ "7" ],
     "attributes" : [ "external" ],
-    "id" : "7",
+    "id" : "8",
     "superClasses" : [ "11", "20" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Plan",
@@ -581,7 +581,7 @@
     "label" : {
       "IRI-based" : "Plan"
     },
-    "subClasses" : [ "7" ],
+    "subClasses" : [ "8" ],
     "attributes" : [ "external" ],
     "id" : "20"
   } ],
@@ -634,7 +634,7 @@
     "id" : "38",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "39",
+    "id" : "40",
     "type" : "owl:objectProperty"
   }, {
     "id" : "41",
@@ -702,12 +702,12 @@
     "comment" : {
       "en" : "If C skosxl:prefLabel L and L skosxl:literalForm V, then X skos:prefLabel V."
     },
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "0"
   }, {
     "iri" : "http://purl.org/net/p-plan#isSubPlanOfPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "7",
+    "range" : "8",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -727,8 +727,8 @@
       "en" : "isSubPlanOfPlan"
     },
     "superproperty" : [ "10" ],
-    "domain" : "7",
-    "attributes" : [ "external", "object" ],
+    "domain" : "8",
+    "attributes" : [ "object", "external" ],
     "id" : "9"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
@@ -739,7 +739,7 @@
     },
     "domain" : "13",
     "subproperty" : [ "9" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "10"
   }, {
     "iri" : "http://www.w3.org/2008/05/skos-xl#altLabel",
@@ -773,17 +773,17 @@
     "comment" : {
       "en" : "If C skosxl:altLabel L and L skosxl:literalForm V, then X skos:altLabel V."
     },
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "16"
   }, {
     "range" : "20",
-    "domain" : "7",
+    "domain" : "8",
     "attributes" : [ "object", "anonymous" ],
     "id" : "19"
   }, {
     "iri" : "http://purl.org/net/p-plan#isDecomposedAsPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "7",
+    "range" : "8",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -803,7 +803,7 @@
       "en" : "isDecomposedAsPlan"
     },
     "domain" : "14",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "23"
   }, {
     "range" : "12",
@@ -816,8 +816,8 @@
     "attributes" : [ "object", "anonymous" ],
     "id" : "26"
   }, {
-    "range" : "7",
-    "domain" : "6",
+    "range" : "8",
+    "domain" : "7",
     "attributes" : [ "object", "anonymous" ],
     "id" : "27"
   }, {
@@ -885,8 +885,33 @@
       "en" : "correspondsToVariable"
     },
     "domain" : "11",
-    "attributes" : [ "functional", "external", "object" ],
+    "attributes" : [ "object", "functional", "external" ],
     "id" : "37"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#isStepOfPlan",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "8",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/net/p-plan#",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "p-plan:isStepOfPlan links a p-plan:Step to the p-plan:Plan which it corresponds to.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isStepOfPlan",
+      "en" : "isStepOfPlan"
+    },
+    "domain" : "39",
+    "attributes" : [ "object", "external" ],
+    "id" : "38"
   }, {
     "iri" : "https://w3id.org/imec/ns/fno-steps#requiresState",
     "baseIri" : "https://w3id.org/imec/ns/fno-steps",
@@ -908,32 +933,7 @@
       "en" : "fno-steps:requiresState binds a fno-steps:Step to the fno-steps:State the step requires to produce the state bound via fno-steps:producesState."
     },
     "attributes" : [ "object" ],
-    "id" : "38"
-  }, {
-    "iri" : "http://purl.org/net/p-plan#isStepOfPlan",
-    "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "7",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/net/p-plan#",
-        "type" : "iri"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "p-plan:isStepOfPlan links a p-plan:Step to the p-plan:Plan which it corresponds to.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isStepOfPlan",
-      "en" : "isStepOfPlan"
-    },
-    "domain" : "40",
-    "attributes" : [ "external", "object" ],
-    "id" : "39"
+    "id" : "40"
   }, {
     "range" : "2",
     "domain" : "15",
@@ -945,19 +945,9 @@
     "attributes" : [ "object", "anonymous" ],
     "id" : "43"
   }, {
-    "iri" : "https://w3id.org/imec/ns/fno-steps#hasDescription",
-    "baseIri" : "https://w3id.org/imec/ns/fno-steps",
-    "range" : "2",
-    "label" : {
-      "IRI-based" : "hasDescription"
-    },
-    "domain" : "40",
-    "attributes" : [ "object" ],
-    "id" : "44"
-  }, {
     "iri" : "http://purl.org/net/p-plan#correspondsToStep",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "40",
+    "range" : "39",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -977,7 +967,17 @@
       "en" : "correspondsToStep"
     },
     "domain" : "5",
-    "attributes" : [ "functional", "external", "object" ],
+    "attributes" : [ "object", "functional", "external" ],
+    "id" : "44"
+  }, {
+    "iri" : "https://w3id.org/imec/ns/fno-steps#hasDescription",
+    "baseIri" : "https://w3id.org/imec/ns/fno-steps",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasDescription"
+    },
+    "domain" : "39",
+    "attributes" : [ "object" ],
     "id" : "45"
   }, {
     "range" : "11",
@@ -986,11 +986,11 @@
     "id" : "46"
   }, {
     "range" : "11",
-    "domain" : "7",
+    "domain" : "8",
     "attributes" : [ "object", "anonymous" ],
     "id" : "47"
   }, {
-    "range" : "40",
+    "range" : "39",
     "domain" : "18",
     "attributes" : [ "object", "anonymous" ],
     "id" : "48"
@@ -1001,7 +1001,7 @@
     "id" : "49"
   }, {
     "range" : "2",
-    "domain" : "8",
+    "domain" : "6",
     "attributes" : [ "object", "anonymous" ],
     "id" : "51"
   }, {
@@ -1053,7 +1053,7 @@
     "comment" : {
       "en" : "If two instances of the class skosxl:Label have the same literal form, they are not necessarily the same resource."
     },
-    "attributes" : [ "external", "datatype" ],
+    "attributes" : [ "datatype", "external" ],
     "id" : "53"
   } ]
 }
