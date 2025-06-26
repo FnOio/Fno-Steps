@@ -8,7 +8,7 @@
     },
     "iri" : "https://w3id.org/imec/ns/fno-steps#",
     "version" : "0.1",
-    "author" : [ "https://data.knows.idlab.ugent.be/person/geraldh/#me", "https://sven-lieber.org/profile#me" ],
+    "author" : [ "https://example.org#disclosed-after-review" ],
     "description" : {
       "en" : "This is the FnO-Steps vocabulary, aiming to describe a workflow consisting of a number of steps."
     },
@@ -25,12 +25,7 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "https://sven-lieber.org/profile#me",
-        "type" : "iri"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "https://data.knows.idlab.ugent.be/person/geraldh/#me",
+        "value" : "https://example.org#disclosed-after-review",
         "type" : "iri"
       } ],
       "preferredNamespacePrefix" : [ {
@@ -39,16 +34,16 @@
         "value" : "fno-steps",
         "type" : "label"
       } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
-        "language" : "en",
-        "value" : "0.1",
-        "type" : "label"
-      } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
         "value" : "https://w3id.org/imec/ns/fno-steps#",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en",
+        "value" : "0.1",
         "type" : "label"
       } ],
       "title" : [ {
@@ -112,7 +107,7 @@
     "id" : "35",
     "type" : "owl:Class"
   }, {
-    "id" : "40",
+    "id" : "39",
     "type" : "owl:Class"
   }, {
     "id" : "50",
@@ -439,7 +434,7 @@
     },
     "subClasses" : [ "18" ],
     "attributes" : [ "external" ],
-    "id" : "40"
+    "id" : "39"
   }, {
     "iri" : "http://www.w3.org/2004/02/skos/core#Collection",
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
@@ -470,7 +465,7 @@
       "en" : "The Workflow Coalition defines a step as: 'A description of a piece of work that forms one logical step within a process'. Furthermore, such a step may be either a workflow, or the smallest unit of work which is scheduled based on pre/post-conditions (states)."
     },
     "id" : "18",
-    "superClasses" : [ "40" ]
+    "superClasses" : [ "39" ]
   }, {
     "iri" : "http://www.w3.org/2008/05/skos-xl#Label",
     "baseIri" : "http://www.w3.org/2008/05/skos-xl",
@@ -639,7 +634,7 @@
     "id" : "38",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "39",
+    "id" : "40",
     "type" : "owl:objectProperty"
   }, {
     "id" : "41",
@@ -890,30 +885,8 @@
       "en" : "correspondsToVariable"
     },
     "domain" : "11",
-    "attributes" : [ "external", "functional", "object" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "37"
-  }, {
-    "iri" : "https://w3id.org/imec/ns/fno-steps#requiresState",
-    "baseIri" : "https://w3id.org/imec/ns/fno-steps",
-    "range" : "21",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://w3id.org/imec/ns/fno-steps#",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "requiresState",
-      "en" : "requiresState"
-    },
-    "domain" : "18",
-    "comment" : {
-      "en" : "fno-steps:requiresState binds a fno-steps:Step to the fno-steps:State the step requires to produce the state bound via fno-steps:producesState."
-    },
-    "attributes" : [ "object" ],
-    "id" : "38"
   }, {
     "iri" : "http://purl.org/net/p-plan#isStepOfPlan",
     "baseIri" : "http://purl.org/net/p-plan",
@@ -936,9 +909,31 @@
       "IRI-based" : "isStepOfPlan",
       "en" : "isStepOfPlan"
     },
-    "domain" : "40",
+    "domain" : "39",
     "attributes" : [ "external", "object" ],
-    "id" : "39"
+    "id" : "38"
+  }, {
+    "iri" : "https://w3id.org/imec/ns/fno-steps#requiresState",
+    "baseIri" : "https://w3id.org/imec/ns/fno-steps",
+    "range" : "21",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/imec/ns/fno-steps#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "requiresState",
+      "en" : "requiresState"
+    },
+    "domain" : "18",
+    "comment" : {
+      "en" : "fno-steps:requiresState binds a fno-steps:Step to the fno-steps:State the step requires to produce the state bound via fno-steps:producesState."
+    },
+    "attributes" : [ "object" ],
+    "id" : "40"
   }, {
     "range" : "2",
     "domain" : "15",
@@ -956,13 +951,13 @@
     "label" : {
       "IRI-based" : "hasDescription"
     },
-    "domain" : "40",
+    "domain" : "39",
     "attributes" : [ "object" ],
     "id" : "44"
   }, {
     "iri" : "http://purl.org/net/p-plan#correspondsToStep",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "40",
+    "range" : "39",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -982,7 +977,7 @@
       "en" : "correspondsToStep"
     },
     "domain" : "5",
-    "attributes" : [ "external", "functional", "object" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "45"
   }, {
     "range" : "11",
@@ -995,7 +990,7 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "47"
   }, {
-    "range" : "40",
+    "range" : "39",
     "domain" : "18",
     "attributes" : [ "anonymous", "object" ],
     "id" : "48"
@@ -1056,7 +1051,7 @@
     "cardinality" : "1",
     "domain" : "2",
     "comment" : {
-      "en" : "The range of skosxl:literalForm is the class of RDF plain literals."
+      "en" : "If two instances of the class skosxl:Label have the same literal form, they are not necessarily the same resource."
     },
     "attributes" : [ "external", "datatype" ],
     "id" : "53"
