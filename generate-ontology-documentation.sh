@@ -25,6 +25,7 @@ ontologyRewriteBase=$5
   -rewriteBase $ontologyRewriteBase
 
 mv $ontologyOutputFolder/index-en.html $ontologyOutputFolder/index.html
+sed --in-place 's/index-en.html/index.html/' $ontologyOutputFolder/index.html
 }
 
 function main {
