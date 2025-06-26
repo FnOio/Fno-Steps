@@ -34,16 +34,16 @@
         "value" : "fno-steps",
         "type" : "label"
       } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
-        "language" : "en",
-        "value" : "0.1",
-        "type" : "label"
-      } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
         "value" : "https://w3id.org/imec/ns/fno-steps#",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en",
+        "value" : "0.1",
         "type" : "label"
       } ],
       "title" : [ {
@@ -65,7 +65,7 @@
     "id" : "6",
     "type" : "owl:Class"
   }, {
-    "id" : "7",
+    "id" : "8",
     "type" : "owl:Class"
   }, {
     "id" : "11",
@@ -89,10 +89,10 @@
     "id" : "33",
     "type" : "owl:Class"
   }, {
-    "id" : "4",
+    "id" : "25",
     "type" : "owl:Class"
   }, {
-    "id" : "25",
+    "id" : "4",
     "type" : "owl:Class"
   }, {
     "id" : "1",
@@ -128,7 +128,7 @@
     "id" : "30",
     "type" : "owl:Class"
   }, {
-    "id" : "8",
+    "id" : "7",
     "type" : "owl:Class"
   }, {
     "id" : "20",
@@ -165,15 +165,6 @@
     "attributes" : [ "external" ],
     "id" : "5"
   }, {
-    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
-    "baseIri" : "http://www.w3.org/2004/02/skos/core",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Concept"
-    },
-    "attributes" : [ "external" ],
-    "id" : "6"
-  }, {
     "iri" : "https://w3id.org/imec/ns/fno-steps#Plan",
     "baseIri" : "https://w3id.org/imec/ns/fno-steps",
     "instances" : 0,
@@ -192,8 +183,17 @@
     "comment" : {
       "en" : "A fno-steps:Plan is a specific type of p-plan:Plan. It is composed of smaller steps that require and produce states."
     },
-    "id" : "7",
-    "superClasses" : [ "8" ]
+    "id" : "6",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept"
+    },
+    "attributes" : [ "external" ],
+    "id" : "8"
   }, {
     "iri" : "http://purl.org/net/p-plan#Entity",
     "baseIri" : "http://purl.org/net/p-plan",
@@ -201,7 +201,7 @@
     "label" : {
       "IRI-based" : "Entity"
     },
-    "subClasses" : [ "12", "8" ],
+    "subClasses" : [ "12", "7" ],
     "attributes" : [ "external" ],
     "id" : "11"
   }, {
@@ -326,6 +326,27 @@
     "id" : "33",
     "superClasses" : [ "18" ]
   }, {
+    "iri" : "https://w3id.org/imec/ns/fno-steps#Bundle",
+    "baseIri" : "https://w3id.org/imec/ns/fno-steps",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/imec/ns/fno-steps#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Bundle",
+      "en" : "Bundle"
+    },
+    "comment" : {
+      "en" : "A fno-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a fno-steps:Plan"
+    },
+    "id" : "25",
+    "superClasses" : [ "12" ]
+  }, {
     "iri" : "http://www.w3.org/ns/shacl#NodeShape",
     "baseIri" : "http://www.w3.org/ns/shacl",
     "instances" : 0,
@@ -347,27 +368,6 @@
     },
     "attributes" : [ "external" ],
     "id" : "4"
-  }, {
-    "iri" : "https://w3id.org/imec/ns/fno-steps#Bundle",
-    "baseIri" : "https://w3id.org/imec/ns/fno-steps",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://w3id.org/imec/ns/fno-steps#",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Bundle",
-      "en" : "Bundle"
-    },
-    "comment" : {
-      "en" : "A fno-steps:Bundle is a specific type of p-plan:Bundle that contains the provenance assertions of the execution of a fno-steps:Plan"
-    },
-    "id" : "25",
-    "superClasses" : [ "12" ]
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
@@ -570,9 +570,9 @@
       "IRI-based" : "Plan",
       "en" : "Plan"
     },
-    "subClasses" : [ "7" ],
+    "subClasses" : [ "6" ],
     "attributes" : [ "external" ],
-    "id" : "8",
+    "id" : "7",
     "superClasses" : [ "11", "20" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Plan",
@@ -581,7 +581,7 @@
     "label" : {
       "IRI-based" : "Plan"
     },
-    "subClasses" : [ "8" ],
+    "subClasses" : [ "7" ],
     "attributes" : [ "external" ],
     "id" : "20"
   } ],
@@ -707,7 +707,7 @@
   }, {
     "iri" : "http://purl.org/net/p-plan#isSubPlanOfPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "8",
+    "range" : "7",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -727,7 +727,7 @@
       "en" : "isSubPlanOfPlan"
     },
     "superproperty" : [ "10" ],
-    "domain" : "8",
+    "domain" : "7",
     "attributes" : [ "external", "object" ],
     "id" : "9"
   }, {
@@ -777,13 +777,13 @@
     "id" : "16"
   }, {
     "range" : "20",
-    "domain" : "8",
-    "attributes" : [ "anonymous", "object" ],
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "19"
   }, {
     "iri" : "http://purl.org/net/p-plan#isDecomposedAsPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "8",
+    "range" : "7",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -808,17 +808,17 @@
   }, {
     "range" : "12",
     "domain" : "25",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "24"
   }, {
     "range" : "22",
     "domain" : "21",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "26"
   }, {
-    "range" : "8",
-    "domain" : "7",
-    "attributes" : [ "anonymous", "object" ],
+    "range" : "7",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "27"
   }, {
     "iri" : "https://w3id.org/imec/ns/fno-steps#producesState",
@@ -845,22 +845,22 @@
   }, {
     "range" : "30",
     "domain" : "12",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "29"
   }, {
     "range" : "18",
     "domain" : "33",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "32"
   }, {
     "range" : "18",
     "domain" : "35",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "34"
   }, {
     "range" : "18",
     "domain" : "17",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "36"
   }, {
     "iri" : "http://purl.org/net/p-plan#correspondsToVariable",
@@ -885,7 +885,7 @@
       "en" : "correspondsToVariable"
     },
     "domain" : "11",
-    "attributes" : [ "external", "object", "functional" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "37"
   }, {
     "iri" : "https://w3id.org/imec/ns/fno-steps#requiresState",
@@ -912,7 +912,7 @@
   }, {
     "iri" : "http://purl.org/net/p-plan#isStepOfPlan",
     "baseIri" : "http://purl.org/net/p-plan",
-    "range" : "8",
+    "range" : "7",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -937,13 +937,23 @@
   }, {
     "range" : "2",
     "domain" : "15",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "41"
   }, {
     "range" : "4",
     "domain" : "3",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "43"
+  }, {
+    "iri" : "https://w3id.org/imec/ns/fno-steps#hasDescription",
+    "baseIri" : "https://w3id.org/imec/ns/fno-steps",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasDescription"
+    },
+    "domain" : "40",
+    "attributes" : [ "object" ],
+    "id" : "44"
   }, {
     "iri" : "http://purl.org/net/p-plan#correspondsToStep",
     "baseIri" : "http://purl.org/net/p-plan",
@@ -967,42 +977,32 @@
       "en" : "correspondsToStep"
     },
     "domain" : "5",
-    "attributes" : [ "external", "object", "functional" ],
-    "id" : "44"
-  }, {
-    "iri" : "https://w3id.org/imec/ns/fno-steps#hasDescription",
-    "baseIri" : "https://w3id.org/imec/ns/fno-steps",
-    "range" : "2",
-    "label" : {
-      "IRI-based" : "hasDescription"
-    },
-    "domain" : "40",
-    "attributes" : [ "object" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "45"
   }, {
     "range" : "11",
     "domain" : "12",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "46"
   }, {
     "range" : "11",
-    "domain" : "8",
-    "attributes" : [ "anonymous", "object" ],
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "47"
   }, {
     "range" : "40",
     "domain" : "18",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "48"
   }, {
     "range" : "2",
     "domain" : "50",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "49"
   }, {
     "range" : "2",
-    "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
+    "domain" : "8",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "51"
   }, {
     "iri" : "https://w3id.org/imec/ns/fno-steps#hasStateShape",
@@ -1051,7 +1051,7 @@
     "cardinality" : "1",
     "domain" : "2",
     "comment" : {
-      "en" : "The range of skosxl:literalForm is the class of RDF plain literals."
+      "en" : "If two instances of the class skosxl:Label have the same literal form, they are not necessarily the same resource."
     },
     "attributes" : [ "external", "datatype" ],
     "id" : "53"
